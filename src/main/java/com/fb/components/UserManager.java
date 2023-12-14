@@ -84,7 +84,7 @@ public class UserManager {
                     + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(newUser.getEmail());
-            if(matcher.matches() == false){
+            if(!matcher.matches()){
 
                 System.out.println("the email is invalid please enter a valid email");
                 break;
@@ -104,7 +104,7 @@ public class UserManager {
             //  "Password length should be between 8 and 20");
             Pattern pattern = Pattern.compile(regex);
             Matcher matcher = pattern.matcher(newUser.getPassword());
-            if(matcher.matches() == true){
+            if(matcher.matches()){
                 if(password != rePassword){
                     validPassword = true;
                 }
