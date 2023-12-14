@@ -15,7 +15,7 @@
 <AnchorPane prefHeight="522.0" prefWidth="561.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
       <TextField fx:id="EmailTextField" layoutX="244.0" layoutY="183.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
-      <DatePicker fx:id="myDatePicker" layoutX="244.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <DatePicker fx:id="myDatePicker" editable="false" layoutX="244.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <TextField fx:id="NameTextField" layoutX="244.0" layoutY="130.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <PasswordField fx:id="PasswordField" layoutX="244.0" layoutY="230.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <PasswordField fx:id="RepasswordField" layoutX="244.0" layoutY="275.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
@@ -30,7 +30,7 @@
             <Font name="Magneto Bold" size="56.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="328.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #5A5A5A;" text="Login" textFill="#7b85dd">
+      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="328.0" layoutY="498.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #5A5A5A;" text="Login" textFill="#7b85dd">
          <font>
             <Font name="System Bold" size="10.0" />
          </font>
@@ -38,7 +38,7 @@
             <Insets />
          </opaqueInsets>
       </Button>
-      <Label layoutX="181.0" layoutY="494.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
+      <Label layoutX="181.0" layoutY="496.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
       <Label layoutX="152.0" layoutY="134.0" text="Username">
          <font>
             <Font name="System Bold" size="12.0" />
