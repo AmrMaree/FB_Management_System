@@ -6,19 +6,23 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="484.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <TextField layoutX="208.0" layoutY="178.0" />
-      <DatePicker layoutX="195.0" layoutY="355.0" />
-      <TextField layoutX="208.0" layoutY="131.0" />
-      <PasswordField layoutX="208.0" layoutY="229.0" />
-      <PasswordField layoutX="208.0" layoutY="277.0" />
-      <RadioButton layoutX="208.0" layoutY="320.0" mnemonicParsing="false" text="Male" />
-      <RadioButton layoutX="298.0" layoutY="320.0" mnemonicParsing="false" text="Female" />
-      <Button layoutX="255.0" layoutY="409.0" mnemonicParsing="false" text="Sign up" />
+      <TextField fx:id="EmailTextField" layoutX="208.0" layoutY="178.0" />
+      <DatePicker fx:id="myDatePicker" layoutX="195.0" layoutY="355.0" />
+      <TextField fx:id="NameTextField" layoutX="208.0" layoutY="131.0" />
+      <PasswordField fx:id="PasswordField" layoutX="208.0" layoutY="229.0" />
+      <PasswordField fx:id="RepasswordField" layoutX="208.0" layoutY="277.0" />
+      <RadioButton fx:id="MaleRadioButton" layoutX="208.0" layoutY="320.0" mnemonicParsing="false" onAction="#getGender" text="Male">
+         <toggleGroup>
+            <ToggleGroup fx:id="Gender" />
+         </toggleGroup></RadioButton>
+      <RadioButton fx:id="FemaleRadioButton" layoutX="298.0" layoutY="320.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
+      <Button fx:id="SignUpButton" layoutX="255.0" layoutY="409.0" mnemonicParsing="false" onAction="#SignUp" text="Sign up" />
       <Label layoutX="214.0" layoutY="25.0" prefHeight="90.0" prefWidth="138.0" text="Buzz">
          <font>
             <Font size="61.0" />
