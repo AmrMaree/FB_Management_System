@@ -6,37 +6,72 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="484.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
+<AnchorPane prefHeight="522.0" prefWidth="561.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <TextField fx:id="EmailTextField" layoutX="208.0" layoutY="178.0" />
-      <DatePicker fx:id="myDatePicker" layoutX="195.0" layoutY="355.0" />
-      <TextField fx:id="NameTextField" layoutX="208.0" layoutY="131.0" />
-      <PasswordField fx:id="PasswordField" layoutX="208.0" layoutY="229.0" />
-      <PasswordField fx:id="RepasswordField" layoutX="208.0" layoutY="277.0" />
-      <RadioButton fx:id="MaleRadioButton" layoutX="208.0" layoutY="320.0" mnemonicParsing="false" onAction="#getGender" text="Male">
+      <TextField fx:id="EmailTextField" layoutX="244.0" layoutY="183.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <DatePicker fx:id="myDatePicker" layoutX="244.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <TextField fx:id="NameTextField" layoutX="244.0" layoutY="130.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <PasswordField fx:id="PasswordField" layoutX="244.0" layoutY="230.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <PasswordField fx:id="RepasswordField" layoutX="244.0" layoutY="275.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <RadioButton fx:id="MaleRadioButton" layoutX="242.0" layoutY="338.0" mnemonicParsing="false" onAction="#getGender" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="Gender" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="FemaleRadioButton" layoutX="298.0" layoutY="320.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
-      <Button fx:id="SignUpButton" layoutX="254.0" layoutY="400.0" mnemonicParsing="false" onAction="#switchToLogin" text="Sign up" />
-      <Label layoutX="214.0" layoutY="25.0" prefHeight="90.0" prefWidth="138.0" text="Buzz">
+      <RadioButton fx:id="FemaleRadioButton" layoutX="328.0" layoutY="338.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
+      <Button fx:id="SignUpButton" layoutX="262.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchToLogin" text="Sign up" />
+      <Label alignment="CENTER" layoutY="14.0" prefHeight="83.0" prefWidth="559.0" text="Welcome to Buzz" textFill="#7b85dd">
          <font>
-            <Font size="61.0" />
+            <Font name="Magneto Bold" size="56.0" />
          </font>
       </Label>
-      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="328.0" layoutY="445.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="25.0" prefWidth="42.0" text="Login">
+      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="328.0" layoutY="496.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="17.0" prefWidth="42.0" style="-fx-background-color: #5A5A5A;" text="Login" textFill="#7b85dd">
          <font>
-            <Font size="10.0" />
+            <Font name="System Bold" size="10.0" />
          </font>
          <opaqueInsets>
             <Insets />
          </opaqueInsets>
       </Button>
-      <Label layoutX="186.0" layoutY="445.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
+      <Label layoutX="181.0" layoutY="494.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
+      <Label layoutX="152.0" layoutY="134.0" text="Username">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="160.0" layoutY="187.0" prefHeight="17.0" prefWidth="39.0" text="Email">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="154.0" layoutY="234.0" text="Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="121.0" layoutY="292.0" text="Confirm Password">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="152.0" layoutY="338.0" text="Gender">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="136.0" layoutY="390.0" prefHeight="25.0" prefWidth="73.0" text="Date of birth">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Separator layoutX="244.0" layoutY="155.0" prefHeight="3.0" prefWidth="169.0" />
+      <Separator layoutX="244.0" layoutY="208.0" prefHeight="3.0" prefWidth="169.0" />
+      <Separator layoutX="244.0" layoutY="254.0" prefHeight="3.0" prefWidth="169.0" />
+      <Separator layoutX="244.0" layoutY="300.0" prefHeight="3.0" prefWidth="169.0" />
    </children>
 </AnchorPane>
