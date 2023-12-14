@@ -1,6 +1,7 @@
 package com.fb.components;
 
 import java.io.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -11,12 +12,12 @@ public class User implements Serializable {
     private String name;
     private String password;
     private String gender;
-    private String birthdate;
+    private LocalDate birthdate;
     private ArrayList<Post> posts;
     private ArrayList<User> friends;
-    //private List<Conversation> conversations;
+    private List<Conversation> conversations;
 
-    public User(String name, String email, String password, String gender, String birthdate) {
+    public User(String name, String email, String password, String gender, LocalDate birthdate) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -31,6 +32,9 @@ public class User implements Serializable {
         posts.add(post);
     }
 
+    public String getGender() {
+        return gender;
+    }
     public String getName() {
         return name;
     }
@@ -43,12 +47,14 @@ public class User implements Serializable {
         return password;
     }
 
-    public String getBirthDate() {
+    public LocalDate getBirthDate() {
         return birthdate;
     }
 
     public List<Post> getPosts() {
+
        return posts;
+
     }
 
     public List<User> getFriends() {
