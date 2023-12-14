@@ -12,7 +12,7 @@ public class User implements Serializable {
     private String password;
     private String gender;
     private String birthdate;
-    //private ArrayList<Post> posts;
+    private ArrayList<Post> posts;
     private ArrayList<User> friends;
     //private List<Conversation> conversations;
 
@@ -22,13 +22,13 @@ public class User implements Serializable {
         this.password = password;
         this.gender = gender;
         this.birthdate = birthdate;
-        //this.posts = new ArrayList<>();
+        this.posts = new ArrayList<>();
         this.friends = new ArrayList<>();
     }
 
     public void createPost(String content) {
-       // Post post = new Post(this, content);
-       // posts.add(post);
+        Post post = new Post(this, content);
+        posts.add(post);
     }
 
     public String getName() {
@@ -47,9 +47,9 @@ public class User implements Serializable {
         return birthdate;
     }
 
-    //public List<Post> getPosts() {
-       // return posts;
-   // }
+    public List<Post> getPosts() {
+       return posts;
+    }
 
     public List<User> getFriends() {
         return friends;
