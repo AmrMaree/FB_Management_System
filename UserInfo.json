@@ -1,5 +1,24 @@
 [
   {
+    "id": 4,
+    "email": "jose@gmail.com",
+    "name": "jose ",
+    "password": "Joe26dec@",
+    "gender": "M",
+    "birthdate": "2023-11-29",
+    "posts": [
+      {
+        "id": 4,
+        "userId": 4,
+        "content": "a7a neeek ",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
+    "friends": []
+  },
+  {
     "id": 3,
     "email": "amr@gmail.com",
     "name": "amr",
