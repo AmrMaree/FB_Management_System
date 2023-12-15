@@ -14,8 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
@@ -106,7 +105,7 @@
                                           <Image url="@../../../../../../../../Downloads/icons8-user-60.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField prefHeight="32.0" prefWidth="360.0" promptText="What's on your mind ?" style="-fx-background-color: #8C8C8C; -fx-background-radius: 20;">
+                                    <TextField fx:id="PostTextField" prefHeight="32.0" prefWidth="360.0" promptText="What's on your mind ?" style="-fx-background-color: #8C8C8C; -fx-background-radius: 20;">
                                        <font>
                                           <Font size="18.0" />
                                        </font>
@@ -146,6 +145,7 @@
                                     </HBox>
                                     <HBox alignment="CENTER_RIGHT" nodeOrientation="RIGHT_TO_LEFT" prefHeight="50.0" prefWidth="260.0">
                                        <children>
+                                          <Button mnemonicParsing="false" onAction="#WritePost" text="publish" />
                                           <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
                                                 <Image url="@../../../../../../../../Downloads/icons8-images-96.png" />

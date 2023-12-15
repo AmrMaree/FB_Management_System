@@ -1,31 +1,21 @@
 [
   {
-    "id": 4,
-    "email": "jose@gmail.com",
-    "name": "jose ",
-    "password": "Joe26dec@",
-    "gender": "M",
-    "birthdate": "2023-11-29",
-    "posts": [
-      {
-        "id": 4,
-        "userId": 4,
-        "content": "a7a neeek ",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      }
-    ],
-    "friends": []
-  },
-  {
     "id": 3,
     "email": "amr@gmail.com",
     "name": "amr",
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-26",
-    "posts": [],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 3,
+        "content": "dajdfalfjf",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
     "friends": []
   },
   {
@@ -51,6 +41,33 @@
         "comments": [],
         "taggedUsers": [],
         "likers": []
+      },
+      {
+        "id": 3,
+        "userId": 1,
+        "content": "Okasan!!!!!",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
+    "friends": []
+  },
+  {
+    "id": 4,
+    "email": "jose@gmail.com",
+    "name": "jose ",
+    "password": "Joe26dec@",
+    "gender": "M",
+    "birthdate": "2023-11-29",
+    "posts": [
+      {
+        "id": 1,
+        "userId": 4,
+        "content": "a7a neeek",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
       }
     ],
     "friends": []
@@ -64,7 +81,7 @@
     "birthdate": "2023-11-26",
     "posts": [
       {
-        "id": 3,
+        "id": 1,
         "userId": 2,
         "content": "ssdfdf",
         "comments": [],

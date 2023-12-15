@@ -28,8 +28,8 @@ public class User implements Serializable {
         this.friends = new ArrayList<>();
     }
 
-    public void createPost(int userId ,String content) {
-        Post post = new Post(userId, this.id, content);
+    public void createPost(int postId ,String content,Privacy privacy) {
+        Post post = new Post(postId, this.id, content, privacy);
         posts.add(post);
     }
 

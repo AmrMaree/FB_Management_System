@@ -76,7 +76,14 @@ public class Controller {
         if (user != null) {
             String postText = PostTextField.getText();
             if (postText != null && !postText.isEmpty()) {
-                user.createPost(user.getId(),postText);
+                int postId;
+                if(!user.getPosts().isEmpty()){
+                    postId = user.getPosts().get(user.getPosts().size()-1).getId() + 1;
+                }
+                else{
+                    postId = 1;
+                }
+                user.createPost(postId, postText,Privacy.PUBLIC);
                 for (int i = 0; i < UserManager.users.size(); i++) {
                     if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
                         UserManager.users.set(i, user);
@@ -89,6 +96,12 @@ public class Controller {
             }
         } else {
             System.out.println("User not found");
+        }
+    }
+    public void WriteComment(ActionEvent event){
+        User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
+        if(user != null){
+
         }
     }
     public void getGender(ActionEvent event){
