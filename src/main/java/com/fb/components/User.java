@@ -12,12 +12,13 @@ public class User implements Serializable {
     private String name;
     private String password;
     private String gender;
-    private LocalDate birthdate;
+    private String birthdate;
+    public boolean loggedIn = false;
     private ArrayList<Post> posts;
     private ArrayList<User> friends;
     private List<Conversation> conversations;
 
-    public User(String name, String email, String password, String gender, LocalDate birthdate) {
+    public User(String name, String email, String password, String gender, String birthdate) {
         this.name = name;
         this.email = email;
         this.password = password;
@@ -47,7 +48,7 @@ public class User implements Serializable {
         return password;
     }
 
-    public LocalDate getBirthDate() {
+    public String getBirthDate() {
         return birthdate;
     }
 

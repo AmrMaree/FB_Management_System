@@ -14,6 +14,7 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             Scene scene = new Scene(root);
+            stage.setResizable(false);
             stage.setTitle("Hello!");
             stage.setScene(scene);
             stage.show();
@@ -21,7 +22,6 @@ public class Main extends Application {
             e.printStackTrace();
         }
     }
-
     public static void main(String[] args) {
         launch();
     }

@@ -14,9 +14,8 @@
 
 <AnchorPane prefHeight="522.0" prefWidth="561.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <TextField fx:id="EmailTextField" layoutX="244.0" layoutY="183.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
-      <DatePicker fx:id="myDatePicker" editable="false" layoutX="244.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <TextField fx:id="NameTextField" layoutX="244.0" layoutY="130.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <TextField fx:id="EmailTextField" layoutX="244.0" layoutY="183.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <PasswordField fx:id="PasswordField" layoutX="244.0" layoutY="230.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <PasswordField fx:id="RepasswordField" layoutX="244.0" layoutY="275.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <RadioButton fx:id="MaleRadioButton" layoutX="242.0" layoutY="338.0" mnemonicParsing="false" onAction="#getGender" text="Male">
@@ -24,7 +23,8 @@
             <ToggleGroup fx:id="Gender" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="FemaleRadioButton" layoutX="328.0" layoutY="338.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
-      <Button fx:id="SignUpButton" layoutX="262.0" layoutY="443.0" mnemonicParsing="false" onAction="#switchToLogin" text="Sign up" />
+      <DatePicker fx:id="myDatePicker" editable="false" layoutX="244.0" layoutY="386.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <Button fx:id="SignUpButton" layoutX="262.0" layoutY="443.0" mnemonicParsing="false" onAction="#SignUp" text="Sign up" />
       <Label alignment="CENTER" layoutY="14.0" prefHeight="83.0" prefWidth="559.0" text="Welcome to Buzz" textFill="#7b85dd">
          <font>
             <Font name="Magneto Bold" size="56.0" />

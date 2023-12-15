@@ -1,0 +1,12 @@
+[
+  {
+    "email": "j@gmail.com",
+    "name": "a",
+    "password": "Joe26dec@",
+    "gender": "M",
+    "birthdate": "2023-11-28",
+    "loggedIn": false,
+    "posts": [],
+    "friends": []
+  }
+]
