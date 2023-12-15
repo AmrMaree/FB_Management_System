@@ -1,0 +1,20 @@
+[
+  {
+    "email": "youssef@gmail.com",
+    "name": "youssef",
+    "password": "S#33rrff",
+    "gender": "Male",
+    "birthdate": "26/12/2004",
+    "posts": [],
+    "friends": []
+  },
+  {
+    "email": "amr@gmail.com",
+    "name": "amr",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [],
+    "friends": []
+  }
+]

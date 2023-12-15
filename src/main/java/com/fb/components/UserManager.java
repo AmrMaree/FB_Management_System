@@ -44,15 +44,29 @@ public class UserManager {
 
     public static List<User> deserialize(String filename) {
         List<User> users = new ArrayList<>();
-        try {
+
+        try (Reader reader = new FileReader(filename)) {
             Gson gson = new Gson();
-            BufferedReader reader = new BufferedReader(new FileReader(filename));
-            users = gson.fromJson(reader, new ArrayList<User>().getClass());
-            reader.close();
+            users = gson.fromJson(reader, new TypeToken<List<User>>() {}.getType());
         } catch (IOException e) {
             e.printStackTrace();
         }
+
         return users;
+    }
+
+
+    public User getUser(String filename) {
+        List<User> users = deserialize(filename);
+
+        if (users != null) {
+            for (User user : users) {
+                if (user.loggedIn) {
+                    return user;
+                }
+            }
+        }
+        return null;
     }
 
     public static boolean checkLogin(String email, String password, String filename) {
@@ -70,6 +84,7 @@ public class UserManager {
                     // Use enhanced for loop for better readability
                     for (User user : users) {
                         if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                            user.loggedIn = true;
                             return true;
                         }
                     }
@@ -81,7 +96,7 @@ public class UserManager {
         }
         return false;
     }
-    public User createAccount(String name, String email, String password, String gender, LocalDate birthdate, String rePassword){
+    public User createAccount(String name, String email, String password, String gender, String birthdate, String rePassword){
         //creating an account
         boolean validEmail = false;
         boolean validPassword = false;
