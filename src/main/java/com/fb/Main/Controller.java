@@ -100,9 +100,6 @@ public class Controller {
         }
     }
     public void SignUp(ActionEvent event) throws IOException {
-        for(User user: UserManager.users){
-
-        }
         User user = userManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
         if(user != null){
             switchToLogin(event);
