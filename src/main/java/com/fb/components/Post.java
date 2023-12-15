@@ -6,18 +6,17 @@ enum Privacy {
     FRIENDS_ONLY
 }
 public class Post {
-    private static int nextId = 1;
     private int id;
-    private User author;
+    private int userId;
     private String content;
     private Privacy privacy;
     private ArrayList<Comment> comments;
     private ArrayList<User> taggedUsers;
     private ArrayList<User> likers;
 
-    public Post(User author, String content) {
-        this.id = nextId++;
-        this.author = author;
+    public Post(int id,int userId, String content) {
+        this.id = id;
+        this.userId = userId;
         this.content = content;
         this.privacy = privacy;
         this.comments = new ArrayList<>();
@@ -26,7 +25,7 @@ public class Post {
     }
 
     public void display() {
-        System.out.println("Post by " + author.getName() + ": " + content);
+        //System.out.println("Post by " + author.getName() + ": " + content);
         System.out.println("Privacy: " + privacy);
         System.out.println("Tagged Users: " + taggedUsers);
         System.out.println("Likes: " + likers.size());

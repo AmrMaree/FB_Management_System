@@ -1,12 +1,58 @@
 [
   {
-    "email": "j@gmail.com",
-    "name": "a",
-    "password": "Joe26dec@",
+    "id": 3,
+    "email": "amr@gmail.com",
+    "name": "amr",
+    "password": "P@ssw0rd",
     "gender": "M",
-    "birthdate": "2023-11-28",
-    "loggedIn": false,
+    "birthdate": "2023-11-26",
     "posts": [],
+    "friends": []
+  },
+  {
+    "id": 1,
+    "email": "eren@gmail.com",
+    "name": "eren",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [
+      {
+        "id": 1,
+        "userId": 1,
+        "content": "TATAKAI!!!!!!",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 2,
+        "userId": 1,
+        "content": "I love Mikasa but the world is cruel :(",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
+    "friends": []
+  },
+  {
+    "id": 2,
+    "email": "jojo@gmail.com",
+    "name": "jojo",
+    "password": "S#33rrff",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [
+      {
+        "id": 3,
+        "userId": 2,
+        "content": "ssdfdf",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
     "friends": []
   }
 ]
