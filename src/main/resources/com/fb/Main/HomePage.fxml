@@ -8,5 +8,6 @@
    <children>
       <Button layoutX="274.0" layoutY="187.0" mnemonicParsing="false" onAction="#WritePost" text="Button" />
       <TextField fx:id="PostTextField" layoutX="225.0" layoutY="105.0" />
+      <Button fx:id="CloseButton" layoutX="518.0" layoutY="31.0" mnemonicParsing="false" onAction="#SignOut" text="close" />
    </children>
 </AnchorPane>

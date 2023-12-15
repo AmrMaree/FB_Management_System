@@ -7,18 +7,18 @@ import java.util.List;
 
 public class User implements Serializable {
     private static final long serialVersionUID = 1L;
-
+    final private int id;
     private String email;
     private String name;
     private String password;
     private String gender;
     private String birthdate;
-    public boolean loggedIn = false;
     private ArrayList<Post> posts;
     private ArrayList<User> friends;
     private List<Conversation> conversations;
 
-    public User(String name, String email, String password, String gender, String birthdate) {
+    public User(int id ,String name, String email, String password, String gender, String birthdate) {
+        this.id = id;
         this.name = name;
         this.email = email;
         this.password = password;
@@ -28,11 +28,14 @@ public class User implements Serializable {
         this.friends = new ArrayList<>();
     }
 
-    public void createPost(String content) {
-        Post post = new Post(this, content);
+    public void createPost(int userId ,String content) {
+        Post post = new Post(userId, this.id, content);
         posts.add(post);
     }
 
+    public int getId() {
+        return id;
+    }
     public String getGender() {
         return gender;
     }

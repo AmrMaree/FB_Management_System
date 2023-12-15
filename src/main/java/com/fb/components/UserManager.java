@@ -11,37 +11,38 @@ import java.lang.reflect.Type;
 import java.util.regex.*;
 import java.text.SimpleDateFormat;
 
-
-
 public class UserManager {
-
+    public static List<User> users = deserialize("UserInfo.json");
     public static void serialize(User user, String filename) {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-
-            // Read the existing JSON data from the file
-            List<User> users = deserialize(filename);
-
             // Ensure that the users list is not null
             if (users == null) {
                 users = new ArrayList<>();
             }
-
-            // Add the new user to the existing data
-            users.add(user);
-
+            // Check if the user already exists in the list
+            boolean userExists = false;
+            for (int i = 0; i < users.size(); i++) {
+                if (users.get(i).getEmail().equals(user.getEmail())) {
+                    // If the user already exists, update the existing user
+                    users.set(i, user);
+                    userExists = true;
+                    break;
+                }
+            }
+            // If the user doesn't exist, add the new user to the list
+            if (!userExists) {
+                users.add(user);
+            }
             // Write the combined data back to the file
             try (FileWriter writer = new FileWriter(filename)) {
                 gson.toJson(users, writer);
             }
-
-            System.out.println("Serialized data is appended to " + filename);
+            System.out.println("Serialized data is updated in " + filename);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
-
-
     public static List<User> deserialize(String filename) {
         List<User> users = new ArrayList<>();
 
@@ -54,53 +55,41 @@ public class UserManager {
 
         return users;
     }
-
-
-    public User getUser(String filename) {
-        List<User> users = deserialize(filename);
-
+    public static User getUserByEmail(String email, String filename) {
         if (users != null) {
             for (User user : users) {
-                if (user.loggedIn) {
+                if (user.getEmail().equals(email)) {
                     return user;
                 }
             }
         }
         return null;
     }
-
-    public static boolean checkLogin(String email, String password, String filename) {
-        try {
-            Gson gson = new Gson();
-
-            // Use TypeToken for generic type information
-            Type userListType = new TypeToken<List<User>>() {}.getType();
-
-            try (BufferedReader reader = new BufferedReader(new FileReader(filename))) {
-                // Use TypeToken to handle generic types
-                List<User> users = gson.fromJson(reader, userListType);
-
-                if (users != null) {
-                    // Use enhanced for loop for better readability
-                    for (User user : users) {
-                        if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
-                            user.loggedIn = true;
-                            return true;
-                        }
-                    }
-                }
+    public static int getGreatestUserId() {
+        int greatestId = -1;
+        for (User user : users) {
+            int userId = user.getId();
+            if (userId > greatestId) {
+                greatestId = userId;
             }
-        } catch (IOException e) {
-            e.printStackTrace();
-            // Handle the exception appropriately (log, throw, etc.)
+        }
+        return greatestId;
+    }
+    public static boolean checkLogin(String email, String password, String filename) {
+        for (User user : users) {
+            if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
+                UserManager.users.remove(user);
+                UserManager.users.add(0, user);
+                return true;
+            }
         }
         return false;
     }
-    public User createAccount(String name, String email, String password, String gender, String birthdate, String rePassword){
+    public User createAccount(int id ,String name, String email, String password, String gender, String birthdate, String rePassword){
         //creating an account
         boolean validEmail = false;
         boolean validPassword = false;
-        User newUser = new User(name, email, password, gender, birthdate);
+        User newUser = new User(id,name, email, password, gender, birthdate);
         while(true){
             String regex = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@"
                     + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
@@ -134,6 +123,7 @@ public class UserManager {
             }
         }
         if(validEmail && validPassword){
+            users.add(newUser);
             return newUser;
         }
         else{
