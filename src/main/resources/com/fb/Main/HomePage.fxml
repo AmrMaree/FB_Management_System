@@ -14,21 +14,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/Purple%20Gradient%20Game%20Company%20(1).png" />
+                  <Image url="@../../../../../../../../Downloads/buzzIcon.png" />
                </image>
             </ImageView>
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-search-50.png" />
+                        <Image url="@../../../Images/searchIcon.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -42,17 +41,17 @@
       </HBox>
    </top>
    <left>
-      <ScrollPane prefHeight="200.0" prefWidth="350.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+      <ScrollPane prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
         <content>
           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox layoutX="-1.0" prefHeight="848.0" prefWidth="350.0" style="-fx-background-color: #5A5A5A;">
+                  <VBox layoutX="-1.0" prefHeight="848.0" prefWidth="333.0" style="-fx-background-color: #5A5A5A;">
                      <children>
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="316.0" spacing="10.0">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../Downloads/icons8-user-60.png" />
+                                    <Image url="@../../../Images/userIcon.png" />
                                  </image>
                               </ImageView>
                               <Label prefHeight="49.0" prefWidth="242.0" text="Your Profile">
@@ -65,11 +64,11 @@
                               <Insets right="20.0" />
                            </padding>
                         </HBox>
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="200.0" spacing="10.0">
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
                            <children>
                               <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                                  <image>
-                                    <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                                    <Image url="@../../../Images/friendsIcon.png" />
                                  </image>
                               </ImageView>
                               <Label prefHeight="49.0" prefWidth="242.0" text="Friends">
@@ -90,16 +89,16 @@
       </ScrollPane>
    </left>
    <center>
-      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+      <HBox prefHeight="850.0" prefWidth="465.0" BorderPane.alignment="CENTER">
          <children>
             <Pane prefHeight="850.0" prefWidth="46.0" HBox.hgrow="ALWAYS" />
-            <ScrollPane prefWidth="993.0" style="-fx-background-color: #5A5A5A;">
+            <ScrollPane hbarPolicy="NEVER" prefHeight="850.0" prefWidth="867.0" style="-fx-background-color: #5A5A5A;" vbarPolicy="NEVER">
                <content>
-                  <VBox prefHeight="850.0" prefWidth="519.0" style="-fx-background-color: #5A5A5A;">
+                  <VBox prefHeight="850.0" prefWidth="498.0" style="-fx-background-color: #5A5A5A;">
                      <children>
-                        <VBox prefHeight="130.0" prefWidth="489.0" spacing="10.0" style="-fx-effect: dropshadow(three-pass-box-rgba(0,0,0,0.1),5.0,0.0,0.0,5.0); -fx-background-color: #808080; -fx-background-radius: 15;">
+                        <VBox prefHeight="130.0" prefWidth="512.0" spacing="10.0" style="-fx-effect: dropshadow(three-pass-box-rgba(0,0,0,0.1),5.0,0.0,0.0,5.0); -fx-background-color: #808080; -fx-background-radius: 15;">
                            <children>
-                              <HBox alignment="CENTER" prefHeight="60.0" prefWidth="462.0">
+                              <HBox alignment="CENTER" prefHeight="59.0" prefWidth="521.0">
                                  <children>
                                     <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                                        <image>
@@ -114,7 +113,7 @@
                                  </children>
                               </HBox>
                               <Pane prefHeight="1.0" prefWidth="471.0" style="-fx-background-color: #737373;" />
-                              <HBox prefHeight="50.0" prefWidth="471.0">
+                              <HBox prefHeight="47.0" prefWidth="528.0">
                                  <children>
                                     <HBox alignment="CENTER_LEFT" prefHeight="40.0" prefWidth="200.0" spacing="5.0">
                                        <children>
@@ -128,12 +127,12 @@
                                           </Label>
                                           <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../../../../../Downloads/icons8-smiling-face-48.png" />
+                                                <Image url="@../../../Images/happyEmoji.png" />
                                              </image>
                                           </ImageView>
                                           <ImageView accessibleRole="BUTTON" fitHeight="40.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../../../../../Downloads/icons8-pensive-face-48.png" />
+                                                <Image url="@../../../Images/sadEmoji.png" />
                                              </image>
                                           </ImageView>
                                        </children>
@@ -148,7 +147,7 @@
                                        <children>
                                           <ImageView accessibleRole="BUTTON" fitHeight="33.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
                                              <image>
-                                                <Image url="@../../../../../../../../Downloads/icons8-images-96.png" />
+                                                <Image url="@../../../Images/imageIcon.png" />
                                              </image>
                                              <HBox.margin>
                                                 <Insets />
@@ -180,11 +179,16 @@
       </HBox>
    </center>
    <right>
-      <VBox prefHeight="850.0" prefWidth="320.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="850.0" prefWidth="368.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="73.0" prefWidth="350.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="350.0">
                <children>
-                  <Label prefHeight="84.0" prefWidth="119.0" text="Contacts" textFill="#8c8c8c">
+                  <ImageView accessibleRole="BUTTON" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/searchIcon.png" />
+                     </image>
+                  </ImageView>
+                  <Label prefHeight="91.0" prefWidth="119.0" text="Contacts" textFill="#8c8c8c">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>
@@ -192,15 +196,7 @@
                         <Insets left="15.0" />
                      </padding>
                   </Label>
-                  <HBox alignment="CENTER_RIGHT" prefHeight="73.0" prefWidth="229.0">
-                     <children>
-                        <ImageView accessibleRole="BUTTON" fitHeight="44.0" fitWidth="33.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../../../../../Downloads/icons8-search-50.png" />
-                           </image>
-                        </ImageView>
-                     </children>
-                  </HBox>
+                  <HBox alignment="BASELINE_RIGHT" prefHeight="10.0" prefWidth="50.0" />
                </children>
             </HBox>
             <VBox prefHeight="70.0" prefWidth="350.0">
@@ -209,7 +205,7 @@
                      <children>
                         <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                              <Image url="@../../../Images/friendsIcon.png" />
                            </image>
                         </ImageView>
                         <Label prefHeight="49.0" prefWidth="242.0" text="Friends">
@@ -225,7 +221,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                        <Image url="@../../../Images/friendsIcon.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="49.0" prefWidth="242.0" text="Friends">
@@ -239,7 +235,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                        <Image url="@../../../Images/friendsIcon.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="49.0" prefWidth="242.0" text="Friends">
@@ -253,7 +249,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                        <Image url="@../../../Images/friendsIcon.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="49.0" prefWidth="242.0" text="Friends">
@@ -267,7 +263,7 @@
                <children>
                   <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../../../../../../../../Downloads/icons8-friends-96.png" />
+                        <Image url="@../../../Images/friendsIcon.png" />
                      </image>
                   </ImageView>
                   <Label prefHeight="49.0" prefWidth="242.0" text="Friends">

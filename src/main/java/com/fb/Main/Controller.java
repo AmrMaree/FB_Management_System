@@ -32,9 +32,8 @@ public class Controller {
     @FXML
     private PasswordField LoginPasswordField;
     @FXML
-    private TextField PostTextField;
-    @FXML
     private Button CloseButton;
+
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -63,34 +62,7 @@ public class Controller {
             stage.show();
         }
     }
-    public void SignOut(ActionEvent event){
-        try {
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void WritePost(ActionEvent event){
-        User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
-        if (user != null) {
-            String postText = PostTextField.getText();
-            if (postText != null && !postText.isEmpty()) {
-                user.createPost(user.getId(),postText);
-                for (int i = 0; i < UserManager.users.size(); i++) {
-                    if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
-                        UserManager.users.set(i, user);
-                        break;
-                    }
-                }
-                System.out.println("Post added to user " + user.getName());
-            } else {
-                System.out.println("Post text is null or empty");
-            }
-        } else {
-            System.out.println("User not found");
-        }
-    }
+
     public void getGender(ActionEvent event){
         if(MaleRadioButton.isSelected()){
             gender = "M";
