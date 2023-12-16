@@ -17,15 +17,6 @@ public class Comment {
         this.likers = new ArrayList<>();
     }
 
-    public void display() {
-        System.out.println(author.getName() + ": " + text);
-        System.out.println("Likes: " + likers.size());
-        System.out.println("Replies:");
-        for (Reply reply : replies) {
-            reply.display();
-        }
-    }
-
     public void addReply(User replier, String text) {
         replies.add(new Reply(replier, text));
     }

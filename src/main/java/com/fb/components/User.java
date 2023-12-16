@@ -56,9 +56,7 @@ public class User implements Serializable {
     }
 
     public List<Post> getPosts() {
-
        return posts;
-
     }
 
     public List<User> getFriends() {
