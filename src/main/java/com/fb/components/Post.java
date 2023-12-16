@@ -9,7 +9,6 @@ public class Post {
     private ArrayList<Comment> comments;
     private ArrayList<User> taggedUsers;
     private ArrayList<User> likers;
-
     public Post(int id, int userId, String content, Privacy privacy) {
         this.id = id;
         this.userId = userId;
