@@ -1,5 +1,25 @@
 [
   {
+    "id": 3,
+    "email": "amr@gmail.com",
+    "name": "amr",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [
+      {
+        "id": 1,
+        "userId": 3,
+        "content": "fadfddfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
+    "friends": []
+  },
+  {
     "id": 1,
     "email": "eren@gmail.com",
     "name": "eren",
@@ -22,6 +42,24 @@
         "comments": [],
         "taggedUsers": [],
         "likers": []
+      },
+      {
+        "id": 3,
+        "userId": 1,
+        "content": "Okasaan!!!!",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 4,
+        "userId": 1,
+        "content": "Mikasa,I love you \u003c3",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
       }
     ],
     "friends": []
@@ -37,22 +75,12 @@
       {
         "id": 4,
         "userId": 4,
-        "content": "a7a neeek ",
+        "content": "a7a neeek",
         "comments": [],
         "taggedUsers": [],
         "likers": []
       }
     ],
-    "friends": []
-  },
-  {
-    "id": 3,
-    "email": "amr@gmail.com",
-    "name": "amr",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-11-26",
-    "posts": [],
     "friends": []
   },
   {

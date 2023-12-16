@@ -33,7 +33,6 @@ public class Controller {
     private PasswordField LoginPasswordField;
     @FXML
     private Button CloseButton;
-
     private Stage stage;
     private Scene scene;
     private Parent root;

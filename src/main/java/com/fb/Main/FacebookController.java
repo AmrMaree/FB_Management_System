@@ -1,6 +1,7 @@
 package com.fb.Main;
 
 import com.fb.components.Post;
+import com.fb.components.Privacy;
 import com.fb.components.User;
 import com.fb.components.UserManager;
 import javafx.event.ActionEvent;
@@ -22,7 +23,6 @@ import java.util.ResourceBundle;
 public class FacebookController implements Initializable {
     @FXML
     private TextField PostTextField;
-
     @FXML
     private VBox postsContainer;
     ArrayList<Post> posts;
@@ -42,7 +42,14 @@ public class FacebookController implements Initializable {
         if (user != null) {
             String postText = PostTextField.getText();
             if (postText != null && !postText.isEmpty()) {
-                user.createPost(user.getId(),postText);
+                int postId;
+                if(!user.getPosts().isEmpty()){
+                    postId = user.getPosts().get(user.getPosts().size()-1).getId() + 1;
+                }
+                else{
+                    postId = 1;
+                }
+                user.createPost(postId, postText, Privacy.PUBLIC);
                 for (int i = 0; i < UserManager.users.size(); i++) {
                     if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
                         UserManager.users.set(i, user);

@@ -16,13 +16,13 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../../Downloads/buzzIcon.png" />
+                  <Image url="@../../../Images/buzzIcon.png" />
                </image>
             </ImageView>
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
@@ -39,6 +39,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </TextField>
+            <Button mnemonicParsing="false" onAction="#WritePost" text="publish" />
          </children>
       </HBox>
    </top>
@@ -107,7 +108,7 @@
                                           <Image url="@../../../Images/userIcon.png" />
                                        </image>
                                     </ImageView>
-                                    <TextField prefHeight="32.0" prefWidth="360.0" promptText="What's on your mind ?" style="-fx-background-color: #8C8C8C; -fx-background-radius: 20;">
+                                    <TextField fx:id="PostTextField" prefHeight="32.0" prefWidth="360.0" promptText="What's on your mind ?" style="-fx-background-color: #8C8C8C; -fx-background-radius: 20;">
                                        <font>
                                           <Font size="18.0" />
                                        </font>

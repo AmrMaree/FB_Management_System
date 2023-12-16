@@ -7,7 +7,6 @@ public class Reply {
     private User author;
     private String text;
     private ArrayList<User> likers;
-
     public Reply(User author, String text) {
         this.id = nextId++;
         this.author = author;

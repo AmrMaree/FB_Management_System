@@ -10,7 +10,7 @@ public class Post {
     private ArrayList<User> taggedUsers;
     private ArrayList<User> likers;
 
-    public Post(int id,int userId, String content) {
+    public Post(int id,int userId, String content, Privacy privacy) {
         this.id = id;
         this.userId = userId;
         this.content = content;
@@ -31,6 +31,8 @@ public class Post {
     public void tagUser(User user) {
         taggedUsers.add(user);
     }
-// function na2sa
+    public int getId() {
+        return id;
+    }
 
 }
