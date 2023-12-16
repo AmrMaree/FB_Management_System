@@ -14,9 +14,5 @@ class Message {
         this.content = content;
     }
 
-    public void display() {
-        System.out.println(sender.getName() + " -> " + recipient.getName() + ": " + content);
-    }
-
     // Other methods for getting sender, recipient, etc.
 }

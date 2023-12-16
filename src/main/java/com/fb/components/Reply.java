@@ -14,12 +14,6 @@ public class Reply {
         this.text = text;
         this.likers = new ArrayList<>();
     }
-
-    public void display() {
-        System.out.println(author.getName() + ": " + text);
-        System.out.println("Likes: " + likers.size());
-    }
-
     public void addLiker(User liker) {
         likers.add(liker);
     }
