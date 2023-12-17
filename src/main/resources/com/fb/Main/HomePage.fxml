@@ -22,7 +22,7 @@
          <children>
             <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../Images/buzzIcon.png" />
+                  <Image url="@../../../../../../../../Downloads/buzzIcon.png" />
                </image>
             </ImageView>
             <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
@@ -39,7 +39,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </TextField>
-            <Button mnemonicParsing="false" onAction="#WritePost" text="publish" />
+            <Button mnemonicParsing="false" onAction="#WritePost" text="Button" />
          </children>
       </HBox>
    </top>
