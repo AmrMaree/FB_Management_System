@@ -28,7 +28,6 @@ public class Main extends Application {
     }
     public static void main(String[] args) {
         launch();
-        UserManager userManager = new UserManager();
         User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
         System.out.println(user.getPosts());
         UserManager.serialize(user, "UserInfo.json");

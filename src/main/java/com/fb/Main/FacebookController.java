@@ -25,6 +25,7 @@ public class FacebookController implements Initializable {
     private TextField PostTextField;
     @FXML
     private VBox postsContainer;
+
     ArrayList<Post> posts;
     private Stage stage;
     private Scene scene;
@@ -56,6 +57,17 @@ public class FacebookController implements Initializable {
                         break;
                     }
                 }
+                try {
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
+                    Parent postNode = fxmlLoader.load();
+                    //PostController postController = new PostController();
+                    //postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
+                    postsContainer.getChildren().add(postNode);
+                }
+                catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
                 System.out.println("Post added to user " + user.getName());
             } else {
                 System.out.println("Post text is null or empty");
@@ -64,7 +76,6 @@ public class FacebookController implements Initializable {
             System.out.println("User not found");
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
@@ -72,8 +83,10 @@ public class FacebookController implements Initializable {
         for (Post post:posts) {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
-                VBox vBox =fxmlLoader.load();
-
+            Parent postNode = fxmlLoader.load();
+            //PostController postController = new PostController();
+            //postController.setPostData(post);
+            postsContainer.getChildren().add(postNode);
             }
         }
         catch (IOException e) {

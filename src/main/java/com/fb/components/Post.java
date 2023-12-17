@@ -35,4 +35,9 @@ public class Post {
         return id;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="410.0" prefWidth="477.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<VBox alignment="CENTER" prefHeight="410.0" prefWidth="477.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
@@ -24,14 +24,14 @@
                   <Image url="@../../../Images/userIcon.png" />
                </image>
             </ImageView>
-            <Label prefHeight="45.0" prefWidth="83.0" text="Username">
+            <Label fx:id="UsernameLabel" prefHeight="45.0" prefWidth="83.0" text="Username">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
             </Label>
          </children>
       </HBox>
-      <Label prefHeight="27.0" prefWidth="441.0" text="Caption">
+      <Label fx:id="PostCaption" prefHeight="27.0" prefWidth="441.0" text="Caption">
          <font>
             <Font name="Segoe UI Semibold" size="14.0" />
          </font>
