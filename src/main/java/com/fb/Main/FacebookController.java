@@ -81,9 +81,9 @@ public class FacebookController implements Initializable {
                     FXMLLoader fxmlLoader = new FXMLLoader();
                     fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
                     Parent postNode = fxmlLoader.load();
-                    //PostController postController = new PostController();
-                    //postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
-                    postsContainer.getChildren().add(postNode);
+                    PostController postController = fxmlLoader.getController();
+                    postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
+                    postsContainer.getChildren().add(1, postNode);
                 }
                 catch (IOException e) {
                     throw new RuntimeException(e);
@@ -100,13 +100,15 @@ public class FacebookController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
         try {
-        for (Post post:posts) {
-            FXMLLoader fxmlLoader = new FXMLLoader();
-            fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
-            Parent postNode = fxmlLoader.load();
-            //PostController postController = new PostController();
-            //postController.setPostData(post);
-            postsContainer.getChildren().add(postNode);
+            if(posts != null){
+                for (Post post:posts) {
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
+                    Parent postNode = fxmlLoader.load();
+                    PostController postController = fxmlLoader.getController();
+                    postController.setPostData(post);
+                    postsContainer.getChildren().add(postNode);
+                }
             }
         }
         catch (IOException e) {
