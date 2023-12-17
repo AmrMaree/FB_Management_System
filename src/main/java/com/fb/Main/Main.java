@@ -6,6 +6,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -16,6 +17,9 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             Scene scene = new Scene(root);
+            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
+            stage.setResizable(false);
+            stage.getIcons().add(icon);
             stage.setScene(scene);
             stage.show();
         } catch (Exception e){
@@ -24,7 +28,6 @@ public class Main extends Application {
     }
     public static void main(String[] args) {
         launch();
-        UserManager userManager = new UserManager();
         User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
         System.out.println(user.getPosts());
         UserManager.serialize(user, "UserInfo.json");

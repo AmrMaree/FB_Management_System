@@ -32,14 +32,11 @@ public class Controller {
     @FXML
     private PasswordField LoginPasswordField;
     @FXML
-    private TextField PostTextField;
-    @FXML
     private Button CloseButton;
     private Stage stage;
     private Scene scene;
     private Parent root;
     private String gender;
-    UserManager userManager = new UserManager();
     public void switchToSignUp (ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -63,47 +60,6 @@ public class Controller {
             stage.show();
         }
     }
-    public void SignOut(ActionEvent event){
-        try {
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.close();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
-    public void WritePost(ActionEvent event){
-        User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
-        if (user != null) {
-            String postText = PostTextField.getText();
-            if (postText != null && !postText.isEmpty()) {
-                int postId;
-                if(!user.getPosts().isEmpty()){
-                    postId = user.getPosts().get(user.getPosts().size()-1).getId() + 1;
-                }
-                else{
-                    postId = 1;
-                }
-                user.createPost(postId, postText,Privacy.PUBLIC);
-                for (int i = 0; i < UserManager.users.size(); i++) {
-                    if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
-                        UserManager.users.set(i, user);
-                        break;
-                    }
-                }
-                System.out.println("Post added to user " + user.getName());
-            } else {
-                System.out.println("Post text is null or empty");
-            }
-        } else {
-            System.out.println("User not found");
-        }
-    }
-    public void WriteComment(ActionEvent event){
-        User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
-        if(user != null){
-
-        }
-    }
     public void getGender(ActionEvent event){
         if(MaleRadioButton.isSelected()){
             gender = "M";
@@ -113,7 +69,7 @@ public class Controller {
         }
     }
     public void SignUp(ActionEvent event) throws IOException {
-        User user = userManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
+        User user = UserManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
         if(user != null){
             switchToLogin(event);
         }

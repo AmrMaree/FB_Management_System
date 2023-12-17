@@ -9,7 +9,8 @@ public class Post {
     private ArrayList<Comment> comments;
     private ArrayList<User> taggedUsers;
     private ArrayList<User> likers;
-    public Post(int id, int userId, String content, Privacy privacy) {
+
+    public Post(int id,int userId, String content, Privacy privacy) {
         this.id = id;
         this.userId = userId;
         this.content = content;
@@ -22,14 +23,20 @@ public class Post {
     public void addComment(User commenter, String text) {
         comments.add(new Comment(commenter, text));
     }
+
     public void addLiker(User liker) {
         likers.add(liker);
     }
+
     public void tagUser(User user) {
         taggedUsers.add(user);
     }
     public int getId() {
         return id;
+    }
+
+    public String getContent() {
+        return content;
     }
 
 

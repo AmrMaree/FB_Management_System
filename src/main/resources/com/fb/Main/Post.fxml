@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" prefHeight="447.0" prefWidth="483.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+   <children>
+      <HBox prefHeight="41.0" prefWidth="478.0" spacing="20.0">
+         <children>
+            <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Images/userIcon.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="UsernameLabel" prefHeight="45.0" prefWidth="83.0" text="Username">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Label fx:id="PostCaption" prefHeight="27.0" prefWidth="441.0" text="Caption">
+         <font>
+            <Font name="Segoe UI Semibold" size="14.0" />
+         </font>
+         <padding>
+            <Insets top="15.0" />
+         </padding>
+      </Label>
+      <ImageView fitHeight="311.0" fitWidth="483.0" pickOnBounds="true" preserveRatio="true">
+         <effect>
+            <DropShadow />
+         </effect>
+      </ImageView>
+      <StackPane>
+         <children>
+            <VBox prefHeight="218.0" prefWidth="478.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefWidth="491.0" spacing="5.0" style="-fx-background-color: #808080; -fx-background-radius: 15;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="0.0" spacing="5.0" />
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/loveIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/likeIcon.png" />
+                           </image>
+                        </ImageView>
+                        <ImageView fitHeight="27.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/laughIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label prefHeight="17.0" prefWidth="167.0" text="no of reactions">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Pane prefWidth="0.0" />
+                        <Label alignment="CENTER_RIGHT" graphicTextGap="0.0" prefHeight="20.0" prefWidth="123.0" text="no of comments">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                        <Label prefHeight="20.0" prefWidth="69.0" text="no of shares">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="12.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #808080; -fx-background-radius: 15;">
+                     <children>
+                        <HBox alignment="CENTER_LEFT" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Images/likeIcon.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Like">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Images/comment.png" />
+                                 </image>
+                              </ImageView>
+                              <Label text="Comment">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="165.0" spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Images/share.png" />
+                                 </image>
+                              </ImageView>
+                              <Label prefHeight="27.0" prefWidth="80.0" text="Share">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="18.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+         <effect>
+            <DropShadow>
+               <color>
+                  <Color red="0.37254902720451355" green="0.30588236451148987" blue="0.6705882549285889" />
+               </color>
+            </DropShadow>
+         </effect>
+      </StackPane>
+   </children>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
+   <effect>
+      <DropShadow>
+         <color>
+            <Color red="0.37254902720451355" green="0.30588236451148987" blue="0.6705882549285889" />
+         </color>
+      </DropShadow>
+   </effect>
+</VBox>
