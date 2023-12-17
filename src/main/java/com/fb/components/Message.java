@@ -1,6 +1,6 @@
 package com.fb.components;
 
-class Message {
+public class Message {
     private static int nextId = 1;
     private int id;
     private User sender;
@@ -13,6 +13,8 @@ class Message {
         this.recipient = recipient;
         this.content = content;
     }
-
+    public String getMessageContent(){
+        return content ;
+    }
     // Other methods for getting sender, recipient, etc.
 }

@@ -11,7 +11,10 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -25,6 +28,8 @@ public class FacebookController implements Initializable {
     private TextField PostTextField;
     @FXML
     private VBox postsContainer;
+    @FXML
+    private Button OpenChat1;
 
     ArrayList<Post> posts;
     private Stage stage;
@@ -38,6 +43,21 @@ public class FacebookController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void OpenChat(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("Conversation.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
+            newStage.setResizable(false);
+            newStage.getIcons().add(icon);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void WritePost(ActionEvent event){
         User user = UserManager.getUserByEmail(UserManager.users.get(0).getEmail(),"UserInfo.json");
         if (user != null) {

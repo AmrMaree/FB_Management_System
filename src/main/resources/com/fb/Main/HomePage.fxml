@@ -184,6 +184,7 @@
                               </DropShadow>
                            </effect>
                         </VBox>
+                        <Button fx:id="OpenChat1" mnemonicParsing="false" onAction="#OpenChat" text="OpenChat" />
                      </children>
                      <padding>
                         <Insets left="10.0" right="10.0" />

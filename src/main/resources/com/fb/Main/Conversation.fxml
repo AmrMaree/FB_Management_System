@@ -12,21 +12,20 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="432.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
    <children>
       <HBox alignment="CENTER_LEFT" layoutY="-2.0" prefHeight="51.0" prefWidth="432.0" style="-fx-background-color: #50378d;">
          <children>
-            <HBox prefHeight="51.0" prefWidth="46.0">
+            <HBox alignment="BASELINE_LEFT" prefHeight="51.0" prefWidth="46.0">
                <children>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="48.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@userIcon.png" />
+                        <Image url="@../../../Images/userIcon.png" />
                      </image>
                   </ImageView>
                </children>
             </HBox>
-            <Label text="Username" textFill="#ffffffba">
+            <Label fx:id="UsernameLabel" text="Username" textFill="#ffffffba">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
@@ -40,7 +39,11 @@
          <children>
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="351.0" style="-fx-background-color: #5A5A5A;">
                <children>
-                  <TextField prefHeight="38.0" prefWidth="315.0" style="-fx-background-radius: 17;" />
+                  <TextField fx:id="ChatTextField" prefHeight="38.0" prefWidth="315.0" promptText="Enter Text" style="-fx-background-radius: 17;">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </TextField>
                </children>
                <padding>
                   <Insets bottom="5.0" />
@@ -52,7 +55,7 @@
                      <graphic>
                         <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@icons8-login-button-50%20(2).png" />
+                              <Image url="@../../../Images/SendIcon.png" />
                            </image>
                         </ImageView>
                      </graphic>
@@ -66,10 +69,10 @@
       </HBox>
       <Pane layoutY="49.0" prefHeight="385.0" prefWidth="432.0">
          <children>
-            <ScrollPane prefHeight="385.0" prefWidth="432.0">
-              <content>
-                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
-              </content>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="385.0" prefWidth="432.0" vbarPolicy="NEVER">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="431.0" />
+               </content>
             </ScrollPane>
          </children>
       </Pane>
