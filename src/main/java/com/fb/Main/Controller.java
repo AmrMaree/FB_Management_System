@@ -37,7 +37,6 @@ public class Controller {
     private Scene scene;
     private Parent root;
     private String gender;
-    UserManager userManager = new UserManager();
     public void switchToSignUp (ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -61,7 +60,6 @@ public class Controller {
             stage.show();
         }
     }
-
     public void getGender(ActionEvent event){
         if(MaleRadioButton.isSelected()){
             gender = "M";
@@ -71,7 +69,7 @@ public class Controller {
         }
     }
     public void SignUp(ActionEvent event) throws IOException {
-        User user = userManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
+        User user = UserManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
         if(user != null){
             switchToLogin(event);
         }

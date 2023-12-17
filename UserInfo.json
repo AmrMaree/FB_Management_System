@@ -1,33 +1,5 @@
 [
   {
-    "id": 4,
-    "email": "jose@gmail.com",
-    "name": "jose ",
-    "password": "Joe26dec@",
-    "gender": "M",
-    "birthdate": "2023-11-29",
-    "posts": [
-      {
-        "id": 4,
-        "userId": 4,
-        "content": "a7a neeek",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      },
-      {
-        "id": 5,
-        "userId": 4,
-        "content": "i\u0027am josemorino",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      }
-    ],
-    "friends": []
-  },
-  {
     "id": 3,
     "email": "amr@gmail.com",
     "name": "amr",
@@ -38,7 +10,16 @@
       {
         "id": 1,
         "userId": 3,
-        "content": "fadfddfd",
+        "content": "I am feeling good",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 2,
+        "userId": 3,
+        "content": "dfdf",
         "privacy": "PUBLIC",
         "comments": [],
         "taggedUsers": [],
@@ -74,16 +55,7 @@
       {
         "id": 3,
         "userId": 1,
-        "content": "Okasaan!!!!",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      },
-      {
-        "id": 4,
-        "userId": 1,
-        "content": "Mikasa,I love you \u003c3",
+        "content": "I killed 80 % of humanity and I am right :)",
         "privacy": "PUBLIC",
         "comments": [],
         "taggedUsers": [],
@@ -93,22 +65,23 @@
     "friends": []
   },
   {
+    "id": 4,
+    "email": "jose@gmail.com",
+    "name": "jose ",
+    "password": "Joe26dec@",
+    "gender": "M",
+    "birthdate": "2023-11-29",
+    "posts": [],
+    "friends": []
+  },
+  {
     "id": 2,
     "email": "jojo@gmail.com",
     "name": "jojo",
     "password": "S#33rrff",
     "gender": "M",
     "birthdate": "2023-11-26",
-    "posts": [
-      {
-        "id": 3,
-        "userId": 2,
-        "content": "ssdfdf",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      }
-    ],
+    "posts": [],
     "friends": []
   }
 ]

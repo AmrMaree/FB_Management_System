@@ -85,7 +85,7 @@ public class UserManager {
         }
         return false;
     }
-    public User createAccount(int id ,String name, String email, String password, String gender, String birthdate, String rePassword){
+    public static User createAccount(int id, String name, String email, String password, String gender, String birthdate, String rePassword){
         //creating an account
         boolean validEmail = false;
         boolean validPassword = false;
