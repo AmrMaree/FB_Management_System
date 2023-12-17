@@ -16,7 +16,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1200.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1203.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
@@ -97,7 +97,7 @@
             <Pane prefHeight="850.0" prefWidth="46.0" HBox.hgrow="ALWAYS" />
             <ScrollPane hbarPolicy="NEVER" prefHeight="850.0" prefWidth="867.0" style="-fx-background-color: #5A5A5A;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="postsContainer" prefHeight="850.0" prefWidth="498.0" style="-fx-background-color: #5A5A5A;">
+                  <VBox fx:id="postsContainer" prefHeight="850.0" prefWidth="507.0" style="-fx-background-color: #5A5A5A;">
                      <children>
                         <VBox prefHeight="130.0" prefWidth="478.0" spacing="10.0" style="-fx-background-color: #808080; -fx-background-radius: 15;">
                            <children>
@@ -212,7 +212,7 @@
                         <Image url="@../../../Images/searchIcon.png" />
                      </image>
                   </ImageView>
-                  <Label prefHeight="91.0" prefWidth="119.0" text="Contacts" textFill="#8c8c8c">
+                  <Label prefHeight="91.0" prefWidth="119.0" text="Chats" textFill="#8c8c8c">
                      <font>
                         <Font name="System Bold" size="18.0" />
                      </font>

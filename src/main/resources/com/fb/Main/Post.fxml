@@ -12,7 +12,7 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="410.0" prefWidth="477.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
+<VBox alignment="CENTER" prefHeight="447.0" prefWidth="483.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
