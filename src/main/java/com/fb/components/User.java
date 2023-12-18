@@ -14,7 +14,7 @@ public class User implements Serializable {
     private String birthdate;
     private ArrayList<Post> posts;
     private ArrayList<User> friends;
-    private List<Conversation> conversations;
+    private ArrayList<Conversation> conversations;
 
     public User(int id ,String name, String email, String password, String gender, String birthdate) {
         this.id = id;
@@ -25,13 +25,17 @@ public class User implements Serializable {
         this.birthdate = birthdate;
         this.posts = new ArrayList<>();
         this.friends = new ArrayList<>();
+        this.conversations = new ArrayList<>();
     }
 
     public void createPost(int postId , String content, Privacy privacy) {
         Post post = new Post(postId, this.id, content,privacy);
         posts.add(post);
     }
-
+    public void createConversation(int conversationId ,int senderId, int participentId){
+        Conversation conversation = new Conversation(conversationId, senderId, participentId);
+        conversations.add(conversation);
+    }
     public int getId() {
         return id;
     }
@@ -58,8 +62,16 @@ public class User implements Serializable {
        return posts;
 
     }
+    public List<Conversation> getConversations() {
+        return conversations;
+    }
 
     public List<User> getFriends() {
         return friends;
     }
+
+    public void setConversations(ArrayList<Conversation> conversations) {
+        this.conversations = conversations;
+    }
+
 }

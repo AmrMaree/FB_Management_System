@@ -5,121 +5,92 @@
     "name": "eren",
     "password": "P@ssw0rd",
     "gender": "M",
-    "birthdate": "2023-11-26",
-    "posts": [
+    "birthdate": "2023-11-27",
+    "posts": [],
+    "friends": [],
+    "conversations": [
       {
         "id": 1,
-        "userId": 1,
-        "content": "TATAKAI!!!!!!",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
+        "participants": [
+          0,
+          1
+        ],
+        "messages": [
+          {
+            "id": 1,
+            "sender": 0,
+            "recipient": 0,
+            "content": "I love you eren\u003c3"
+          },
+          {
+            "id": 2,
+            "sender": 0,
+            "recipient": 0,
+            "content": "Thank you amr "
+          },
+          {
+            "id": 3,
+            "sender": 0,
+            "recipient": 0,
+            "content": "I hate armin btw"
+          }
+        ]
       },
       {
         "id": 2,
-        "userId": 1,
-        "content": "I love Mikasa but the world is cruel :(",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      },
-      {
-        "id": 3,
-        "userId": 1,
-        "content": "I killed 80 % of humanity and I am right :)",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
+        "participants": [
+          1,
+          0
+        ],
+        "messages": []
       }
-    ],
-    "friends": []
+    ]
   },
   {
-    "id": 2,
-    "email": "jojo@gmail.com",
-    "name": "jojo",
-    "password": "S#33rrff",
-    "gender": "M",
-    "birthdate": "2023-11-26",
-    "posts": [
-      {
-        "id": 1,
-        "userId": 2,
-        "content": "dfdfdf",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      }
-    ],
-    "friends": []
-  },
-  {
-    "id": 3,
+    "id": 0,
     "email": "amr@gmail.com",
     "name": "amr",
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-26",
-    "posts": [
+    "posts": [],
+    "friends": [],
+    "conversations": [
       {
         "id": 1,
-        "userId": 3,
-        "content": "I am feeling good",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
+        "participants": [
+          0,
+          1
+        ],
+        "messages": [
+          {
+            "id": 1,
+            "sender": 0,
+            "recipient": 0,
+            "content": "I love you eren\u003c3"
+          },
+          {
+            "id": 2,
+            "sender": 0,
+            "recipient": 0,
+            "content": "Thank you amr "
+          },
+          {
+            "id": 3,
+            "sender": 0,
+            "recipient": 0,
+            "content": "I hate armin btw"
+          }
+        ]
       },
       {
         "id": 2,
-        "userId": 3,
-        "content": "dfdf",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      },
-      {
-        "id": 3,
-        "userId": 3,
-        "content": "ana 5wl ",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
+        "participants": [
+          1,
+          0
+        ],
+        "messages": []
       }
-    ],
-    "friends": []
-  },
-  {
-    "id": 4,
-    "email": "jose@gmail.com",
-    "name": "jose ",
-    "password": "Joe26dec@",
-    "gender": "M",
-    "birthdate": "2023-11-29",
-    "posts": [
-      {
-        "id": 1,
-        "userId": 4,
-        "content": "i am feeling good!",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      },
-      {
-        "id": 2,
-        "userId": 4,
-        "content": "i am feeling good!",
-        "privacy": "PUBLIC",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": []
-      }
-    ],
-    "friends": []
+    ]
   }
 ]

@@ -1,20 +1,21 @@
 package com.fb.components;
 
 public class Message {
-    private static int nextId = 1;
     private int id;
-    private User sender;
-    private User recipient;
+    private int sender;
+    private int recipient;
     private String content;
 
-    public Message(User sender, User recipient, String content) {
-        this.id = nextId++;
+    public Message(int id, int senderId, int recipientId, String content) {
+        this.id = id;
         this.sender = sender;
         this.recipient = recipient;
         this.content = content;
     }
-    public String getMessageContent(){
-        return content ;
+    public int getId() {
+        return id;
     }
-    // Other methods for getting sender, recipient, etc.
+    public String getMessageContent(){
+        return content;
+    }
 }
