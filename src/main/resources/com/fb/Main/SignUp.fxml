@@ -27,13 +27,13 @@
       <TextField fx:id="EmailTextField" layoutX="533.0" layoutY="183.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
       <PasswordField fx:id="PasswordField" layoutX="533.0" layoutY="238.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
       <PasswordField fx:id="RepasswordField" layoutX="533.0" layoutY="285.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
-      <RadioButton fx:id="MaleRadioButton" layoutX="533.0" layoutY="345.0" mnemonicParsing="false" onAction="#getGender" text="Male">
+      <RadioButton fx:id="MaleRadioButton" layoutX="533.0" layoutY="346.0" mnemonicParsing="false" onAction="#getGender" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="Gender" />
          </toggleGroup></RadioButton>
       <RadioButton fx:id="FemaleRadioButton" layoutX="618.0" layoutY="346.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
-      <DatePicker fx:id="myDatePicker" editable="false" layoutX="533.0" layoutY="393.0" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
-      <Button fx:id="SignUpButton" layoutX="564.0" layoutY="439.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Sign up" textFill="#1716169c">
+      <DatePicker fx:id="myDatePicker" editable="false" layoutX="527.0" layoutY="393.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <Button fx:id="SignUpButton" layoutX="550.0" layoutY="439.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Sign up" textFill="#1716169c">
          <effect>
             <DropShadow height="18.07" radius="8.535" width="18.07">
                <color>
