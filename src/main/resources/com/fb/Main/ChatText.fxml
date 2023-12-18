@@ -1,14 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="com.fb.Main.ChatText"
-            prefHeight="400.0" prefWidth="600.0">
-
-</AnchorPane>
+<HBox alignment="BOTTOM_LEFT" prefHeight="59.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label fx:id="ChatLabel" contentDisplay="CENTER" lineSpacing="20.0" prefHeight="43.0" prefWidth="399.0" style="-fx-background-color: #8C8C8C; -fx-background-radius: 10;" text="how is life monsieur amr how a re you doin in this shitty world you live ni ">
+         <font>
+            <Font name="Segoe UI Semibold" size="18.0" />
+         </font>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </Label>
+   </children>
+   <padding>
+      <Insets left="10.0" />
+   </padding>
+</HBox>

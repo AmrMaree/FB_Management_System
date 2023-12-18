@@ -5,43 +5,79 @@
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="460.0" prefWidth="413.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
+<AnchorPane prefHeight="460.0" prefWidth="413.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <TextField fx:id="LoginEmailTextField" layoutX="160.0" layoutY="203.0" promptText="Enter your email" style="-fx-background-color: #5A5A5A; -fx-border-image-width: 0;">
+      <ImageView fitHeight="472.0" fitWidth="688.0" layoutX="-10.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/Background.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="LoginEmailTextField" layoutX="290.0" layoutY="191.0" promptText="Enter your email" style="-fx-background-color: transparent; -fx-border-image-width: 0;">
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <TextField layoutX="134.0" layoutY="155.0" prefHeight="30.0" prefWidth="173.0" promptText="Enter your password" style="-fx-background-color: #5A5A5A; -fx-border-image-width: 0;">
+      <Button layoutX="297.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Login" textAlignment="JUSTIFY" textFill="#1716169c">
          <font>
-            <Font size="14.0" />
-         </font></TextField>
-      <Button layoutX="184.0" layoutY="354.0" mnemonicParsing="false" onAction="#switchToHome" text="Login" textAlignment="JUSTIFY" textFill="#1716169b" />
-      <Label layoutX="90.0" layoutY="206.0" prefHeight="36.0" prefWidth="59.0" text="Email" textAlignment="CENTER" textFill="#171616bd">
+            <Font name="Segoe UI Semibold" size="18.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect></Button>
+      <Label layoutX="231.0" layoutY="191.0" prefHeight="42.0" prefWidth="59.0" text="Email" textAlignment="CENTER" textFill="#171616bd">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <Label layoutX="84.0" layoutY="271.0" prefHeight="42.0" prefWidth="65.0" text="Password" textAlignment="CENTER" textFill="#171616ab">
+      <Label layoutX="217.0" layoutY="251.0" prefHeight="42.0" prefWidth="65.0" text="Password" textAlignment="CENTER" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
+         <effect>
+            <DropShadow />
+         </effect>
       </Label>
-      <Label alignment="CENTER" layoutY="21.0" prefHeight="133.0" prefWidth="413.0" text="Buzz" textAlignment="JUSTIFY" textFill="#7b85dd">
+      <Label alignment="CENTER" layoutX="128.0" layoutY="44.0" prefHeight="133.0" prefWidth="413.0" text="Buzz" textAlignment="JUSTIFY" textFill="#3a2c71">
          <font>
             <Font name="Magneto Bold" size="80.0" />
          </font>
+         <effect>
+            <DropShadow height="23.93" radius="10.7325">
+               <color>
+                  <Color red="0.15000000596046448" green="0.1469999998807907" blue="0.1469999998807907" />
+               </color>
+            </DropShadow>
+         </effect>
       </Label>
-      <Label fx:id="haveAcc" layoutX="116.0" layoutY="430.0" prefHeight="25.0" prefWidth="136.0" text="Don't have an account ?" />
-      <Button layoutX="247.0" layoutY="432.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="21.0" prefWidth="52.0" style="-fx-background-color: #5A5A5A;" text="Sign Up" textFill="#7b85dd">
+      <Label fx:id="haveAcc" layoutX="237.0" layoutY="430.0" prefHeight="25.0" prefWidth="136.0" text="Don't have an account ?" />
+      <Button layoutX="367.0" layoutY="428.0" mnemonicParsing="false" onAction="#switchToSignUp" prefHeight="30.0" prefWidth="71.0" style="-fx-background-color: transparent;" text="Sign Up" textFill="#3a2c71">
          <font>
-            <Font name="System Bold" size="10.0" />
+            <Font name="Segoe UI Semibold" size="13.0" />
          </font>
+         <effect>
+            <DropShadow height="12.21" radius="10.002500000000001" width="29.8" />
+         </effect>
       </Button>
-      <Separator layoutX="169.0" layoutY="230.0" prefHeight="5.0" prefWidth="136.0" />
-      <Separator layoutX="172.0" layoutY="299.0" prefHeight="5.0" prefWidth="136.0" />
-      <PasswordField fx:id="LoginPasswordField" layoutX="165.0" layoutY="271.0" />
+      <Separator layoutX="299.0" layoutY="219.0" prefHeight="5.0" prefWidth="136.0">
+         <effect>
+            <DropShadow />
+         </effect></Separator>
+      <Separator layoutX="299.0" layoutY="279.0" prefHeight="5.0" prefWidth="136.0">
+         <effect>
+            <DropShadow />
+         </effect></Separator>
+      <PasswordField fx:id="LoginPasswordField" layoutX="290.0" layoutY="251.0" promptText="Enter your password" style="-fx-background-color: transparent;">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
    </children>
 </AnchorPane>

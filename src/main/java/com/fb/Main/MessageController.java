@@ -1,10 +1,13 @@
 package com.fb.Main;
 
-import com.fb.components.Message;
-import com.fb.components.Post;
-import com.fb.components.UserManager;
+import com.fb.components.*;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.control.Label;
+
+import java.io.IOException;
 
 public class MessageController {
     @FXML

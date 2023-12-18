@@ -13,6 +13,7 @@ public class User implements Serializable {
     private String gender;
     private String birthdate;
     private ArrayList<Post> posts;
+    private ArrayList<Message> messages;
     private ArrayList<User> friends;
     private List<Conversation> conversations;
 
@@ -30,6 +31,11 @@ public class User implements Serializable {
     public void createPost(int postId , String content, Privacy privacy) {
         Post post = new Post(postId, this.id, content,privacy);
         posts.add(post);
+    }
+    // creating new messages
+    public void createMessage(int id , User sender, User recipient, String content) {
+        Message message = new Message(sender,recipient ,content);
+        messages.add(message);
     }
 
     public int getId() {
@@ -56,10 +62,12 @@ public class User implements Serializable {
 
     public List<Post> getPosts() {
        return posts;
-
     }
-
+    public List<Message> getMessages() {
+        return messages;
+    }
     public List<User> getFriends() {
         return friends;
     }
+
 }

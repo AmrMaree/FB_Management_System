@@ -1,9 +1,6 @@
 package com.fb.Main;
 
-import com.fb.components.Post;
-import com.fb.components.Privacy;
-import com.fb.components.User;
-import com.fb.components.UserManager;
+import com.fb.components.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
