@@ -17,8 +17,6 @@ public class Main extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
             Scene scene = new Scene(root);
-           //String css = this.getClass().getResource("C:\\Users\\PC\\IdeaProjects\\FB_Management_System1\\src\\main\\resources\\fb.css").toExternalForm();
-            //scene.getStylesheets().add(css);
             Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
             stage.setResizable(false);
             stage.getIcons().add(icon);
