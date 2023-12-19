@@ -23,7 +23,7 @@ public class ConversationController implements Initializable {
     @FXML
     private VBox MessagesContainer;
     @FXML
-    private Button SendMessageButton;
+    private Label UsernameLabel;
     ArrayList<Message> Messages;
     public void writeMessage(ActionEvent event){
         User user = UserManager.users.get(0);
@@ -48,7 +48,7 @@ public class ConversationController implements Initializable {
                     fxmlLoader.setLocation(getClass().getResource("ChatText.fxml"));
                     Parent messageNode = fxmlLoader.load();
                     MessageController messageController = fxmlLoader.getController();
-                    messageController.setMessageData(user.getConversations().get(0).getMessages().get(user.getConversations().get(0).getMessages().size() - 1));
+                    messageController.setMessageData(user.getConversations().get(0).getMessages().get(user.getConversations().get(0).getMessages().size() - 1),true);
                     MessagesContainer.getChildren().add(messageNode);
                 }
                 catch (IOException e) {
@@ -65,6 +65,7 @@ public class ConversationController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Messages = (ArrayList<Message>) UserManager.users.get(0).getConversations().get(0).getMessages();
+        UsernameLabel.setText(UserManager.users.get(1).getName());
         try {
             if(Messages != null){
                 for (Message message : Messages) {
@@ -72,7 +73,11 @@ public class ConversationController implements Initializable {
                     fxmlLoader.setLocation(getClass().getResource("ChatText.fxml"));
                     Parent messageNode = fxmlLoader.load();
                     MessageController messageController = fxmlLoader.getController();
-                    messageController.setMessageData(message);
+                    if (message.getSenderId() == UserManager.users.get(0).getId()) {
+                        messageController.setMessageData(message, true);
+                    } else {
+                        messageController.setMessageData(message, false);
+                    }
                     MessagesContainer.getChildren().add(messageNode);
                 }
             }

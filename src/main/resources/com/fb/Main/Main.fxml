@@ -23,6 +23,10 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
+      <PasswordField fx:id="LoginPasswordField" layoutX="290.0" layoutY="251.0" promptText="Enter your password" style="-fx-background-color: transparent;">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
       <Button layoutX="297.0" layoutY="317.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="41.0" prefWidth="84.0" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Login" textAlignment="JUSTIFY" textFill="#1716169c">
          <font>
             <Font name="Segoe UI Semibold" size="18.0" />
@@ -75,9 +79,5 @@
          <effect>
             <DropShadow />
          </effect></Separator>
-      <PasswordField fx:id="LoginPasswordField" layoutX="290.0" layoutY="251.0" promptText="Enter your password" style="-fx-background-color: transparent;">
-         <font>
-            <Font size="14.0" />
-         </font></PasswordField>
    </children>
 </AnchorPane>

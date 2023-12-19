@@ -51,19 +51,14 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="59.0" prefWidth="103.0">
                <children>
-                  <Button fx:id="SendMessageButton" mnemonicParsing="false" onAction="#writeMessage" text="Button" />
-                  <Button mnemonicParsing="false" prefHeight="43.0" prefWidth="42.0" style="-fx-background-color: #808080; -fx-background-radius: 20;">
+                  <Button fx:id="SendMessageButton" mnemonicParsing="false" onAction="#writeMessage" style="-fx-background-radius: 20;">
                      <graphic>
-                        <ImageView fitHeight="36.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../Images/SendIcon.png" />
                            </image>
                         </ImageView>
-                     </graphic>
-                     <padding>
-                        <Insets bottom="1.0" />
-                     </padding>
-                  </Button>
+                     </graphic></Button>
                </children>
             </HBox>
          </children>

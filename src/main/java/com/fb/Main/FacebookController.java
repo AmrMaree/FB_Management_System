@@ -66,7 +66,7 @@ public class FacebookController implements Initializable {
             conversationId2 = 1;
         }
         UserManager.users.get(0).createConversation(conversationId, UserManager.users.get(0).getId(), UserManager.users.get(1).getId());
-        UserManager.users.get(1).createConversation(conversationId, UserManager.users.get(0).getId(), UserManager.users.get(1).getId());
+        UserManager.users.get(1).createConversation(conversationId2, UserManager.users.get(0).getId(), UserManager.users.get(1).getId());
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Conversation.fxml"));
             Parent root = loader.load();
