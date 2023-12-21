@@ -13,7 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -39,6 +41,10 @@ public class FacebookController implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void CloseWindow (ActionEvent event)
+    {
+     System.exit(0);
     }
     public void OpenChat(ActionEvent event) {
         ArrayList<Conversation> conversations = (ArrayList<Conversation>) UserManager.users.get(0).getConversations();

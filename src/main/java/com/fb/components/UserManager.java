@@ -16,25 +16,20 @@ public class UserManager {
     public static void serialize(User user, String filename) {
         try {
             Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            // Ensure that the users list is not null
             if (users == null) {
                 users = new ArrayList<>();
             }
-            // Check if the user already exists in the list
             boolean userExists = false;
             for (int i = 0; i < users.size(); i++) {
                 if (users.get(i).getEmail().equals(user.getEmail())) {
-                    // If the user already exists, update the existing user
                     users.set(i, user);
                     userExists = true;
                     break;
                 }
             }
-            // If the user doesn't exist, add the new user to the list
             if (!userExists) {
                 users.add(user);
             }
-            // Write the combined data back to the file
             try (FileWriter writer = new FileWriter(filename)) {
                 gson.toJson(users, writer);
             }

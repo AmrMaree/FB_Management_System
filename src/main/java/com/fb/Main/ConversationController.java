@@ -61,6 +61,10 @@ public class ConversationController implements Initializable {
             System.out.println("User not found");
         }
     }
+    public void CloseWindow (ActionEvent event)
+    {
+        System.exit(0);
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {

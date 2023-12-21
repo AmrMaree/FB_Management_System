@@ -79,5 +79,35 @@
          <effect>
             <DropShadow />
          </effect></Separator>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="-10.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="284.0" layoutY="-33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="134.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="511.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="414.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="624.0" layoutY="47.0" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="46.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="X">
+         <font>
+            <Font name="Gadugi Bold" size="20.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
