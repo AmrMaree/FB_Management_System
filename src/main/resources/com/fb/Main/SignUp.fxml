@@ -16,24 +16,36 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="478.0" prefWidth="1101.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
+<AnchorPane prefHeight="530.0" prefWidth="1138.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <ImageView fitHeight="548.0" fitWidth="1186.0" layoutX="-15.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="567.0" fitWidth="1208.0" layoutX="-36.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/SignUpBg.png" />
          </image>
       </ImageView>
-      <TextField fx:id="NameTextField" layoutX="533.0" layoutY="138.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
-      <TextField fx:id="EmailTextField" layoutX="533.0" layoutY="183.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
-      <PasswordField fx:id="PasswordField" layoutX="533.0" layoutY="238.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
-      <PasswordField fx:id="RepasswordField" layoutX="533.0" layoutY="285.0" style="-fx-background-color: transparent; -fx-border-width: 0;" />
-      <RadioButton fx:id="MaleRadioButton" layoutX="533.0" layoutY="346.0" mnemonicParsing="false" onAction="#getGender" text="Male">
+      <TextField fx:id="NameTextField" layoutX="531.0" layoutY="142.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <TextField fx:id="EmailTextField" layoutX="531.0" layoutY="190.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+         <font>
+            <Font size="14.0" />
+         </font></TextField>
+      <PasswordField fx:id="PasswordField" layoutX="531.0" layoutY="226.0" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <PasswordField fx:id="RepasswordField" layoutX="531.0" layoutY="279.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+         <font>
+            <Font size="14.0" />
+         </font></PasswordField>
+      <RadioButton fx:id="MaleRadioButton" layoutX="543.0" layoutY="348.0" mnemonicParsing="false" onAction="#getGender" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="Gender" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="FemaleRadioButton" layoutX="618.0" layoutY="346.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
-      <DatePicker fx:id="myDatePicker" editable="false" layoutX="527.0" layoutY="393.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
-      <Button fx:id="SignUpButton" layoutX="550.0" layoutY="439.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Sign up" textFill="#1716169c">
+      <RadioButton fx:id="FemaleRadioButton" layoutX="627.0" layoutY="348.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
+      <DatePicker fx:id="myDatePicker" editable="false" layoutX="529.0" layoutY="397.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
+      <Button fx:id="SignUpButton" layoutX="550.0" layoutY="449.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Sign up" textFill="#1716169c">
          <effect>
             <DropShadow height="18.07" radius="8.535" width="18.07">
                <color>
@@ -44,15 +56,15 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Label alignment="CENTER" layoutX="306.0" layoutY="21.0" prefHeight="83.0" prefWidth="559.0" text="Welcome to Buzz" textFill="#715fbce0">
+      <Label alignment="CENTER" layoutX="306.0" layoutY="49.0" prefHeight="83.0" prefWidth="559.0" text="Welcome to Buzz" textFill="#3a2c71e0">
          <font>
             <Font name="Magneto Bold" size="56.0" />
          </font>
          <effect>
-            <DropShadow height="12.21" radius="8.535" width="23.93" />
+            <DropShadow height="9.28" radius="4.14" width="9.28" />
          </effect>
       </Label>
-      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="637.0" layoutY="493.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="24.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="Login" textFill="#3a2c71">
+      <Button contentDisplay="CENTER" graphicTextGap="2.0" layoutX="637.0" layoutY="503.0" mnemonicParsing="false" onAction="#switchToLogin" prefHeight="24.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="Login" textFill="#3a2c71">
          <font>
             <Font name="Segoe UI Semibold" size="13.0" />
          </font>
@@ -63,8 +75,8 @@
             <DropShadow />
          </effect>
       </Button>
-      <Label layoutX="498.0" layoutY="494.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
-      <Label layoutX="418.0" layoutY="152.0" text="Username" textFill="#171616ab">
+      <Label layoutX="498.0" layoutY="504.0" prefHeight="25.0" prefWidth="139.0" text="Already have an account ?" />
+      <Label layoutX="427.0" layoutY="156.0" text="Username" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -72,7 +84,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="432.0" layoutY="195.0" prefHeight="17.0" prefWidth="39.0" text="Email" textFill="#171616ab">
+      <Label layoutX="442.0" layoutY="206.0" prefHeight="17.0" prefWidth="39.0" text="Email" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -80,7 +92,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="420.0" layoutY="241.0" text="Password" textFill="#171616ab">
+      <Label layoutX="429.0" layoutY="252.0" text="Password" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -88,7 +100,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="391.0" layoutY="297.0" text="Confirm Password" textFill="#171616ab">
+      <Label layoutX="400.0" layoutY="299.0" text="Confirm Password" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -96,7 +108,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="427.0" layoutY="344.0" text="Gender" textFill="#171616ab">
+      <Label layoutX="436.0" layoutY="346.0" text="Gender" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -104,7 +116,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="406.0" layoutY="393.0" prefHeight="25.0" prefWidth="92.0" text="Date of birth" textFill="#171616ab">
+      <Label layoutX="415.0" layoutY="397.0" prefHeight="25.0" prefWidth="92.0" text="Date of birth" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -112,21 +124,69 @@
             <DropShadow />
          </effect>
       </Label>
-      <Separator layoutX="533.0" layoutY="162.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="533.0" layoutY="166.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="533.0" layoutY="207.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="531.0" layoutY="214.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="533.0" layoutY="261.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="533.0" layoutY="260.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="533.0" layoutY="306.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="531.0" layoutY="309.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="-15.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="279.0" layoutY="-37.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="129.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="409.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="730.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="1004.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="885.0" layoutY="-24.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="103.0" fitWidth="167.0" layoutX="573.0" layoutY="-28.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Images/treeDisign.png" />
+         </image>
+      </ImageView>
+      <Button layoutX="1111.0" layoutY="43.0" mnemonicParsing="false" onAction="#CloseWindow" prefHeight="46.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="X">
+         <font>
+            <Font name="Gadugi Bold" size="20.0" />
+         </font>
+         <effect>
+            <DropShadow />
+         </effect>
+      </Button>
    </children>
 </AnchorPane>

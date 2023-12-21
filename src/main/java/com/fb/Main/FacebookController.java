@@ -13,7 +13,9 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.net.URL;
@@ -26,7 +28,7 @@ public class FacebookController implements Initializable {
     @FXML
     private VBox postsContainer;
     @FXML
-    private TextField SearchTextField;
+    private Button OpenChat1;
 
     ArrayList<Post> posts;
     private Stage stage;
@@ -39,6 +41,10 @@ public class FacebookController implements Initializable {
         }catch (Exception e){
             e.printStackTrace();
         }
+    }
+    public void CloseWindow (ActionEvent event)
+    {
+     System.exit(0);
     }
     public void OpenChat(ActionEvent event) {
         ArrayList<Conversation> conversations = (ArrayList<Conversation>) UserManager.users.get(0).getConversations();
@@ -80,20 +86,6 @@ public class FacebookController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void CreatePost(ActionEvent event){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CreatePost.fxml"));
-            Parent root1 = loader.load();
-            Stage newStage = new Stage();
-            newStage.setScene(new Scene(root1));
-            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
-            newStage.setResizable(false);
-            newStage.getIcons().add(icon);
-            newStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public void WritePost(ActionEvent event){
         User user = UserManager.users.get(0);
         if (user != null) {
@@ -119,7 +111,7 @@ public class FacebookController implements Initializable {
                     Parent postNode = fxmlLoader.load();
                     PostController postController = fxmlLoader.getController();
                     postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
-                    postsContainer.getChildren().add(1,postNode);
+                    postsContainer.getChildren().add(1, postNode);
                 }
                 catch (IOException e) {
                     throw new RuntimeException(e);

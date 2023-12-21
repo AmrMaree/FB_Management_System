@@ -1,4 +1,5 @@
 package com.fb.Main;
+
 import com.fb.components.User;
 import com.fb.components.UserManager;
 import javafx.application.Application;

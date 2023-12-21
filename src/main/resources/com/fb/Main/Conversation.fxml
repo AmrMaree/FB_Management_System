@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -14,7 +15,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="497.0" prefWidth="432.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.ConversationController">
    <children>
-      <HBox alignment="CENTER_LEFT" layoutY="-2.0" prefHeight="51.0" prefWidth="432.0" style="-fx-background-color: #50378d;">
+      <HBox alignment="CENTER_LEFT" layoutY="-2.0" prefHeight="55.0" prefWidth="432.0" style="-fx-background-color: #50378d;">
          <children>
             <HBox alignment="BASELINE_LEFT" prefHeight="51.0" prefWidth="46.0">
                <children>
@@ -25,7 +26,7 @@
                   </ImageView>
                </children>
             </HBox>
-            <Label fx:id="UsernameLabel" text="Username" textFill="#ffffffba">
+            <Label fx:id="UsernameLabel" prefHeight="30.0" prefWidth="136.0" text="Username" textFill="#ffffffba">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
@@ -33,9 +34,21 @@
                   <Insets top="3.0" />
                </padding>
             </Label>
+            <HBox alignment="CENTER_RIGHT" prefHeight="55.0" prefWidth="300.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#CloseWindow" prefHeight="46.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="X">
+                     <font>
+                        <Font name="Gadugi Bold" size="20.0" />
+                     </font>
+                     <effect>
+                        <DropShadow />
+                     </effect>
+                  </Button>
+               </children>
+            </HBox>
          </children>
       </HBox>
-      <HBox layoutY="438.0" prefHeight="59.0" prefWidth="432.0">
+      <HBox layoutY="431.0" prefHeight="66.0" prefWidth="432.0">
          <children>
             <HBox alignment="CENTER" prefHeight="58.0" prefWidth="351.0" style="-fx-background-color: #5A5A5A;">
                <children>
@@ -51,7 +64,7 @@
             </HBox>
             <HBox alignment="CENTER" prefHeight="59.0" prefWidth="103.0">
                <children>
-                  <Button fx:id="SendMessageButton" mnemonicParsing="false" onAction="#writeMessage" style="-fx-background-radius: 20;">
+                  <Button fx:id="SendMessageButton" alignment="CENTER" mnemonicParsing="false" onAction="#writeMessage" prefHeight="40.0" prefWidth="40.0" style="-fx-background-radius: 20;">
                      <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -63,10 +76,10 @@
             </HBox>
          </children>
       </HBox>
-      <Pane layoutY="49.0" prefHeight="385.0" prefWidth="432.0" />
-      <ScrollPane hbarPolicy="NEVER" layoutY="46.0" prefHeight="385.0" prefWidth="432.0" vbarPolicy="NEVER">
+      <Pane layoutY="49.0" prefHeight="385.0" prefWidth="432.0" style="-fx-background-color: #222222;" />
+      <ScrollPane hbarPolicy="NEVER" layoutX="-6.0" layoutY="46.0" prefHeight="385.0" prefWidth="438.0" style="-fx-background-color: #222222;" vbarPolicy="NEVER">
          <content>
-            <VBox fx:id="MessagesContainer" prefHeight="385.0" prefWidth="432.0" />
+            <VBox fx:id="MessagesContainer" prefHeight="387.0" prefWidth="441.0" style="-fx-background-color: #222222;" />
          </content>
       </ScrollPane>
    </children>

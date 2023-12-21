@@ -9,6 +9,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.io.IOException;
 
@@ -31,12 +32,14 @@ public class Controller {
     private TextField LoginEmailTextField;
     @FXML
     private PasswordField LoginPasswordField;
-    @FXML
-    private Button CloseButton;
     private Stage stage;
     private Scene scene;
     private Parent root;
     private String gender;
+    public void CloseWindow (ActionEvent event)
+    {
+        System.exit(0);
+    }
     public void switchToSignUp (ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
         stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

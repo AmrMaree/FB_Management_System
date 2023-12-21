@@ -21,9 +21,9 @@ public class MessageController {
 
         if (isCurrentUser) {
             chatHbox.setStyle("-fx-alignment: CENTER-RIGHT;");
+            ChatLabel.setStyle( "-fx-background-color: #7d55bc;"+"-fx-background-radius: 20;");
         } else {
             chatHbox.setStyle("-fx-alignment: CENTER-LEFT;");
-            ChatLabel.setStyle( "-fx-background-color: #5A5A5A;"+"-fx-background-radius: 20;");
         }
     }
 

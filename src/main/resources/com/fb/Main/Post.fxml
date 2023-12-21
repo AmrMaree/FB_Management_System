@@ -2,6 +2,7 @@
 
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -12,12 +13,12 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="447.0" prefWidth="483.0" style="-fx-background-color: #808080; -fx-background-radius: 15;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
+<VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="483.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <children>
-      <HBox prefHeight="41.0" prefWidth="478.0" spacing="20.0">
+      <HBox prefHeight="41.0" prefWidth="478.0" spacing="20.0" style="-fx-background-color: #5A5A5A;">
          <children>
             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -31,24 +32,27 @@
             </Label>
          </children>
       </HBox>
-      <Label fx:id="PostCaption" prefHeight="27.0" prefWidth="441.0" text="Caption">
-         <font>
-            <Font name="Segoe UI Semibold" size="14.0" />
-         </font>
-         <padding>
-            <Insets top="15.0" />
-         </padding>
-      </Label>
-      <ImageView fitHeight="311.0" fitWidth="483.0" pickOnBounds="true" preserveRatio="true">
-         <effect>
-            <DropShadow />
-         </effect>
-      </ImageView>
-      <StackPane>
+      <Separator prefHeight="5.0" prefWidth="551.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+      <HBox alignment="CENTER_LEFT" prefWidth="483.0">
          <children>
-            <VBox prefHeight="218.0" prefWidth="478.0">
+            <Label fx:id="PostCaption" prefWidth="441.0" wrapText="true">
+               <font>
+                  <Font name="Segoe UI Semibold" size="18.0" />
+               </font>
+               <padding>
+                  <Insets bottom="15.0" left="10.0" top="15.0" />
+               </padding>
+            </Label>
+         </children>
+         <padding>
+            <Insets bottom="20.0" top="20.0" />
+         </padding>
+      </HBox>
+      <StackPane style="-fx-background-radius: 15;">
+         <children>
+            <VBox prefHeight="49.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefWidth="491.0" spacing="5.0" style="-fx-background-color: #808080; -fx-background-radius: 15;">
+                  <HBox alignment="CENTER_LEFT" prefWidth="491.0" spacing="5.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="0.0" spacing="5.0" />
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -84,7 +88,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #808080; -fx-background-radius: 15;">
+                  <HBox prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefWidth="165.0" spacing="10.0">
                            <children>
@@ -142,9 +146,6 @@
          </effect>
       </StackPane>
    </children>
-   <padding>
-      <Insets top="10.0" />
-   </padding>
    <effect>
       <DropShadow>
          <color>
@@ -152,4 +153,7 @@
          </color>
       </DropShadow>
    </effect>
+   <padding>
+      <Insets top="10.0" />
+   </padding>
 </VBox>
