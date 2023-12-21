@@ -13,7 +13,7 @@ public class User implements Serializable {
     private String gender;
     private String birthdate;
     private ArrayList<Post> posts;
-    private ArrayList<User> friends;
+    private ArrayList<Integer> friends;
     private ArrayList<Conversation> conversations;
 
     public User(int id ,String name, String email, String password, String gender, String birthdate) {
@@ -28,9 +28,9 @@ public class User implements Serializable {
         this.conversations = new ArrayList<>();
     }
 
-    public void createPost(int postId , String content, Privacy privacy) {
+    public void createPost(int postId , String content, String privacy) {
         Post post = new Post(postId, this.id, content,privacy);
-        posts.add(post);
+        posts.add(0, post);
     }
     public void createConversation(int conversationId ,int senderId, int participentId){
         Conversation conversation = new Conversation(conversationId, senderId, participentId);
@@ -64,7 +64,7 @@ public class User implements Serializable {
     public List<Conversation> getConversations() {
         return conversations;
     }
-    public List<User> getFriends() {
+    public List<Integer> getFriends() {
         return friends;
     }
     public void setConversations(ArrayList<Conversation> conversations) {

@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Comment {
     private static int nextId = 1;
-    private int id;
+    final private int id;
     private User author;
     private String text;
     private ArrayList<Reply> replies;

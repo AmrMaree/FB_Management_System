@@ -3,7 +3,7 @@ import java.util.ArrayList;
 
 public class Reply {
     private static int nextId = 1;
-    private int id;
+    final private int id;
     private User author;
     private String text;
     private ArrayList<User> likers;

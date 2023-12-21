@@ -2,15 +2,15 @@ package com.fb.components;
 import java.util.ArrayList;
 
 public class Post {
-    private int id;
+    private final int id;
     private int userId;
     private String content;
-    private Privacy privacy;
+    private String privacy;
     private ArrayList<Comment> comments;
     private ArrayList<User> taggedUsers;
     private ArrayList<User> likers;
 
-    public Post(int id,int userId, String content, Privacy privacy) {
+    public Post(int id, int userId, String content, String privacy) {
         this.id = id;
         this.userId = userId;
         this.content = content;
@@ -35,8 +35,11 @@ public class Post {
         return id;
     }
 
-    public String getContent()
-    {
+    public String getContent() {
         return content;
     }
+    public String getPrivacy() {
+        return privacy;
+    }
+
 }

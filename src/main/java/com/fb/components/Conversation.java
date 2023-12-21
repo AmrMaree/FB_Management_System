@@ -3,7 +3,7 @@ package com.fb.components;
 import java.util.ArrayList;
 
 public class Conversation {
-    private int id;
+    private final int id;
     private ArrayList<Integer> participants;
     private ArrayList<Message> messages;
 

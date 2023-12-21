@@ -9,6 +9,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
@@ -28,12 +29,13 @@ public class FacebookController implements Initializable {
     @FXML
     private VBox postsContainer;
     @FXML
-    private Button OpenChat1;
+    private RadioButton PublicRadioButton, FriendsRadioButton;
 
     ArrayList<Post> posts;
     private Stage stage;
     private Scene scene;
     private Parent root;
+    private String privacy;
     public void SignOut(ActionEvent event){
         try {
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -86,6 +88,13 @@ public class FacebookController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void getPrivacy(ActionEvent event){
+        if(PublicRadioButton.isSelected()){
+            privacy = "public";
+        }else if (FriendsRadioButton.isSelected()){
+            privacy = "friends";
+        }
+    }
     public void WritePost(ActionEvent event){
         User user = UserManager.users.get(0);
         if (user != null) {
@@ -93,12 +102,12 @@ public class FacebookController implements Initializable {
             if (postText != null && !postText.isEmpty()) {
                 int postId;
                 if(!user.getPosts().isEmpty()){
-                    postId = user.getPosts().get(user.getPosts().size()-1).getId() + 1;
+                    postId = user.getPosts().get(0).getId() + 1;
                 }
                 else{
                     postId = 1;
                 }
-                user.createPost(postId, postText, Privacy.PUBLIC);
+                user.createPost(postId, postText, privacy);
                 for (int i = 0; i < UserManager.users.size(); i++) {
                     if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
                         UserManager.users.set(i, user);
@@ -110,8 +119,8 @@ public class FacebookController implements Initializable {
                     fxmlLoader.setLocation(getClass().getResource("Post.fxml"));
                     Parent postNode = fxmlLoader.load();
                     PostController postController = fxmlLoader.getController();
-                    postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
-                    postsContainer.getChildren().add(1, postNode);
+                    postController.setPostData(UserManager.users.get(0).getPosts().get(0));
+                    postsContainer.getChildren().add(1,postNode);
                 }
                 catch (IOException e) {
                     throw new RuntimeException(e);
