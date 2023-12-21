@@ -6,7 +6,62 @@
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-26",
-    "posts": [],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 1,
+        "content": "dadhf",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 2,
+        "userId": 1,
+        "content": "dfdfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 3,
+        "userId": 1,
+        "content": "dfdfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 4,
+        "userId": 1,
+        "content": "dfdfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 5,
+        "userId": 1,
+        "content": "jlfsjdfa",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 6,
+        "userId": 1,
+        "content": "Rigj",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
     "friends": [],
     "conversations": [
       {
@@ -63,6 +118,30 @@
             "senderId": 1,
             "recipientId": 2,
             "content": "hi"
+          },
+          {
+            "id": 9,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "You are right btw :)"
+          },
+          {
+            "id": 10,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "I support you :)"
+          },
+          {
+            "id": 11,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "love you \u003c3, Good night"
+          },
+          {
+            "id": 12,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "."
           }
         ]
       },
@@ -85,56 +164,8 @@
       {
         "id": 4,
         "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 5,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 6,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 7,
-        "participants": [
           2,
           1
-        ],
-        "messages": []
-      },
-      {
-        "id": 8,
-        "participants": [
-          2,
-          1
-        ],
-        "messages": []
-      },
-      {
-        "id": 9,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 10,
-        "participants": [
-          1,
-          2
         ],
         "messages": []
       }
@@ -147,7 +178,35 @@
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-27",
-    "posts": [],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 2,
+        "content": "fdfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 2,
+        "userId": 2,
+        "content": "fdfdfdfd",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      },
+      {
+        "id": 3,
+        "userId": 2,
+        "content": "f",
+        "privacy": "PUBLIC",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": []
+      }
+    ],
     "friends": [],
     "conversations": [
       {
@@ -204,6 +263,30 @@
             "senderId": 1,
             "recipientId": 2,
             "content": "hi"
+          },
+          {
+            "id": 9,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "You are right btw :)"
+          },
+          {
+            "id": 10,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "I support you :)"
+          },
+          {
+            "id": 11,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "love you \u003c3, Good night"
+          },
+          {
+            "id": 12,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "."
           }
         ]
       },
@@ -226,56 +309,8 @@
       {
         "id": 4,
         "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 5,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 6,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 7,
-        "participants": [
           2,
           1
-        ],
-        "messages": []
-      },
-      {
-        "id": 8,
-        "participants": [
-          2,
-          1
-        ],
-        "messages": []
-      },
-      {
-        "id": 9,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": []
-      },
-      {
-        "id": 10,
-        "participants": [
-          1,
-          2
         ],
         "messages": []
       }

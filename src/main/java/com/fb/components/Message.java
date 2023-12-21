@@ -1,7 +1,7 @@
 package com.fb.components;
 
 public class Message {
-    private int id;
+    private final int id;
     private int senderId;
     private int recipientId;
     private String content;

@@ -26,7 +26,7 @@ public class FacebookController implements Initializable {
     @FXML
     private VBox postsContainer;
     @FXML
-    private Button OpenChat1;
+    private TextField SearchTextField;
 
     ArrayList<Post> posts;
     private Stage stage;
@@ -80,6 +80,20 @@ public class FacebookController implements Initializable {
             e.printStackTrace();
         }
     }
+    public void CreatePost(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CreatePost.fxml"));
+            Parent root1 = loader.load();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root1));
+            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
+            newStage.setResizable(false);
+            newStage.getIcons().add(icon);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void WritePost(ActionEvent event){
         User user = UserManager.users.get(0);
         if (user != null) {
@@ -105,7 +119,7 @@ public class FacebookController implements Initializable {
                     Parent postNode = fxmlLoader.load();
                     PostController postController = fxmlLoader.getController();
                     postController.setPostData(UserManager.users.get(0).getPosts().get(postId - 1));
-                    postsContainer.getChildren().add(1, postNode);
+                    postsContainer.getChildren().add(1,postNode);
                 }
                 catch (IOException e) {
                     throw new RuntimeException(e);

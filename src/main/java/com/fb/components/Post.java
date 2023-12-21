@@ -2,7 +2,7 @@ package com.fb.components;
 import java.util.ArrayList;
 
 public class Post {
-    private int id;
+    private final int id;
     private int userId;
     private String content;
     private Privacy privacy;
