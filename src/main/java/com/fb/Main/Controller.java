@@ -55,7 +55,7 @@ public class Controller {
         stage.show();
     }
     public void switchToHome (ActionEvent event) throws IOException {
-        if(UserManager.checkLogin(LoginEmailTextField.getText(),LoginPasswordField.getText(),"UserInfo.json")){
+        if(UserManager.checkLogin(LoginEmailTextField.getText(),LoginPasswordField.getText())){
             root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);

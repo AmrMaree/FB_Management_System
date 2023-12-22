@@ -113,11 +113,11 @@
             <Pane prefHeight="850.0" prefWidth="46.0" HBox.hgrow="ALWAYS" />
             <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="1169.0" style="-fx-background-color: #50378d;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="postsContainer" alignment="TOP_CENTER" prefHeight="773.0" prefWidth="571.0" spacing="30.0" style="-fx-background-color: #222222;">
+                  <VBox fx:id="postsContainer" alignment="TOP_CENTER" prefHeight="773.0" prefWidth="571.0" spacing="20.0" style="-fx-background-color: #222222;">
                      <children>
-                        <VBox prefHeight="130.0" prefWidth="478.0" spacing="10.0" style="-fx-background-color: #222222; -fx-background-radius: 15;">
+                        <VBox prefHeight="128.0" prefWidth="551.0" spacing="10.0" style="-fx-background-color: #222222; -fx-background-radius: 15;">
                            <children>
-                              <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="340.0" prefWidth="548.0" style="-fx-background-color: #222222; -fx-background-radius: 20;">
+                              <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="346.0" prefWidth="548.0" style="-fx-background-color: #222222; -fx-background-radius: 20;">
                                  <top>
                                     <HBox alignment="CENTER" prefHeight="63.0" prefWidth="573.0" style="-fx-background-color: #222222;" BorderPane.alignment="CENTER">
                                        <children>
@@ -302,13 +302,10 @@
                         </VBox>
                      </children>
                      <padding>
-                        <Insets bottom="20.0" left="10.0" right="10.0" top="30.0" />
+                        <Insets bottom="20.0" left="10.0" right="10.0" />
                      </padding>
                   </VBox>
                </content>
-               <padding>
-                  <Insets top="20.0" />
-               </padding>
             </ScrollPane>
             <Pane prefHeight="850.0" prefWidth="314.0" HBox.hgrow="ALWAYS" />
          </children>

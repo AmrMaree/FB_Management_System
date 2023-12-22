@@ -17,6 +17,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
@@ -41,6 +42,8 @@ public class FacebookController implements Initializable {
     private Parent root;
     private String privacy;
     private ArrayList<String> usersName = new ArrayList<>();
+    String SearchedUser;
+
     private void getUserName(){
         for(User user:UserManager.users){
             usersName.add(user.getName());
@@ -143,11 +146,33 @@ public class FacebookController implements Initializable {
             System.out.println("User not found");
         }
     }
+    public void switchToProfilePage(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilePage.fxml"));
+            Parent root = loader.load();
+            if (loader.getController() instanceof ProfilePageController) {
+                ProfilePageController profilePageController = loader.getController();
+                // profilePageController.someMethod();
+            }
+            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getUserName();
         Set<String> _usersName = new HashSet<>(usersName);
-        TextFields.bindAutoCompletion(SearchTextField,_usersName);
+        AutoCompletionBinding<String> autoComplete = TextFields.bindAutoCompletion(SearchTextField, _usersName);
+        autoComplete.setOnAutoCompleted(event -> {
+            String selectedValue = event.getCompletion();
+            SearchedUser = selectedValue;
+        });
+        User ProfileUser = UserManager.getUserByUserName(SearchedUser);
         posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
         try {
             if(posts != null){

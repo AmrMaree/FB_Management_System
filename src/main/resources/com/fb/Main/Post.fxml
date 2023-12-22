@@ -3,6 +3,7 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -14,12 +15,12 @@
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="483.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
+<VBox alignment="TOP_CENTER" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="483.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.PostController">
    <opaqueInsets>
       <Insets />
    </opaqueInsets>
    <children>
-      <HBox prefHeight="41.0" prefWidth="478.0" spacing="20.0" style="-fx-background-color: #5A5A5A;">
+      <HBox alignment="CENTER_LEFT" prefHeight="64.0" prefWidth="483.0" spacing="20.0" style="-fx-background-color: #5A5A5A;">
          <children>
             <ImageView fitHeight="45.0" fitWidth="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -34,14 +35,14 @@
          </children>
       </HBox>
       <Separator prefHeight="5.0" prefWidth="551.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-      <HBox alignment="CENTER_LEFT" prefWidth="483.0">
+      <HBox alignment="CENTER" prefWidth="483.0" style="-fx-background-color: #5A5A5A;">
          <children>
             <Label fx:id="PostCaption" prefWidth="441.0" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
                <padding>
-                  <Insets bottom="15.0" left="10.0" top="15.0" />
+                  <Insets bottom="15.0" />
                </padding>
             </Label>
          </children>
@@ -49,11 +50,11 @@
             <Insets bottom="20.0" top="20.0" />
          </padding>
       </HBox>
-      <StackPane style="-fx-background-radius: 15;">
+      <StackPane prefHeight="86.0" prefWidth="483.0" style="-fx-background-radius: 15;">
          <children>
-            <VBox prefHeight="49.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
+            <VBox prefHeight="70.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A;">
                <children>
-                  <HBox alignment="CENTER_LEFT" prefWidth="491.0" spacing="5.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
+                  <HBox alignment="CENTER_LEFT" prefHeight="33.0" prefWidth="483.0" spacing="5.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefHeight="27.0" prefWidth="0.0" spacing="5.0" />
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
@@ -89,7 +90,7 @@
                         </Label>
                      </children>
                   </HBox>
-                  <HBox prefHeight="40.0" prefWidth="176.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
+                  <HBox prefHeight="54.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                      <children>
                         <HBox alignment="CENTER_LEFT" prefWidth="165.0" spacing="10.0">
                            <children>
@@ -109,13 +110,17 @@
                               </Label>
                            </children>
                         </HBox>
-                        <HBox alignment="CENTER" prefWidth="165.0" spacing="10.0">
+                        <HBox fx:id="comment" alignment="CENTER" onMousePressed="#onCommentPressed" onMouseReleased="#onCommentReleased" prefWidth="165.0" spacing="10.0">
                            <children>
-                              <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/comment.png" />
-                                 </image>
-                              </ImageView>
+                              <Button fx:id="commentExitButton" mnemonicParsing="false" onAction="#commentExit" style="-fx-background-color: transparent;">
+                                 <graphic>
+                                    <ImageView fitHeight="34.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../../../Images/comment.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
                               <Label text="Comment">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
@@ -150,15 +155,25 @@
             </DropShadow>
          </effect>
       </StackPane>
+      <HBox fx:id="commentContainer" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="146.0" prefWidth="483.0" style="-fx-background-color: #222222;" visible="false">
+         <children>
+            <ScrollPane hbarPolicy="NEVER" prefHeight="120.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A;" vbarPolicy="NEVER">
+               <content>
+                  <VBox prefHeight="183.0" prefWidth="496.0" style="-fx-background-color: #5A5A5A;">
+                     <padding>
+                        <Insets left="10.0" />
+                     </padding>
+                     <children>
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                        <Button mnemonicParsing="false" text="Button" />
+                     </children>
+                  </VBox>
+               </content>
+            </ScrollPane>
+         </children>
+      </HBox>
    </children>
-   <effect>
-      <DropShadow>
-         <color>
-            <Color red="0.37254902720451355" green="0.30588236451148987" blue="0.6705882549285889" />
-         </color>
-      </DropShadow>
-   </effect>
-   <padding>
-      <Insets top="10.0" />
-   </padding>
 </VBox>

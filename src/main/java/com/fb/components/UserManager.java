@@ -50,10 +50,10 @@ public class UserManager {
 
         return users;
     }
-    public static User getUserByEmail(String email, String filename) {
+    public static User getUserByUserName(String username) {
         if (users != null) {
             for (User user : users) {
-                if (user.getEmail().equals(email)) {
+                if (user.getName().equals(username)) {
                     return user;
                 }
             }
@@ -70,7 +70,7 @@ public class UserManager {
         }
         return greatestId;
     }
-    public static boolean checkLogin(String email, String password, String filename) {
+    public static boolean checkLogin(String email, String password) {
         for (User user : users) {
             if (user.getEmail().equals(email) && user.getPassword().equals(password)) {
                 UserManager.users.remove(user);
