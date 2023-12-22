@@ -14,7 +14,11 @@
         "privacy": "public",
         "comments": [],
         "taggedUsers": [],
-        "likers": []
+        "likers": [
+          1,
+          1
+        ],
+        "NumberOfLikes": 2
       },
       {
         "id": 4,
@@ -22,7 +26,10 @@
         "content": "eren yeager",
         "comments": [],
         "taggedUsers": [],
-        "likers": []
+        "likers": [
+          1
+        ],
+        "NumberOfLikes": 2
       },
       {
         "id": 3,
@@ -30,7 +37,8 @@
         "content": "I am amr",
         "comments": [],
         "taggedUsers": [],
-        "likers": []
+        "likers": [],
+        "NumberOfLikes": 0
       },
       {
         "id": 2,
@@ -39,7 +47,8 @@
         "privacy": "friends",
         "comments": [],
         "taggedUsers": [],
-        "likers": []
+        "likers": [],
+        "NumberOfLikes": 0
       },
       {
         "id": 1,
@@ -47,7 +56,8 @@
         "content": "hi guys☺",
         "comments": [],
         "taggedUsers": [],
-        "likers": []
+        "likers": [],
+        "NumberOfLikes": 0
       }
     ],
     "friends": [],
@@ -142,7 +152,19 @@
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-27",
-    "posts": [],
+    "posts": [
+      {
+        "id": 1,
+        "userId": 2,
+        "content": "hi amr",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [
+          2
+        ],
+        "NumberOfLikes": 2
+      }
+    ],
     "friends": [],
     "conversations": [
       {

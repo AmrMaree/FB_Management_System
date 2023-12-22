@@ -17,11 +17,14 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.controlsfx.control.textfield.TextFields;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class FacebookController implements Initializable {
     @FXML
@@ -30,12 +33,19 @@ public class FacebookController implements Initializable {
     private VBox postsContainer;
     @FXML
     private RadioButton PublicRadioButton, FriendsRadioButton;
-
+    @FXML
+    private TextField SearchTextField;
     ArrayList<Post> posts;
     private Stage stage;
     private Scene scene;
     private Parent root;
     private String privacy;
+    private ArrayList<String> usersName = new ArrayList<>();
+    private void getUserName(){
+        for(User user:UserManager.users){
+            usersName.add(user.getName());
+        }
+    }
     public void SignOut(ActionEvent event){
         try {
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -135,6 +145,9 @@ public class FacebookController implements Initializable {
     }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        getUserName();
+        Set<String> _usersName = new HashSet<>(usersName);
+        TextFields.bindAutoCompletion(SearchTextField,_usersName);
         posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
         try {
             if(posts != null){

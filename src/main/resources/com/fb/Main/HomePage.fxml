@@ -30,7 +30,7 @@
                   <Insets right="20.0" />
                </HBox.margin>
             </ImageView>
-            <TextField alignment="BOTTOM_LEFT" prefHeight="24.0" prefWidth="250.0" promptText="Search " style="-fx-background-color: #8C8C8C;">
+            <TextField fx:id="SearchTextField" alignment="BOTTOM_LEFT" prefHeight="24.0" prefWidth="250.0" promptText="Search " style="-fx-background-color: #8C8C8C;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>

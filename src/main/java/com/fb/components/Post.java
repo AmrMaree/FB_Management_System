@@ -8,7 +8,8 @@ public class Post {
     private String privacy;
     private ArrayList<Comment> comments;
     private ArrayList<User> taggedUsers;
-    private ArrayList<User> likers;
+    private ArrayList<Integer> likers;
+    private int NumberOfLikes = 0;
 
     public Post(int id, int userId, String content, String privacy) {
         this.id = id;
@@ -24,8 +25,17 @@ public class Post {
         comments.add(new Comment(commenter, text));
     }
 
-    public void addLiker(User liker) {
-        likers.add(liker);
+    public void addLiker(int liker) {
+        boolean found = false;
+        for(int l : likers){
+            if(l == liker){
+               found = true;
+            }
+        }
+        if(!found){
+            likers.add(liker);
+        }
+        NumberOfLikes++;
     }
 
     public void tagUser(User user) {
@@ -40,6 +50,12 @@ public class Post {
     }
     public String getPrivacy() {
         return privacy;
+    }
+    public int getNumberOfLikes() {
+        return NumberOfLikes;
+    }
+    public int getUserId() {
+        return userId;
     }
 
 }
