@@ -147,19 +147,22 @@ public class FacebookController implements Initializable {
         }
     }
     public void switchToProfilePage(ActionEvent event) {
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilePage.fxml"));
-            Parent root = loader.load();
-            if (loader.getController() instanceof ProfilePageController) {
-                ProfilePageController profilePageController = loader.getController();
-                // profilePageController.someMethod();
+        if (SearchedUser != null){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilePage.fxml"));
+                Parent root = loader.load();
+                if (loader.getController() instanceof ProfilePageController) {
+                    ProfilePageController profilePageController = loader.getController();
+                    User ProfileUser = UserManager.getUserByUserName(SearchedUser);
+                    // profilePageController.someMethod();
+                }
+                Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                Scene scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            Scene scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -172,7 +175,6 @@ public class FacebookController implements Initializable {
             String selectedValue = event.getCompletion();
             SearchedUser = selectedValue;
         });
-        User ProfileUser = UserManager.getUserByUserName(SearchedUser);
         posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
         try {
             if(posts != null){

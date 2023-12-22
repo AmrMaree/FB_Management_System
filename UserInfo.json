@@ -8,6 +8,15 @@
     "birthdate": "2023-11-26",
     "posts": [
       {
+        "id": 6,
+        "userId": 1,
+        "content": "hi",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [],
+        "NumberOfLikes": 0
+      },
+      {
         "id": 5,
         "userId": 1,
         "content": "freedom",

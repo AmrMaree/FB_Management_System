@@ -35,7 +35,7 @@
                   <Font name="System Bold" size="14.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#switchToProfilePage" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
