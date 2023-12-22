@@ -15,6 +15,7 @@ public class User implements Serializable {
     private ArrayList<Post> posts;
     private ArrayList<Integer> friends;
     private ArrayList<Conversation> conversations;
+    private ArrayList <String> notifications;
 
     public User(int id ,String name, String email, String password, String gender, String birthdate) {
         this.id = id;
@@ -26,8 +27,26 @@ public class User implements Serializable {
         this.posts = new ArrayList<>();
         this.friends = new ArrayList<>();
         this.conversations = new ArrayList<>();
+        this.notifications = new ArrayList<>();
     }
 
+    public void receiveNotification(User user) {
+        if (notifications == null) {
+            notifications = new ArrayList<>();
+        }
+        notifications.add("You got a friend request from " + user.getName());
+        for (int i = 0; i < UserManager.users.size(); i++) {
+            if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
+                UserManager.users.set(i, user);
+                break;
+            }
+        }
+    }
+
+    public void acceptFriendRequest(User RequestSender, User RequestAccepter){
+        friends.add(RequestSender.getId());
+        RequestSender.friends.add(id);
+    }
     public void createPost(int postId , String content, String privacy) {
         Post post = new Post(postId, this.id, content,privacy);
         posts.add(0, post);

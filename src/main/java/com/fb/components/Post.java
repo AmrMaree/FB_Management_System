@@ -21,8 +21,8 @@ public class Post {
         this.likers = new ArrayList<>();
     }
 
-    public void addComment(User commenter, String text) {
-        comments.add(new Comment(commenter, text));
+    public void addComment(int commenterId, String text) {
+        comments.add(new Comment(commenterId, text));
     }
 
     public void addLiker(int liker) {

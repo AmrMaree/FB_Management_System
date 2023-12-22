@@ -29,19 +29,17 @@ public class PostController {
     private HBox commentContainer;
     @FXML
     private Button commentExitButton;
-    private long startTime =0;
+    private long startTime = 0;
     public void  onCommentPressed(MouseEvent event){
         startTime = System.currentTimeMillis();
     }
 
     public void onCommentReleased(MouseEvent event) {
-        if(System.currentTimeMillis()-startTime>5)
-        {
+        if(System.currentTimeMillis() - startTime > 5) {
             commentContainer.setVisible(true);
         }
     }
-    public void commentExit(ActionEvent event)
-    {
+    public void commentExit(ActionEvent event) {
         commentContainer.setVisible(false);
     }
     public void addLike(ActionEvent event){

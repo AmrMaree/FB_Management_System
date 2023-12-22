@@ -4,14 +4,14 @@ import java.util.ArrayList;
 public class Comment {
     private static int nextId = 1;
     final private int id;
-    private User author;
+    final private int userId;
     private String text;
     private ArrayList<Reply> replies;
     private ArrayList<User> likers;
 
-    public Comment(User author, String text) {
+    public Comment(int userId, String text) {
         this.id = nextId++;
-        this.author = author;
+        this.userId = userId;
         this.text = text;
         this.replies = new ArrayList<>();
         this.likers = new ArrayList<>();

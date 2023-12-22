@@ -154,7 +154,7 @@ public class FacebookController implements Initializable {
                 if (loader.getController() instanceof ProfilePageController) {
                     ProfilePageController profilePageController = loader.getController();
                     User ProfileUser = UserManager.getUserByUserName(SearchedUser);
-                    // profilePageController.someMethod();
+                    profilePageController.setProfileData(ProfileUser);
                 }
                 Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 Scene scene = new Scene(root);

@@ -60,23 +60,6 @@
                <children>
                   <VBox layoutX="-1.0" prefHeight="848.0" prefWidth="342.0" style="-fx-background-color: #222222;">
                      <children>
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="314.0" prefWidth="342.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/userIcon.png" />
-                                 </image>
-                              </ImageView>
-                              <Label prefHeight="49.0" prefWidth="242.0" text="Your Profile">
-                                 <font>
-                                    <Font name="Segoe UI Semibold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                           <padding>
-                              <Insets right="20.0" />
-                           </padding>
-                        </HBox>
                         <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
                            <children>
                               <ImageView fitHeight="46.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
@@ -84,7 +67,7 @@
                                     <Image url="@../../../Images/nameIcon.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="49.0" prefWidth="242.0" text="Name">
+                              <Label fx:id="UserNameLabel" prefHeight="49.0" prefWidth="242.0" text="Name">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
                                  </font>
@@ -98,7 +81,7 @@
                                     <Image url="@../../../Images/birthdateIcon.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="49.0" prefWidth="242.0" text="Birthdate">
+                              <Label fx:id="BirthdateLabel" prefHeight="49.0" prefWidth="242.0" text="Birthdate">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
                                  </font>
@@ -112,13 +95,14 @@
                                     <Image url="@../../../Images/genderIcon.png" />
                                  </image>
                               </ImageView>
-                              <Label prefHeight="49.0" prefWidth="242.0" text="Gender">
+                              <Label fx:id="GenderLabel" prefHeight="49.0" prefWidth="242.0" text="Gender">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
+                        <Button mnemonicParsing="false" onAction="#friendRequest" prefHeight="26.0" prefWidth="334.0" text="Send Friend Request" />
                      </children>
                      <padding>
                         <Insets top="20.0" />
@@ -135,7 +119,7 @@
             <Pane prefHeight="850.0" prefWidth="46.0" HBox.hgrow="ALWAYS" />
             <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="1169.0" style="-fx-background-color: #50378d;" vbarPolicy="NEVER">
                <content>
-                  <VBox prefHeight="850.0" prefWidth="571.0" style="-fx-background-color: #222222;">
+                  <VBox fx:id="ProfilePostContainer" prefHeight="850.0" prefWidth="571.0" style="-fx-background-color: #222222;">
                      <padding>
                         <Insets left="10.0" right="10.0" />
                      </padding>
