@@ -56,7 +56,6 @@ public class UserManager {
 
         return users;
     }
-
     public static User getUserByUserName(String username) {
         if (users != null) {
             for (User user : users) {
@@ -142,19 +141,19 @@ public class UserManager {
             }
         }
 
-            if (gender == null) {
-                GenderValidation.setVisible(true);
-            } else {
-                GenderValidation.setVisible(false);
-                validGender = true;
+        if (gender == null) {
+            GenderValidation.setVisible(true);
+        } else {
+            GenderValidation.setVisible(false);
+            validGender = true;
         }
 
-            if (name.isEmpty()) {
-                NameValidation.setVisible(true);
-            } else {
-                NameValidation.setVisible(false);
-                validName=true;
-            }
+        if (name.isEmpty()) {
+            NameValidation.setVisible(true);
+        } else {
+            NameValidation.setVisible(false);
+            validName=true;
+        }
         if (birthdate.isEmpty()) {
             dateValidation.setVisible(true);
         } else {
@@ -170,7 +169,5 @@ public class UserManager {
     }
 
 }
-
-
 
 

@@ -8,20 +8,41 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
+import org.controlsfx.control.textfield.AutoCompletionBinding;
+import org.controlsfx.control.textfield.TextFields;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 public class ProfilePageController implements Initializable{
     @FXML
     private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
     private VBox ProfilePostContainer, NotificationContainer;
+    @FXML
+    private TextField SearchTextField1;
     ArrayList<Post> posts;
+    private ArrayList<String> usersName = new ArrayList<>();
+    String SearchedUser;
+    private Stage stage;
+    private Scene scene;
+    private Parent root;
+    private void getUserName(){
+        for(User user:UserManager.users){
+            usersName.add(user.getName());
+        }
+    }
     public void setProfileData(User user) {
         UserNameLabel.setText(user.getName());
         BirthdateLabel.setText(user.getBirthDate());
@@ -48,9 +69,42 @@ public class ProfilePageController implements Initializable{
         Notification notification = new Notification(UserManager.users.get(0).getName() +" sent you a friend request", UserManager.users.get(0).getId(), user.getId());
         user.receiveNotification(user, notification);
     }
+    public void switchToHome (ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
+        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToProfilePage(ActionEvent event) {
+        if (SearchedUser != null){
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("ProfilePage.fxml"));
+                root = loader.load();
+                if (loader.getController() instanceof ProfilePageController) {
+                    ProfilePageController profilePageController = loader.getController();
+                    User ProfileUser = UserManager.getUserByUserName(SearchedUser);
+                    profilePageController.setProfileData(ProfileUser);
+                }
+                stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                scene = new Scene(root);
+                stage.setScene(scene);
+                stage.show();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+    }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        getUserName();
+        Set<String> _usersName = new HashSet<>(usersName);
+        AutoCompletionBinding<String> autoComplete = TextFields.bindAutoCompletion(SearchTextField1, _usersName);
+        autoComplete.setOnAutoCompleted(event -> {
+            String selectedValue = event.getCompletion();
+            SearchedUser = selectedValue;
+        });
         try {
             if(UserManager.users.get(0).getNotifications() != null){
                 for(Notification n :UserManager.users.get(0).getNotifications()){

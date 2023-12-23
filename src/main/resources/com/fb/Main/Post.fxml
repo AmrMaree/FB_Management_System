@@ -73,7 +73,7 @@
                               <Image url="@../../../Images/laughIcon.png" />
                            </image>
                         </ImageView>
-                        <Label prefHeight="17.0" prefWidth="167.0" text="no of reactions">
+                        <Label fx:id="likes" prefHeight="17.0" prefWidth="167.0" text="no of reactions">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>

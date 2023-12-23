@@ -8,15 +8,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
 
@@ -31,7 +27,7 @@ public class FacebookController implements Initializable {
     @FXML
     private TextField PostTextField;
     @FXML
-    private VBox postsContainer, HomeNotificationContainer;
+    private VBox postsContainer, HomeNotificationContainer, friendsContainer;
     @FXML
     private RadioButton PublicRadioButton, FriendsRadioButton;
     @FXML
@@ -165,6 +161,7 @@ public class FacebookController implements Initializable {
             }
         }
     }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getUserName();
@@ -183,6 +180,7 @@ public class FacebookController implements Initializable {
                     Parent postNode = fxmlLoader.load();
                     PostController postController = fxmlLoader.getController();
                     postController.setPostData(post);
+                    System.out.println(post.getNumberOfLikes());
                     postsContainer.getChildren().add(postNode);
                 }
             }
@@ -199,6 +197,23 @@ public class FacebookController implements Initializable {
                     NotificationController notificationController = fxmlLoader.getController();
                     notificationController.setNotificationData(n);
                     HomeNotificationContainer.getChildren().add(notificationNode);
+                }
+            }
+
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            if(UserManager.users.get(0).getFriends() != null){
+                for(Friendship f : UserManager.users.get(0).getFriends()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                    Parent friendNode = fxmlLoader.load();
+                    FriendController friendController = fxmlLoader.getController();
+                    friendController.setFriendLabelData(f);
+                    friendsContainer.getChildren().add(friendNode);
                 }
             }
 

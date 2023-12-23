@@ -8,6 +8,27 @@
     "birthdate": "2023-11-26",
     "posts": [
       {
+        "id": 7,
+        "userId": 1,
+        "content": "hello",
+        "comments": [
+          {
+            "id": 1,
+            "userId": 1,
+            "postId": 7,
+            "text": "hi",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
+          }
+        ],
+        "taggedUsers": [],
+        "likers": [
+          1
+        ],
+        "NumberOfLikes": 6
+      },
+      {
         "id": 6,
         "userId": 1,
         "content": "hi",
@@ -31,17 +52,7 @@
         "userId": 1,
         "content": "freedom",
         "privacy": "public",
-        "comments": [
-          {
-            "id": 1,
-            "userId": 1,
-            "postId": 5,
-            "text": "sf",
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0
-          }
-        ],
+        "comments": [],
         "taggedUsers": [],
         "likers": [
           1
@@ -88,7 +99,18 @@
         "NumberOfLikes": 0
       }
     ],
-    "friends": [],
+    "friends": [
+      {
+        "userId": 1,
+        "friendId": 3,
+        "type": "regular"
+      },
+      {
+        "userId": 1,
+        "friendId": 2,
+        "type": "regular"
+      }
+    ],
     "conversations": [
       {
         "id": 1,
@@ -180,6 +202,12 @@
             "senderId": 3,
             "recipientId": 1,
             "content": "hi amr, you are my best friend"
+          },
+          {
+            "id": 2,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
           }
         ]
       },
@@ -190,46 +218,14 @@
           1
         ],
         "messages": []
-      }
-    ],
-    "notifications": []
-  },
-  {
-    "id": 3,
-    "email": "joe@gmail.com",
-    "name": "joe",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-08-27",
-    "posts": [
+      },
       {
-        "id": 1,
-        "userId": 3,
-        "content": "i am gay!!",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          3
-        ],
-        "NumberOfLikes": 1
-      }
-    ],
-    "friends": [],
-    "conversations": [
-      {
-        "id": 1,
+        "id": 3,
         "participants": [
-          3,
-          1
+          1,
+          2
         ],
-        "messages": [
-          {
-            "id": 1,
-            "senderId": 3,
-            "recipientId": 1,
-            "content": "hi amr, you are my best friend"
-          }
-        ]
+        "messages": []
       }
     ],
     "notifications": []
@@ -254,7 +250,13 @@
         "NumberOfLikes": 2
       }
     ],
-    "friends": [],
+    "friends": [
+      {
+        "userId": 2,
+        "friendId": 1,
+        "type": "regular"
+      }
+    ],
     "conversations": [
       {
         "id": 1,
@@ -340,44 +342,82 @@
             "senderId": 1,
             "recipientId": 2,
             "content": "love you"
+          },
+          {
+            "id": 2,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      }
+    ],
+    "notifications": [
+      {
+        "content": "amr sent you a friend request",
+        "senderId": 1,
+        "receiverId": 2
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "email": "joe@gmail.com",
+    "name": "joe",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-08-27",
+    "posts": [
+      {
+        "id": 1,
+        "userId": 3,
+        "content": "i am gay!!",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [
+          3
+        ],
+        "NumberOfLikes": 1
+      }
+    ],
+    "friends": [
+      {
+        "userId": 3,
+        "friendId": 1,
+        "type": "regular"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "participants": [
+          3,
+          1
+        ],
+        "messages": [
+          {
+            "id": 1,
+            "senderId": 3,
+            "recipientId": 1,
+            "content": "hi amr, you are my best friend"
           }
         ]
       }
     ],
-    "notifications": []
-  },
-  {
-    "id": 4,
-    "email": "joe@gmail.com",
-    "name": "joe",
-    "password": "P@ssw0rd",
-    "birthdate": "2023-11-28",
-    "posts": [],
-    "friends": [],
-    "conversations": [],
-    "notifications": []
-  },
-  {
-    "id": 5,
-    "email": "JOE@gmail.com",
-    "name": "joe",
-    "password": "P@ssw0rd",
-    "birthdate": "2023-11-27",
-    "posts": [],
-    "friends": [],
-    "conversations": [],
-    "notifications": []
-  },
-  {
-    "id": 6,
-    "email": "joe@gmail.com",
-    "name": "",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-11-26",
-    "posts": [],
-    "friends": [],
-    "conversations": [],
-    "notifications": []
+    "notifications": [
+      {
+        "content": "amr sent you a friend request",
+        "senderId": 1,
+        "receiverId": 3
+      }
+    ]
   }
 ]
