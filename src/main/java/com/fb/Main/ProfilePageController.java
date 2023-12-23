@@ -1,9 +1,6 @@
 package com.fb.Main;
 
-import com.fb.components.Notification;
-import com.fb.components.Post;
-import com.fb.components.User;
-import com.fb.components.UserManager;
+import com.fb.components.*;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -29,7 +26,7 @@ public class ProfilePageController implements Initializable{
     @FXML
     private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
-    private VBox ProfilePostContainer, NotificationContainer;
+    private VBox ProfilePostContainer, NotificationContainer, friendsContainer;
     @FXML
     private TextField SearchTextField1;
     ArrayList<Post> posts;
@@ -116,6 +113,22 @@ public class ProfilePageController implements Initializable{
                     NotificationContainer.getChildren().add(notificationNode);
                 }
             }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(UserManager.users.get(0).getFriends() != null){
+                for(Friendship f : UserManager.users.get(0).getFriends()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                    Parent friendNode = fxmlLoader.load();
+                    FriendController friendController = fxmlLoader.getController();
+                    friendController.setFriendLabelData(f);
+                    friendsContainer.getChildren().add(friendNode);
+                }
+            }
+
         }
         catch (IOException e) {
             throw new RuntimeException(e);
