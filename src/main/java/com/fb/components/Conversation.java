@@ -33,5 +33,4 @@ public class Conversation {
     public ArrayList<Message> getMessages() {
         return messages;
     }
-
 }

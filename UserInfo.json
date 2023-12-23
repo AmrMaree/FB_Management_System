@@ -11,7 +11,17 @@
         "id": 6,
         "userId": 1,
         "content": "hi",
-        "comments": [],
+        "comments": [
+          {
+            "id": 1,
+            "userId": 1,
+            "postId": 6,
+            "text": "amr is ",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
+          }
+        ],
         "taggedUsers": [],
         "likers": [],
         "NumberOfLikes": 0
@@ -212,9 +222,7 @@
         ]
       }
     ],
-    "notifications": [
-      "You got a friend request from joe"
-    ]
+    "notifications": []
   },
   {
     "id": 2,

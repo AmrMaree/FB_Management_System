@@ -1,5 +1,6 @@
 package com.fb.Main;
 
+import com.fb.components.Notification;
 import com.fb.components.Post;
 import com.fb.components.User;
 import com.fb.components.UserManager;
@@ -15,11 +16,11 @@ import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
 
-public class ProfilePageController{
+public class ProfilePageController implements Initializable{
     @FXML
-    private Label UserNameLabel, BirthdateLabel, GenderLabel;
+    private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
-    private VBox ProfilePostContainer;
+    private VBox ProfilePostContainer, NotificationContainer;
     ArrayList<Post> posts;
     public void setProfileData(User user) {
         UserNameLabel.setText(user.getName());
@@ -44,6 +45,26 @@ public class ProfilePageController{
     }
     public void friendRequest(ActionEvent event) {
         User user = UserManager.getUserByUserName(UserNameLabel.getText());
-        user.receiveNotification(user);
+        Notification notification = new Notification(UserManager.users.get(0).getName() +" sent you a friend request", UserManager.users.get(0).getId(), user.getId());
+        user.receiveNotification(user, notification);
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        try {
+            if(UserManager.users.get(0).getNotifications() != null){
+                for(Notification n :UserManager.users.get(0).getNotifications()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Notification.fxml"));
+                    Parent notificationNode = fxmlLoader.load();
+                    NotificationController notificationController = fxmlLoader.getController();
+                    notificationController.setNotificationData(n);
+                    NotificationContainer.getChildren().add(notificationNode);
+                }
+            }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

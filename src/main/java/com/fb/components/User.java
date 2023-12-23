@@ -15,7 +15,7 @@ public class User implements Serializable {
     private ArrayList<Post> posts;
     private ArrayList<Integer> friends;
     private ArrayList<Conversation> conversations;
-    private ArrayList <String> notifications;
+    private ArrayList <Notification> notifications;
 
     public User(int id ,String name, String email, String password, String gender, String birthdate) {
         this.id = id;
@@ -30,11 +30,11 @@ public class User implements Serializable {
         this.notifications = new ArrayList<>();
     }
 
-    public void receiveNotification(User user) {
+    public void receiveNotification(User user,Notification notification) {
         if (notifications == null) {
             notifications = new ArrayList<>();
         }
-        notifications.add("You got a friend request from " + user.getName());
+        notifications.add(0,notification);
         for (int i = 0; i < UserManager.users.size(); i++) {
             if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
                 UserManager.users.set(i, user);
@@ -42,14 +42,34 @@ public class User implements Serializable {
             }
         }
     }
-
     public void acceptFriendRequest(User RequestSender, User RequestAccepter){
         friends.add(RequestSender.getId());
         RequestSender.friends.add(id);
     }
     public void createPost(int postId , String content, String privacy) {
-        Post post = new Post(postId, this.id, content,privacy);
-        posts.add(0, post);
+        boolean found= false;
+        Post p1 = null;
+        for(Post p : UserManager.users.get(0).getPosts())
+        {
+            if(p.getId()==postId)
+            {
+                found =true;
+                p1=p;
+                break;
+            }
+        }
+        if(found)
+        {
+            for (int i = 0; i < UserManager.users.get(0).getPosts().size(); i++) {
+                if (UserManager.users.get(0).getPosts().get(i).getContent().equals(content)) {
+                    UserManager.users.get(0).getPosts().set(i,p1);
+                    break;
+                }
+            }
+        }else {
+            Post post = new Post(postId, this.id, content,privacy);
+            posts.add(0, post);
+        }
     }
     public void createConversation(int conversationId ,int senderId, int participentId){
         Conversation conversation = new Conversation(conversationId, senderId, participentId);
@@ -64,22 +84,16 @@ public class User implements Serializable {
     public String getName() {
         return name;
     }
-
     public String getEmail() {
         return email;
     }
-
     public String getPassword() {
         return password;
     }
-
     public String getBirthDate() {
         return birthdate;
     }
-    public List<Post> getPosts() {
-       return posts;
-
-    }
+    public List<Post> getPosts() { return posts; }
     public List<Conversation> getConversations() {
         return conversations;
     }
@@ -88,5 +102,8 @@ public class User implements Serializable {
     }
     public void setConversations(ArrayList<Conversation> conversations) {
         this.conversations = conversations;
+    }
+    public ArrayList<Notification> getNotifications() {
+        return notifications;
     }
 }

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="432.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.CommentController">
+    <children>
+        <HBox alignment="CENTER_LEFT" prefWidth="432.0">
+            <children>
+                <Label fx:id="CommentLabel" prefWidth="248.0" style="-fx-background-radius: 20; -fx-background-color: #949494;" wrapText="true">
+                    <font>
+                        <Font name="Segoe UI Semibold" size="18.0" />
+                    </font>
+                    <padding>
+                        <Insets bottom="10.0" left="15.0" top="10.0" />
+                    </padding>
+                </Label>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="105.0">
+                    <children>
+                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../Images/likeIcon.png" />
+                            </image>
+                        </ImageView>
+                    </children></HBox>
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="70.0">
+                    <children>
+                        <Label prefHeight="41.0" prefWidth="64.0" text="nb of likes">
+                            <font>
+                                <Font size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+            <padding>
+                <Insets bottom="10.0" left="5.0" top="10.0" />
+            </padding>
+        </HBox>
+        <VBox fx:id="ReplyContainer" layoutY="70.0" prefWidth="432.0" />
+    </children>
+    <padding>
+        <Insets right="10.0" />
+    </padding>
+</Pane>

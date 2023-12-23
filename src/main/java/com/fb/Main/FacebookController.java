@@ -31,7 +31,7 @@ public class FacebookController implements Initializable {
     @FXML
     private TextField PostTextField;
     @FXML
-    private VBox postsContainer;
+    private VBox postsContainer, HomeNotificationContainer;
     @FXML
     private RadioButton PublicRadioButton, FriendsRadioButton;
     @FXML
@@ -165,7 +165,6 @@ public class FacebookController implements Initializable {
             }
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getUserName();
@@ -187,6 +186,22 @@ public class FacebookController implements Initializable {
                     postsContainer.getChildren().add(postNode);
                 }
             }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(UserManager.users.get(0).getNotifications() != null){
+                for(Notification n : UserManager.users.get(0).getNotifications()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Notification.fxml"));
+                    Parent notificationNode = fxmlLoader.load();
+                    NotificationController notificationController = fxmlLoader.getController();
+                    notificationController.setNotificationData(n);
+                    HomeNotificationContainer.getChildren().add(notificationNode);
+                }
+            }
+
         }
         catch (IOException e) {
             throw new RuntimeException(e);

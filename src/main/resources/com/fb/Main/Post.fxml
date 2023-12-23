@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -159,21 +160,23 @@
          <children>
             <ScrollPane hbarPolicy="NEVER" prefHeight="120.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A;" vbarPolicy="NEVER">
                <content>
-                  <VBox prefHeight="183.0" prefWidth="496.0" style="-fx-background-color: #5A5A5A;">
-                     <padding>
-                        <Insets left="10.0" />
-                     </padding>
-                     <children>
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                        <Button mnemonicParsing="false" text="Button" />
-                     </children>
-                  </VBox>
+                  <VBox fx:id="commentTextContainer" prefHeight="183.0" prefWidth="496.0" style="-fx-background-color: #5A5A5A;" />
                </content>
             </ScrollPane>
          </children>
+      </HBox>
+      <HBox fx:id="commentEnterTextContainer" alignment="CENTER" onMouseReleased="#onCommentReleased" prefHeight="68.0" prefWidth="453.0" style="-fx-background-color: #5A5A5A;" visible="false">
+         <children>
+            <TextField fx:id="C_RTextField" prefHeight="41.0" prefWidth="355.0" style="-fx-background-radius: 15;" />
+            <HBox alignment="CENTER" prefHeight="68.0" prefWidth="61.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#AddComment" text="Button" />
+               </children>
+            </HBox>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
       </HBox>
    </children>
 </VBox>

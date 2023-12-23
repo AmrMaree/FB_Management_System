@@ -21,15 +21,15 @@ public class Post {
         this.likers = new ArrayList<>();
     }
 
-    public void addComment(int commenterId, String text) {
-        comments.add(new Comment(commenterId, text));
+    public void addComment(Comment comment) {
+        comments.add(comment);
     }
 
     public void addLiker(int liker) {
         boolean found = false;
         for(int l : likers){
             if(l == liker){
-               found = true;
+                found = true;
             }
         }
         if(!found){
@@ -56,6 +56,9 @@ public class Post {
     }
     public int getUserId() {
         return userId;
+    }
+    public ArrayList<Comment> getComments() {
+        return comments;
     }
 
 }

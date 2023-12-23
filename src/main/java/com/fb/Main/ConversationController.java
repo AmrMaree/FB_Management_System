@@ -65,7 +65,6 @@ public class ConversationController implements Initializable {
     {
         System.exit(0);
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         Messages = (ArrayList<Message>) UserManager.users.get(0).getConversations().get(0).getMessages();

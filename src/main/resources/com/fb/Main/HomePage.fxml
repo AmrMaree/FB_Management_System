@@ -314,6 +314,7 @@
    <right>
       <VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="710.0" prefWidth="299.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
+            <VBox fx:id="HomeNotificationContainer" prefHeight="33.0" prefWidth="299.0" />
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="350.0">
                <children>
                   <ImageView accessibleRole="BUTTON" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">
@@ -412,4 +413,4 @@
          </padding>
       </VBox>
    </right>
-</BorderPane>
+   </BorderPane>
