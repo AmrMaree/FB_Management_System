@@ -20,6 +20,15 @@
             "replies": [],
             "likers": [],
             "NumberOfLikes": 0
+          },
+          {
+            "id": 1,
+            "userId": 1,
+            "postId": 7,
+            "text": "",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
           }
         ],
         "taggedUsers": [],
@@ -47,7 +56,7 @@
         "likers": [
           1
         ],
-        "NumberOfLikes": 4
+        "NumberOfLikes": 5
       },
       {
         "id": 5,
@@ -59,7 +68,7 @@
         "likers": [
           1
         ],
-        "NumberOfLikes": 2
+        "NumberOfLikes": 3
       },
       {
         "id": 4,
@@ -70,7 +79,7 @@
         "likers": [
           1
         ],
-        "NumberOfLikes": 2
+        "NumberOfLikes": 3
       },
       {
         "id": 3,

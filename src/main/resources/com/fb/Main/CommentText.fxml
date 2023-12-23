@@ -21,22 +21,19 @@
                         <Insets bottom="10.0" left="15.0" top="10.0" />
                     </padding>
                 </Label>
-                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="105.0">
-                    <children>
-                        <ImageView fitHeight="50.0" fitWidth="60.0" pickOnBounds="true" preserveRatio="true">
+                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="159.0">
+               <children>
+                        <ImageView fitHeight="47.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@../../../Images/likeIcon.png" />
                             </image>
                         </ImageView>
-                    </children></HBox>
-                <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="70.0">
-                    <children>
-                        <Label prefHeight="41.0" prefWidth="64.0" text="nb of likes">
+                        <Label prefHeight="64.0" prefWidth="87.0" text="nb of likes">
                             <font>
-                                <Font size="14.0" />
+                                <Font size="18.0" />
                             </font>
                         </Label>
-                    </children>
+               </children>
                 </HBox>
             </children>
             <padding>
