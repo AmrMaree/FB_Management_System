@@ -14,7 +14,6 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import org.controlsfx.control.textfield.AutoCompletionBinding;
 import org.controlsfx.control.textfield.TextFields;
-
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
