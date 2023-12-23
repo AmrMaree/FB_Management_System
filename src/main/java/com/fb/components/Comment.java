@@ -17,8 +17,8 @@ public class Comment {
         this.replies = new ArrayList<>();
         this.likers = new ArrayList<>();
     }
-    public void addReply(User replier, String text) {
-        replies.add(new Reply(replier, text));
+    public void addReply(int replierId, String text) {
+        replies.add(new Reply(replierId, text));
     }
     public void addLiker(int likerId) {
         likers.add(likerId);

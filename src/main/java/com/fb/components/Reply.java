@@ -4,12 +4,12 @@ import java.util.ArrayList;
 public class Reply {
     private static int nextId = 1;
     final private int id;
-    private User author;
+    private int userId;
     private String text;
     private ArrayList<User> likers;
-    public Reply(User author, String text) {
+    public Reply(int userId, String text) {
         this.id = nextId++;
-        this.author = author;
+        this.userId = userId;
         this.text = text;
         this.likers = new ArrayList<>();
     }

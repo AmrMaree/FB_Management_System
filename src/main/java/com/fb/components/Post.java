@@ -7,10 +7,9 @@ public class Post {
     private String content;
     private String privacy;
     private ArrayList<Comment> comments;
-    private ArrayList<User> taggedUsers;
+    private ArrayList<Integer> taggedUsers;
     private ArrayList<Integer> likers;
     private int NumberOfLikes = 0;
-
     public Post(int id, int userId, String content, String privacy) {
         this.id = id;
         this.userId = userId;
@@ -20,11 +19,9 @@ public class Post {
         this.taggedUsers = new ArrayList<>();
         this.likers = new ArrayList<>();
     }
-
     public void addComment(Comment comment) {
         comments.add(comment);
     }
-
     public void addLiker(int liker) {
         boolean found = false;
         for(int l : likers){
@@ -32,19 +29,17 @@ public class Post {
                 found = true;
             }
         }
-        if(!found){
+        if(!found) {
             likers.add(liker);
+            NumberOfLikes++;
         }
-        NumberOfLikes++;
     }
-
-    public void tagUser(User user) {
-        taggedUsers.add(user);
+    public void tagUser(int userId) {
+        taggedUsers.add(userId);
     }
     public int getId() {
         return id;
     }
-
     public String getContent() {
         return content;
     }
@@ -60,5 +55,4 @@ public class Post {
     public ArrayList<Comment> getComments() {
         return comments;
     }
-
 }

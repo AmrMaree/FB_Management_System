@@ -15,10 +15,8 @@ public class MessageController {
     private Label ChatLabel;
     @FXML
     private HBox chatHbox;
-
     public void setMessageData(Message message, boolean isCurrentUser) {
         ChatLabel.setText(message.getMessageContent());
-
         if (isCurrentUser) {
             chatHbox.setStyle("-fx-alignment: CENTER-RIGHT;");
             ChatLabel.setStyle( "-fx-background-color: #7d55bc;"+"-fx-background-radius: 20;");

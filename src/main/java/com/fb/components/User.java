@@ -4,8 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class User {
     final private int id;
     private String email;
     private String name;
@@ -39,7 +38,6 @@ public class User implements Serializable {
         }
         if (!found) {
             friends.add(friend);
-
         }
     }
     public void receiveNotification(User user,Notification notification) {
@@ -88,8 +86,8 @@ public class User implements Serializable {
             posts.add(0, post);
         }
     }
-    public void createConversation(int conversationId ,int senderId, int participentId){
-        Conversation conversation = new Conversation(conversationId, senderId, participentId);
+    public void createConversation(int conversationId ,int senderId, String name){
+        Conversation conversation = new Conversation(conversationId, senderId, name);
         conversations.add(conversation);
     }
     public int getId() {

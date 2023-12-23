@@ -46,7 +46,9 @@
             </Button>
             <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="798.0">
                <children>
-                  <Button fx:id="OpenChat1" mnemonicParsing="false" onAction="#OpenChat" text="OpenChat" />
+                  <Button mnemonicParsing="false" onAction="#OpenChat" text="open chat" />
+                  <Button mnemonicParsing="false" onAction="#addParticipent" text="add friend" />
+                  <Button mnemonicParsing="false" onAction="#CreateChat" text="Create chat" />
                </children></HBox>
             <Button mnemonicParsing="false" onAction="#CloseWindow" prefHeight="46.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="X">
                <font>
