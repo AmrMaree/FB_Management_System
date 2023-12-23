@@ -19,20 +19,21 @@
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
-            <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../../../Images/buzzIcon.png" />
-               </image>
-               <HBox.margin>
-                  <Insets right="20.0" />
-               </HBox.margin>
-            </ImageView>
-            <TextField alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="258.0" promptText="Search " style="-fx-background-color: #8C8C8C;">
+            <Button mnemonicParsing="false" onAction="#switchToHome" prefHeight="22.0" prefWidth="37.0" style="-fx-background-color: transparent;">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../Images/buzzIcon.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            <TextField fx:id="SearchTextField1" alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="258.0" promptText="Search " style="-fx-background-color: #8C8C8C;">
                <font>
                   <Font name="System Bold" size="14.0" />
                </font>
             </TextField>
-            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
+            <Button alignment="CENTER" contentDisplay="CENTER" graphicTextGap="0.0" mnemonicParsing="false" onAction="#switchToProfilePage" prefHeight="45.0" prefWidth="50.0" style="-fx-background-color: #50378d;">
                <graphic>
                   <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>

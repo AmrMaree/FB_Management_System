@@ -83,9 +83,6 @@ public class PostController implements Initializable{
                 commentController.setCommentData(comment);
             }
             commentTextContainer.getChildren().add(CommentNode);
-            int index = commentTextContainer.getChildren().indexOf(CommentNode);
-            System.out.println("Index of CommentNode: " + index);
-
         }
         catch (IOException e) {
             throw new RuntimeException(e);
@@ -96,13 +93,14 @@ public class PostController implements Initializable{
         for(Post post:UserManager.users.get(0).getPosts()){
             if(post.getContent().equals(PostCaption.getText())){
                 post.addLiker(UserManager.users.get(0).getId());
-                //likes.setText(String.valueOf(post.getNumberOfLikes()));
+                break;
             }
         }
     }
     public void setPostData (Post post){
         UsernameLabel.setText(UserManager.users.get(0).getName());
         PostCaption.setText(post.getContent());
+        likes.setText(String.valueOf(post.getNumberOfLikes()));
     }
 
     @Override

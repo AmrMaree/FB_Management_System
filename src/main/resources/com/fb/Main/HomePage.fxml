@@ -64,7 +64,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox layoutX="-1.0" prefHeight="848.0" prefWidth="342.0" style="-fx-background-color: #222222;">
+                  <VBox layoutX="-1.0" layoutY="2.0" prefHeight="848.0" prefWidth="342.0" style="-fx-background-color: #222222;">
                      <children>
                         <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="316.0" spacing="10.0">
                            <children>
@@ -97,6 +97,7 @@
                               </Label>
                            </children>
                         </HBox>
+                        <VBox fx:id="friendsContainer" prefHeight="200.0" prefWidth="100.0" />
                      </children>
                      <padding>
                         <Insets top="20.0" />

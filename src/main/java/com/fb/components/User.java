@@ -29,21 +29,39 @@ public class User implements Serializable {
         this.conversations = new ArrayList<>();
         this.notifications = new ArrayList<>();
     }
-    public void addFriend(Friendship friend){
-        friends.add(friend);
-    }
-
-    public void receiveNotification(User user,Notification notification) {
-        if (notifications == null) {
-            notifications = new ArrayList<>();
-        }
-        notifications.add(0,notification);
-        for (int i = 0; i < UserManager.users.size(); i++) {
-            if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
-                UserManager.users.set(i, user);
+    public void addFriend(Friendship friend) {
+        boolean found = false;
+        for (Friendship f : UserManager.users.get(0).getFriends()) {
+            if (f.equals(friend)) {
+                found = true;
                 break;
             }
         }
+        if (!found) {
+            friends.add(friend);
+
+        }
+    }
+    public void receiveNotification(User user,Notification notification) {
+        boolean found =false;
+        if (notifications == null) {
+            notifications = new ArrayList<>();
+        }
+        for(Notification n: user.getNotifications()){
+            if (n.equals(notification)){
+                found = true;
+                break;
+            }
+        }
+        if(!found) {
+            notifications.add(0, notification);
+        }
+//        for (int i = 0; i < UserManager.users.size(); i++) {
+//            if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
+//                UserManager.users.set(i, user);
+//                break;
+//            }
+//        }
     }
     public void createPost(int postId , String content, String privacy) {
         boolean found= false;
