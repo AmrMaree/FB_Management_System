@@ -104,6 +104,7 @@
                            </children>
                         </HBox>
                         <Button mnemonicParsing="false" onAction="#friendRequest" prefHeight="26.0" prefWidth="334.0" text="Send Friend Request" />
+                        <VBox fx:id="friendsContainer" prefHeight="200.0" prefWidth="100.0" />
                      </children>
                      <padding>
                         <Insets top="20.0" />
