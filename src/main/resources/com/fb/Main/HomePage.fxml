@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="760.0" prefWidth="1203.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1203.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
@@ -64,7 +64,7 @@
          <content>
             <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
                <children>
-                  <VBox layoutX="-1.0" layoutY="2.0" prefHeight="848.0" prefWidth="342.0" style="-fx-background-color: #222222;">
+                  <VBox layoutX="-1.0" prefHeight="850.0" prefWidth="342.0" style="-fx-background-color: #222222;">
                      <children>
                         <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="316.0" spacing="10.0">
                            <children>
@@ -114,7 +114,7 @@
             <Pane prefHeight="850.0" prefWidth="46.0" HBox.hgrow="ALWAYS" />
             <ScrollPane hbarPolicy="NEVER" prefHeight="710.0" prefWidth="1169.0" style="-fx-background-color: #50378d;" vbarPolicy="NEVER">
                <content>
-                  <VBox fx:id="postsContainer" alignment="TOP_CENTER" prefHeight="773.0" prefWidth="571.0" spacing="20.0" style="-fx-background-color: #222222;">
+                  <VBox fx:id="postsContainer" alignment="TOP_CENTER" prefHeight="850.0" prefWidth="571.0" spacing="20.0" style="-fx-background-color: #222222;">
                      <children>
                         <VBox prefHeight="128.0" prefWidth="551.0" spacing="10.0" style="-fx-background-color: #222222; -fx-background-radius: 15;">
                            <children>
@@ -250,11 +250,15 @@
                                                                   </HBox>
                                                                   <HBox alignment="CENTER" prefWidth="70.0">
                                                                      <children>
-                                                                        <ImageView fitHeight="40.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
-                                                                           <image>
-                                                                              <Image url="@../../../Images/FriendTag.png" />
-                                                                           </image>
-                                                                        </ImageView>
+                                                                        <Button mnemonicParsing="false" onAction="#TagFriend" style="-fx-background-color: transparent;">
+                                                                           <graphic>
+                                                                              <ImageView fitHeight="40.0" fitWidth="63.0" pickOnBounds="true" preserveRatio="true">
+                                                                                 <image>
+                                                                                    <Image url="@../../../Images/FriendTag.png" />
+                                                                                 </image>
+                                                                              </ImageView>
+                                                                           </graphic>
+                                                                        </Button>
                                                                      </children>
                                                                   </HBox>
                                                                   <HBox alignment="CENTER" prefWidth="70.0">
@@ -313,9 +317,9 @@
       </HBox>
    </center>
    <right>
-      <VBox nodeOrientation="RIGHT_TO_LEFT" prefHeight="710.0" prefWidth="299.0" spacing="10.0" BorderPane.alignment="CENTER">
+      <VBox nodeOrientation="RIGHT_TO_LEFT" prefWidth="299.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <VBox fx:id="HomeNotificationContainer" prefHeight="33.0" prefWidth="299.0" />
+            <VBox fx:id="HomeNotificationContainer" prefWidth="299.0" />
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="350.0">
                <children>
                   <ImageView accessibleRole="BUTTON" fitWidth="37.0" pickOnBounds="true" preserveRatio="true">

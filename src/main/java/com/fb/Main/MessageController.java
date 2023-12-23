@@ -26,6 +26,4 @@ public class MessageController {
             chatHbox.setStyle("-fx-alignment: CENTER-LEFT;");
         }
     }
-
-
 }

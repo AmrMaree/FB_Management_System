@@ -45,6 +45,21 @@ public class FacebookController implements Initializable {
             usersName.add(user.getName());
         }
     }
+
+    public void TagFriend(ActionEvent event){
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagFriends.fxml"));
+            Parent root = loader.load();
+            Stage newStage = new Stage();
+            newStage.setScene(new Scene(root));
+            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
+            newStage.setResizable(false);
+            newStage.getIcons().add(icon);
+            newStage.show();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
     public void SignOut(ActionEvent event){
         try {
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();

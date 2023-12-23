@@ -26,7 +26,7 @@ public class ProfilePageController implements Initializable{
     @FXML
     private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
-    private VBox ProfilePostContainer, NotificationContainer, friendsContainer;
+    private VBox ProfilePostContainer,friendsContainer;
     @FXML
     private TextField SearchTextField1;
     ArrayList<Post> posts;
@@ -102,21 +102,6 @@ public class ProfilePageController implements Initializable{
             String selectedValue = event.getCompletion();
             SearchedUser = selectedValue;
         });
-        try {
-            if(UserManager.users.get(0).getNotifications() != null){
-                for(Notification n :UserManager.users.get(0).getNotifications()){
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("Notification.fxml"));
-                    Parent notificationNode = fxmlLoader.load();
-                    NotificationController notificationController = fxmlLoader.getController();
-                    notificationController.setNotificationData(n);
-                    NotificationContainer.getChildren().add(notificationNode);
-                }
-            }
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
         try {
             if(UserManager.users.get(0).getFriends() != null){
                 for(Friendship f : UserManager.users.get(0).getFriends()){

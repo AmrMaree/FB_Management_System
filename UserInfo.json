@@ -44,8 +44,10 @@
           }
         ],
         "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0
+        "likers": [
+          1
+        ],
+        "NumberOfLikes": 4
       },
       {
         "id": 5,
@@ -100,6 +102,21 @@
       }
     ],
     "friends": [
+      {
+        "userId": 1,
+        "friendId": 3,
+        "type": "regular"
+      },
+      {
+        "userId": 1,
+        "friendId": 2,
+        "type": "regular"
+      },
+      {
+        "userId": 1,
+        "friendId": 2,
+        "type": "regular"
+      },
       {
         "userId": 1,
         "friendId": 3,
@@ -226,6 +243,38 @@
           2
         ],
         "messages": []
+      },
+      {
+        "id": 4,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 5,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 6,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 7,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
       }
     ],
     "notifications": []
@@ -251,6 +300,16 @@
       }
     ],
     "friends": [
+      {
+        "userId": 2,
+        "friendId": 1,
+        "type": "regular"
+      },
+      {
+        "userId": 2,
+        "friendId": 1,
+        "type": "regular"
+      },
       {
         "userId": 2,
         "friendId": 1,
@@ -358,6 +417,38 @@
           2
         ],
         "messages": []
+      },
+      {
+        "id": 3,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 4,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 5,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 6,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
       }
     ],
     "notifications": [
@@ -393,6 +484,11 @@
         "userId": 3,
         "friendId": 1,
         "type": "regular"
+      },
+      {
+        "userId": 3,
+        "friendId": 1,
+        "type": "regular"
       }
     ],
     "conversations": [
@@ -414,8 +510,8 @@
     ],
     "notifications": [
       {
-        "content": "amr sent you a friend request",
-        "senderId": 1,
+        "content": "eren sent you a friend request",
+        "senderId": 2,
         "receiverId": 3
       }
     ]

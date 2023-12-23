@@ -7,14 +7,19 @@ import com.fb.components.UserManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.HBox;
 
 public class NotificationController {
+    @FXML
+    private BorderPane NotificationBar;
     @FXML
     private Label NotificationLabel;
     public void setNotificationData(Notification notification){
         NotificationLabel.setText(notification.getContent());
     }
     public void acceptFriend (ActionEvent event){
+        NotificationBar.setVisible(false);
         int spaceIndex = NotificationLabel.getText().indexOf(' ');
         String userFriendName = NotificationLabel.getText().substring(0, spaceIndex).trim();
         User userFriend = UserManager.getUserByUserName(userFriendName);
@@ -22,5 +27,9 @@ public class NotificationController {
         Friendship friendship2 = new Friendship(userFriend.getId(),UserManager.users.get(0).getId(),"regular");
         UserManager.users.get(0).addFriend(friendship);
         userFriend.addFriend(friendship2);
+    }
+    public void DeclineFriend()
+    {
+        NotificationBar.setVisible(false);
     }
 }
