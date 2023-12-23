@@ -31,7 +31,17 @@
         "userId": 1,
         "content": "freedom",
         "privacy": "public",
-        "comments": [],
+        "comments": [
+          {
+            "id": 1,
+            "userId": 1,
+            "postId": 5,
+            "text": "sf",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
+          }
+        ],
         "taggedUsers": [],
         "likers": [
           1
@@ -334,6 +344,40 @@
         ]
       }
     ],
+    "notifications": []
+  },
+  {
+    "id": 4,
+    "email": "joe@gmail.com",
+    "name": "joe",
+    "password": "P@ssw0rd",
+    "birthdate": "2023-11-28",
+    "posts": [],
+    "friends": [],
+    "conversations": [],
+    "notifications": []
+  },
+  {
+    "id": 5,
+    "email": "JOE@gmail.com",
+    "name": "joe",
+    "password": "P@ssw0rd",
+    "birthdate": "2023-11-27",
+    "posts": [],
+    "friends": [],
+    "conversations": [],
+    "notifications": []
+  },
+  {
+    "id": 6,
+    "email": "joe@gmail.com",
+    "name": "",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [],
+    "friends": [],
+    "conversations": [],
     "notifications": []
   }
 ]

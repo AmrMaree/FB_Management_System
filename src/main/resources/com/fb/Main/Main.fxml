@@ -9,6 +9,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
@@ -50,7 +51,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label alignment="CENTER" layoutX="128.0" layoutY="44.0" prefHeight="133.0" prefWidth="413.0" text="Buzz" textAlignment="JUSTIFY" textFill="#3a2c71">
+      <Label alignment="CENTER" layoutX="128.0" layoutY="27.0" prefHeight="133.0" prefWidth="413.0" text="Buzz" textAlignment="JUSTIFY" textFill="#3a2c71">
          <font>
             <Font name="Magneto Bold" size="80.0" />
          </font>
@@ -109,5 +110,14 @@
             <Font name="Gadugi Bold" size="20.0" />
          </font>
       </Button>
+      <HBox fx:id="loginCredentials" layoutX="-5.0" layoutY="132.0" style="-fx-background-color: transparent;" visible="false">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="57.0" prefWidth="678.0" text="Please check your Credentials" textFill="RED">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

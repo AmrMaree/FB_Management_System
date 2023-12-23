@@ -13,12 +13,13 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.paint.Color?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane prefHeight="530.0" prefWidth="1138.0" style="-fx-background-color: #5A5A5A;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.Controller">
    <children>
-      <ImageView fitHeight="567.0" fitWidth="1208.0" layoutX="-36.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="567.0" fitWidth="1208.0" layoutX="-37.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../../../Images/SignUpBg.png" />
          </image>
@@ -31,19 +32,19 @@
          <font>
             <Font size="14.0" />
          </font></TextField>
-      <PasswordField fx:id="PasswordField" layoutX="531.0" layoutY="226.0" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+      <PasswordField fx:id="PasswordField" layoutX="529.0" layoutY="237.0" prefHeight="30.0" prefWidth="173.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
          <font>
             <Font size="14.0" />
          </font></PasswordField>
-      <PasswordField fx:id="RepasswordField" layoutX="531.0" layoutY="279.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
+      <PasswordField fx:id="RepasswordField" layoutX="529.0" layoutY="289.0" style="-fx-background-color: transparent; -fx-border-width: 0;">
          <font>
             <Font size="14.0" />
          </font></PasswordField>
-      <RadioButton fx:id="MaleRadioButton" layoutX="543.0" layoutY="348.0" mnemonicParsing="false" onAction="#getGender" text="Male">
+      <RadioButton fx:id="MaleRadioButton" layoutX="544.0" layoutY="356.0" mnemonicParsing="false" onAction="#getGender" text="Male">
          <toggleGroup>
             <ToggleGroup fx:id="Gender" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="FemaleRadioButton" layoutX="627.0" layoutY="348.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
+      <RadioButton fx:id="FemaleRadioButton" layoutX="628.0" layoutY="356.0" mnemonicParsing="false" onAction="#getGender" text="Female" toggleGroup="$Gender" />
       <DatePicker fx:id="myDatePicker" editable="false" layoutX="529.0" layoutY="397.0" prefHeight="25.0" prefWidth="155.0" style="-fx-background-color: #5A5A5A; -fx-border-width: 0;" />
       <Button fx:id="SignUpButton" layoutX="550.0" layoutY="449.0" mnemonicParsing="false" onAction="#SignUp" style="-fx-background-color: transparent; -fx-border-color: #3a2c71;" text="Sign up" textFill="#1716169c">
          <effect>
@@ -100,7 +101,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="400.0" layoutY="299.0" text="Confirm Password" textFill="#171616ab">
+      <Label layoutX="398.0" layoutY="309.0" text="Confirm Password" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -108,7 +109,7 @@
             <DropShadow />
          </effect>
       </Label>
-      <Label layoutX="436.0" layoutY="346.0" text="Gender" textFill="#171616ab">
+      <Label layoutX="437.0" layoutY="354.0" text="Gender" textFill="#171616ab">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -124,19 +125,19 @@
             <DropShadow />
          </effect>
       </Label>
-      <Separator layoutX="533.0" layoutY="166.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="531.0" layoutY="175.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="531.0" layoutY="214.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="531.0" layoutY="225.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="533.0" layoutY="260.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="531.0" layoutY="271.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
-      <Separator layoutX="531.0" layoutY="309.0" prefHeight="3.0" prefWidth="169.0">
+      <Separator layoutX="529.0" layoutY="319.0" prefHeight="3.0" prefWidth="169.0">
          <effect>
             <DropShadow />
          </effect></Separator>
@@ -188,5 +189,59 @@
             <DropShadow />
          </effect>
       </Button>
+      <HBox fx:id="EmailValidation" alignment="CENTER" layoutX="730.0" layoutY="199.0" prefHeight="30.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label prefHeight="20.0" prefWidth="200.0" text="Please Enter a valid E-mail" textFill="#d00d0d">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="PasswordValidation" alignment="CENTER" layoutX="730.0" layoutY="247.0" prefHeight="30.0" prefWidth="237.0" visible="false">
+         <children>
+            <Label prefHeight="25.0" prefWidth="239.0" text="Please Enter a valid Password" textFill="#da0e0e">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="ConfirmValidation" alignment="CENTER" layoutX="730.0" layoutY="304.0" prefHeight="30.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label prefHeight="17.0" prefWidth="209.0" text="Confirm your Password" textFill="#d00101">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="GenderValidation" alignment="CENTER" layoutX="730.0" layoutY="349.0" prefHeight="30.0" prefWidth="200.0" visible="false">
+         <children>
+            <Label prefHeight="17.0" prefWidth="209.0" text="Please Enter your Gender" textFill="#d00101">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="NameValidation" alignment="CENTER" layoutX="730.0" layoutY="157.0" prefHeight="30.0" prefWidth="237.0" visible="false">
+         <children>
+            <Label prefHeight="25.0" prefWidth="257.0" text="Please Enter a valid Username" textFill="#d00d0d">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <HBox fx:id="DateValidation" alignment="CENTER" layoutX="730.0" layoutY="395.0" prefHeight="30.0" prefWidth="250.0" visible="false">
+         <children>
+            <Label prefHeight="25.0" prefWidth="255.0" text="Please Enter your Birthdate" textFill="#d00101">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
    </children>
 </AnchorPane>

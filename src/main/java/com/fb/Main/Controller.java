@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -27,42 +28,64 @@ public class Controller {
     @FXML
     private DatePicker myDatePicker;
     @FXML
-    private RadioButton MaleRadioButton,FemaleRadioButton;
+    private RadioButton MaleRadioButton, FemaleRadioButton;
     @FXML
     private TextField LoginEmailTextField;
     @FXML
     private PasswordField LoginPasswordField;
+    @FXML
+    private HBox loginCredentials;
+    @FXML
+    private HBox EmailValidation;
+    @FXML
+    private HBox PasswordValidation;
+    @FXML
+    private HBox ConfirmValidation;
+    @FXML
+    private HBox GenderValidation;
+    @FXML
+    private HBox NameValidation;
+    @FXML
+    private HBox DateValidation;
+
+
     private Stage stage;
     private Scene scene;
     private Parent root;
     private String gender;
-    public void CloseWindow (ActionEvent event)
-    {
+
+    public void CloseWindow(ActionEvent event) {
         System.exit(0);
     }
-    public void switchToSignUp (ActionEvent event) throws IOException {
+
+    public void switchToSignUp(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("SignUp.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToLogin (ActionEvent event) throws IOException {
+
+    public void switchToLogin(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-        stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToHome (ActionEvent event) throws IOException {
-        if(UserManager.checkLogin(LoginEmailTextField.getText(),LoginPasswordField.getText())){
+
+    public void switchToHome(ActionEvent event) throws IOException {
+        if (UserManager.checkLogin(LoginEmailTextField.getText(), LoginPasswordField.getText())) {
             root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-            stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+        } else {
+            loginCredentials.setVisible(true);
         }
     }
+
     public void getGender(ActionEvent event){
         if(MaleRadioButton.isSelected()){
             gender = "M";
@@ -72,7 +95,7 @@ public class Controller {
         }
     }
     public void SignUp(ActionEvent event) throws IOException {
-        User user = UserManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText());
+        User user = UserManager.createAccount(UserManager.getGreatestUserId()+1,NameTextField.getText(),EmailTextField.getText(),PasswordField.getText(),gender,myDatePicker.getValue().toString(),RepasswordField.getText(),EmailValidation,PasswordValidation,ConfirmValidation,GenderValidation,NameValidation,DateValidation);
         if(user != null){
             switchToLogin(event);
         }
