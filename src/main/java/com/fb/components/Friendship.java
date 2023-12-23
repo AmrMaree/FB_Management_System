@@ -1,23 +1,23 @@
 package com.fb.components;
 
-enum FriendType {
-    REGULAR,
-    RESTRICTED
-}
-class Friendship {
-    private User friend;
-    private FriendType type;
+public class Friendship {
+    private int userId;
+    private int friendId;
+    private String type;
 
-    public Friendship(User friend, FriendType type) {
-        this.friend = friend;
+    public Friendship(int userId ,int friendId, String type) {
+        this.userId = userId;
+        this.friendId = friendId;
         this.type = type;
     }
 
-    public User getFriend() {
-        return friend;
+    public int getFriendId() {
+        return friendId;
     }
-
-    public FriendType getType() {
+    public int getUserId() {
+        return userId;
+    }
+    public String getType() {
         return type;
     }
 }

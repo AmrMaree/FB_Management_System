@@ -16,7 +16,7 @@
    <bottom>
       <HBox alignment="CENTER" prefWidth="210.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Accept" />
+            <Button mnemonicParsing="false" onAction="#acceptFriend" text="Accept" />
             <Button mnemonicParsing="false" text="Decline" />
          </children>
       </HBox>

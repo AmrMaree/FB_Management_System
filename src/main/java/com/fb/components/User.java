@@ -13,7 +13,7 @@ public class User implements Serializable {
     private String gender;
     private String birthdate;
     private ArrayList<Post> posts;
-    private ArrayList<Integer> friends;
+    private ArrayList<Friendship> friends;
     private ArrayList<Conversation> conversations;
     private ArrayList <Notification> notifications;
 
@@ -29,6 +29,9 @@ public class User implements Serializable {
         this.conversations = new ArrayList<>();
         this.notifications = new ArrayList<>();
     }
+    public void addFriend(Friendship friend){
+        friends.add(friend);
+    }
 
     public void receiveNotification(User user,Notification notification) {
         if (notifications == null) {
@@ -41,10 +44,6 @@ public class User implements Serializable {
                 break;
             }
         }
-    }
-    public void acceptFriendRequest(User RequestSender, User RequestAccepter){
-        friends.add(RequestSender.getId());
-        RequestSender.friends.add(id);
     }
     public void createPost(int postId , String content, String privacy) {
         boolean found= false;
@@ -97,7 +96,7 @@ public class User implements Serializable {
     public List<Conversation> getConversations() {
         return conversations;
     }
-    public List<Integer> getFriends() {
+    public List<Friendship> getFriends() {
         return friends;
     }
     public void setConversations(ArrayList<Conversation> conversations) {

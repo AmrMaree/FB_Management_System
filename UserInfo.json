@@ -1,5 +1,129 @@
 [
   {
+    "id": 2,
+    "email": "eren@gmail.com",
+    "name": "eren",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-27",
+    "posts": [
+      {
+        "id": 1,
+        "userId": 2,
+        "content": "hi amr",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [
+          2
+        ],
+        "NumberOfLikes": 2
+      }
+    ],
+    "friends": [
+      {
+        "userId": 2,
+        "friendId": 1,
+        "type": "regular"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": [
+          {
+            "id": 1,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "The ending was heartbreaking"
+          },
+          {
+            "id": 2,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "I know right :("
+          },
+          {
+            "id": 3,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "so sad :("
+          },
+          {
+            "id": 4,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "HI"
+          },
+          {
+            "id": 5,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "Hello"
+          },
+          {
+            "id": 6,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "Good Morning"
+          },
+          {
+            "id": 7,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi eren :)"
+          },
+          {
+            "id": 8,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          },
+          {
+            "id": 9,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "omg "
+          },
+          {
+            "id": 10,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hello "
+          },
+          {
+            "id": 11,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          },
+          {
+            "id": 12,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hey "
+          },
+          {
+            "id": 13,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "love you"
+          }
+        ]
+      }
+    ],
+    "notifications": [
+      {
+        "content": "amr sent you a friend request",
+        "senderId": 1,
+        "receiverId": 2
+      }
+    ]
+  },
+  {
     "id": 1,
     "email": "amr@gmail.com",
     "name": "amr",
@@ -78,7 +202,18 @@
         "NumberOfLikes": 0
       }
     ],
-    "friends": [],
+    "friends": [
+      {
+        "userId": 1,
+        "friendId": 3,
+        "type": "regular"
+      },
+      {
+        "userId": 1,
+        "friendId": 2,
+        "type": "regular"
+      }
+    ],
     "conversations": [
       {
         "id": 1,
@@ -204,7 +339,13 @@
         "NumberOfLikes": 1
       }
     ],
-    "friends": [],
+    "friends": [
+      {
+        "userId": 3,
+        "friendId": 1,
+        "type": "regular"
+      }
+    ],
     "conversations": [
       {
         "id": 1,
@@ -222,118 +363,12 @@
         ]
       }
     ],
-    "notifications": []
-  },
-  {
-    "id": 2,
-    "email": "eren@gmail.com",
-    "name": "eren",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-11-27",
-    "posts": [
+    "notifications": [
       {
-        "id": 1,
-        "userId": 2,
-        "content": "hi amr",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          2
-        ],
-        "NumberOfLikes": 2
+        "content": "amr sent you a friend request",
+        "senderId": 1,
+        "receiverId": 3
       }
-    ],
-    "friends": [],
-    "conversations": [
-      {
-        "id": 1,
-        "participants": [
-          1,
-          2
-        ],
-        "messages": [
-          {
-            "id": 1,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "The ending was heartbreaking"
-          },
-          {
-            "id": 2,
-            "senderId": 2,
-            "recipientId": 1,
-            "content": "I know right :("
-          },
-          {
-            "id": 3,
-            "senderId": 2,
-            "recipientId": 1,
-            "content": "so sad :("
-          },
-          {
-            "id": 4,
-            "senderId": 2,
-            "recipientId": 1,
-            "content": "HI"
-          },
-          {
-            "id": 5,
-            "senderId": 2,
-            "recipientId": 1,
-            "content": "Hello"
-          },
-          {
-            "id": 6,
-            "senderId": 2,
-            "recipientId": 1,
-            "content": "Good Morning"
-          },
-          {
-            "id": 7,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "hi eren :)"
-          },
-          {
-            "id": 8,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "hi"
-          },
-          {
-            "id": 9,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "omg "
-          },
-          {
-            "id": 10,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "hello "
-          },
-          {
-            "id": 11,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "hi"
-          },
-          {
-            "id": 12,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "hey "
-          },
-          {
-            "id": 13,
-            "senderId": 1,
-            "recipientId": 2,
-            "content": "love you"
-          }
-        ]
-      }
-    ],
-    "notifications": []
+    ]
   }
 ]
