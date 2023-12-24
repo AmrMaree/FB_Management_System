@@ -23,3 +23,4 @@ abstract public class SocialContent {
         return content;
     }
 }
+

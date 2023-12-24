@@ -9,10 +9,9 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.text.Font?>
 
-
-<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="342.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="109.0" prefWidth="342.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FriendHomeController">
     <children>
-        <Label fx:id="friendLabel" prefHeight="78.0" prefWidth="274.0" style="-fx-border-color: #CBC3E3; -fx-border-width: 2; -fx-border-radius: 15;">
+        <Label prefHeight="78.0" prefWidth="274.0" style="-fx-border-color: #CBC3E3; -fx-border-width: 2; -fx-border-radius: 15;">
             <graphic>
                 <HBox alignment="CENTER" prefHeight="63.0" prefWidth="248.0">
                     <children>
@@ -27,12 +26,12 @@
                         </HBox>
                         <HBox alignment="CENTER_RIGHT" prefHeight="56.0" prefWidth="200.0">
                             <children>
-                                <Label prefHeight="45.0" prefWidth="106.0" text="Friends" textFill="#dbdbdb">
+                                <Label fx:id="friendLabel" prefHeight="45.0" prefWidth="106.0" text="Friends" textFill="#dbdbdb">
                                     <font>
                                         <Font size="24.0" />
                                     </font>
                                 </Label>
-                                <Button mnemonicParsing="false" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: transparent; -fx-border-color: #6958a4; -fx-border-radius: 10; -fx-border-width: 2;" text="Restrict" textFill="#6958a4">
+                                <Button fx:id="restrictedButton" mnemonicParsing="false" onAction="#restrictFriend" prefHeight="34.0" prefWidth="80.0" style="-fx-background-color: transparent; -fx-border-color: #6958a4; -fx-border-radius: 10; -fx-border-width: 2;" text="Restrict" textFill="#6958a4">
                                     <font>
                                         <Font name="System Bold" size="14.0" />
                                     </font>

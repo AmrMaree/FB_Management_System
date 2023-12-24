@@ -146,7 +146,7 @@
                                                                   </HBox>
                                                                   <HBox prefHeight="71.0" prefWidth="255.0">
                                                                      <children>
-                                                                        <Label prefHeight="69.0" prefWidth="104.0" text="Username" textFill="#ebe4e4">
+                                                                        <Label fx:id="UsernsamePost" prefHeight="69.0" prefWidth="104.0" text="Username" textFill="#ebe4e4">
                                                                            <font>
                                                                               <Font name="Segoe UI Semibold" size="18.0" />
                                                                            </font>

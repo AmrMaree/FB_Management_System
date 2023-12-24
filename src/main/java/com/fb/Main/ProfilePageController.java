@@ -46,10 +46,12 @@ public class ProfilePageController implements Initializable{
         UserNameLabel.setText(user.getName());
         BirthdateLabel.setText(user.getBirthDate());
         GenderLabel.setText((user.getGender().equals("M")? "Male" :"Female"));
-        for(Friendship f : UserManager.users.get(0).getFriends()){
-            if(f.getFriendId() == user.getId()){
-                friendRequestButton.setVisible(false);
-            }
+       if (UserManager.users.get(0).getFriends()!= null) {
+               for (Friendship f : UserManager.users.get(0).getFriends()) {
+                   if (f.getFriendId() == user.getId()) {
+                       friendRequestButton.setVisible(false);
+                   }
+               }
        }
         posts = (ArrayList<Post>) user.getPosts();
         try {
@@ -85,16 +87,18 @@ public class ProfilePageController implements Initializable{
         try {
             if(user.getFriends() != null){
                 for(Friendship f : user.getFriends()){
-                    for(Friendship f2: UserManager.users.get(0).getFriends()){
-                       if(f.getFriendId() == f2.getFriendId()){
-                           FXMLLoader fxmlLoader = new FXMLLoader();
-                           fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
-                           Parent friendNode = fxmlLoader.load();
-                           FriendController friendController = fxmlLoader.getController();
-                           friendController.setFriendLabelData(f);
-                           mutualFriendsContainer.getChildren().add(friendNode);
-                           break;
-                       }
+                    if (UserManager.users.get(0).getFriends()!= null) {
+                        for (Friendship f2 : UserManager.users.get(0).getFriends()) {
+                            if (f.getFriendId() == f2.getFriendId()) {
+                                FXMLLoader fxmlLoader = new FXMLLoader();
+                                fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                                Parent friendNode = fxmlLoader.load();
+                                FriendController friendController = fxmlLoader.getController();
+                                friendController.setFriendLabelData(f);
+                                mutualFriendsContainer.getChildren().add(friendNode);
+                                break;
+                            }
+                        }
                     }
                 }
             }
@@ -123,6 +127,7 @@ public class ProfilePageController implements Initializable{
         User user = UserManager.getUserByUserName(UserNameLabel.getText());
         Notification notification = new Notification(UserManager.users.get(0).getName() +" sent you a friend request", UserManager.users.get(0).getId(), user.getId());
         user.receiveNotification(user, notification);
+        friendRequestButton.setVisible(false);
     }
     public void switchToHome (ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("HomePage.fxml"));

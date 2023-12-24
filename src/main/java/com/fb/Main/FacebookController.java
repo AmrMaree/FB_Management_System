@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -32,6 +33,8 @@ public class FacebookController implements Initializable {
     private RadioButton PublicRadioButton, FriendsRadioButton;
     @FXML
     private TextField SearchTextField;
+    @FXML
+    private Label UsernamePost;
     ArrayList<Post> posts = new ArrayList<>();
     private Stage stage;
     private Scene scene;
@@ -185,18 +188,20 @@ public class FacebookController implements Initializable {
             String selectedValue = event.getCompletion();
             SearchedUser = selectedValue;
         });
+
         posts.addAll((ArrayList<Post>) UserManager.users.get(0).getPosts());
-        for(Friendship f:UserManager.users.get(0).getFriends()){
-            User user = UserManager.getUserByUserId(f.getFriendId());
-            if(f.getType().equals("restricted")){
-                for(Post p : user.getPosts()){
-                    if(p.getPrivacy().equals("public")){
-                        posts.add(p);
+        if (UserManager.users.get(0).getFriends()!=null) {
+            for (Friendship f : UserManager.users.get(0).getFriends()) {
+                User user = UserManager.getUserByUserId(f.getFriendId());
+                if (f.getType().equals("restricted") && f != null) {
+                    for (Post p : user.getPosts()) {
+                        if (p.getPrivacy() != null && p.getPrivacy().equals("public")) {
+                            posts.add(p);
+                        }
                     }
+                } else {
+                    posts.addAll(user.getPosts());
                 }
-            }
-            else{
-                posts.addAll(user.getPosts());
             }
         }
         try {
@@ -235,14 +240,13 @@ public class FacebookController implements Initializable {
             if(UserManager.users.get(0).getFriends() != null){
                 for(Friendship f : UserManager.users.get(0).getFriends()){
                     FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                    fxmlLoader.setLocation(getClass().getResource("FriendHome.fxml"));
                     Parent friendNode = fxmlLoader.load();
-                    FriendController friendController = fxmlLoader.getController();
-                    friendController.setFriendLabelData(f);
+                    FriendHomeController friendHomeController = fxmlLoader.getController();
+                    friendHomeController.setFriendLabelData(f);
                     friendsContainer.getChildren().add(friendNode);
                 }
             }
-
         }
         catch (IOException e) {
             throw new RuntimeException(e);

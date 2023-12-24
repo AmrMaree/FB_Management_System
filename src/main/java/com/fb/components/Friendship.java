@@ -3,6 +3,7 @@ package com.fb.components;
 public class Friendship {
     private int userId;
     private int friendId;
+
     private String type;
     public Friendship(int userId ,int friendId, String type) {
         this.userId = userId;
@@ -17,5 +18,8 @@ public class Friendship {
     }
     public String getType() {
         return type;
+    }
+    public void setType(String type) {
+        this.type = type;
     }
 }

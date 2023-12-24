@@ -11,16 +11,16 @@
 
 <HBox alignment="CENTER_LEFT" prefHeight="84.0" prefWidth="348.0" spacing="10.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.ChatController">
    <children>
-      <Label prefHeight="68.0" prefWidth="283.0" style="-fx-border-color: #CBC3E3; -fx-border-radius: 15; -fx-border-width: 2;">
+      <Label prefHeight="68.0" prefWidth="274.0" style="-fx-border-color: #CBC3E3; -fx-border-radius: 15; -fx-border-width: 2;">
          <graphic>
-            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="275.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="64.0" prefWidth="271.0" spacing="10.0">
                <children>
                   <ImageView fitHeight="50.0" fitWidth="92.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../../../Images/friendsIcon.png" />
                      </image>
                   </ImageView>
-                  <Label fx:id="chatLabel" prefHeight="50.0" prefWidth="97.0" text="Chat" textAlignment="RIGHT" textFill="#e3dedeed">
+                  <Label fx:id="chatLabel" prefHeight="50.0" prefWidth="88.0" text="Chat" textAlignment="RIGHT" textFill="#e3dedeed">
                      <font>
                         <Font name="Segoe UI Semibold" size="18.0" />
                      </font>

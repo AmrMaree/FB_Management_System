@@ -34,7 +34,7 @@
       </HBox>
       <HBox alignment="CENTER" prefWidth="483.0" style="-fx-background-color: #5A5A5A; -fx-border-color: #CBC3E3;">
          <children>
-            <Label fx:id="PostCaption" prefWidth="441.0" wrapText="true">
+            <Label fx:id="PostCaption" prefWidth="441.0" textFill="#ebe7e7" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>

@@ -8,76 +8,31 @@
     "birthdate": "2023-11-26",
     "posts": [
       {
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0,
-        "id": 3,
-        "userId": 1,
-        "content": "hello"
-      },
-      {
+        "privacy": "public",
         "comments": [
           {
-            "postId": 2,
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0,
-            "id": 2,
-            "userId": 1
-          },
-          {
-            "postId": 2,
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0,
-            "id": 4,
-            "userId": 1
-          },
-          {
-            "postId": 2,
+            "postId": 1,
             "replies": [],
             "likers": [],
             "NumberOfLikes": 0,
             "id": 1,
-            "userId": 2,
-            "content": "d"
-          },
-          {
-            "postId": 2,
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0,
-            "id": 1,
-            "userId": 2,
-            "content": "d"
+            "userId": 1,
+            "content": "hello"
           }
         ],
         "taggedUsers": [],
         "likers": [],
         "NumberOfLikes": 0,
-        "id": 2,
-        "userId": 1,
-        "content": "amr"
-      },
-      {
-        "privacy": "public",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          1
-        ],
-        "NumberOfLikes": 1,
         "id": 1,
         "userId": 1,
-        "content": "hi"
+        "content": "check restrict"
       }
     ],
     "friends": [
       {
         "userId": 1,
         "friendId": 3,
-        "type": "regular"
+        "type": "restricted"
       },
       {
         "userId": 1,
@@ -182,6 +137,12 @@
             "senderId": 1,
             "recipientId": 2,
             "content": "hi"
+          },
+          {
+            "id": 3,
+            "senderId": 1,
+            "recipientId": 3,
+            "content": "hello "
           }
         ]
       },
@@ -384,6 +345,46 @@
           3
         ],
         "messages": []
+      },
+      {
+        "id": 27,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 28,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 29,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 30,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 31,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
       }
     ],
     "notifications": []
@@ -395,31 +396,7 @@
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-08-27",
-    "posts": [
-      {
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          3
-        ],
-        "NumberOfLikes": 1,
-        "id": 1,
-        "userId": 3,
-        "content": "i am gay!!"
-      }
-    ],
-    "friends": [
-      {
-        "userId": 3,
-        "friendId": 1,
-        "type": "regular"
-      },
-      {
-        "userId": 3,
-        "friendId": 2,
-        "type": "regular"
-      }
-    ],
+    "posts": [],
     "conversations": [
       {
         "id": 1,
@@ -433,6 +410,12 @@
             "senderId": 3,
             "recipientId": 1,
             "content": "hi amr, you are my best friend"
+          },
+          {
+            "id": 3,
+            "senderId": 1,
+            "recipientId": 3,
+            "content": "hello "
           }
         ]
       },
@@ -563,9 +546,54 @@
           3
         ],
         "messages": []
+      },
+      {
+        "id": 18,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 19,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 20,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 21,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
+      },
+      {
+        "id": 22,
+        "participants": [
+          1,
+          3
+        ],
+        "messages": []
       }
     ],
     "notifications": [
+      {
+        "content": "joe sent you a friend request",
+        "senderId": 3,
+        "receiverId": 3
+      },
       {
         "content": "eren sent you a friend request",
         "senderId": 2,
@@ -585,33 +613,12 @@
     "password": "P@ssw0rd",
     "gender": "M",
     "birthdate": "2023-11-27",
-    "posts": [
-      {
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0,
-        "id": 2,
-        "userId": 2,
-        "content": "hi"
-      },
-      {
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          2
-        ],
-        "NumberOfLikes": 2,
-        "id": 1,
-        "userId": 2,
-        "content": "eren"
-      }
-    ],
+    "posts": [],
     "friends": [
       {
         "userId": 2,
         "friendId": 1,
-        "type": "regular"
+        "type": "restricted"
       },
       {
         "userId": 2,
@@ -719,6 +726,17 @@
         ]
       }
     ],
-    "notifications": []
+    "notifications": [
+      {
+        "content": "joe sent you a friend request",
+        "senderId": 3,
+        "receiverId": 2
+      },
+      {
+        "content": "joe sent you a friend request",
+        "senderId": 3,
+        "receiverId": 2
+      }
+    ]
   }
 ]
