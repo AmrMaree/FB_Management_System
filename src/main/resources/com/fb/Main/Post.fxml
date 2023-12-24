@@ -25,7 +25,7 @@
                   <Image url="@../../../Images/userIcon.png" />
                </image>
             </ImageView>
-            <Label fx:id="UsernameLabel" prefHeight="45.0" prefWidth="83.0" text="Username">
+            <Label fx:id="UsernameLabel" prefHeight="45.0" prefWidth="83.0" text="Username" textFill="#dbd9d9f5">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />
                </font>
@@ -69,27 +69,31 @@
                               <Image url="@../../../Images/laughIcon.png" />
                            </image>
                         </ImageView>
-                        <Label fx:id="likes" prefHeight="17.0" prefWidth="167.0" text="no of reactions">
+                        <Label fx:id="likes" prefHeight="17.0" prefWidth="216.0" text="no of reactions" textFill="#dbd9d9f5">
                            <font>
                               <Font name="Segoe UI Semibold" size="12.0" />
                            </font>
                         </Label>
                         <Pane prefWidth="0.0" />
-                        <Label alignment="CENTER_RIGHT" graphicTextGap="0.0" prefHeight="20.0" prefWidth="123.0" text="no of comments">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="12.0" />
-                           </font>
-                        </Label>
-                        <Label prefHeight="20.0" prefWidth="69.0" text="no of shares">
-                           <font>
-                              <Font name="Segoe UI Semibold" size="12.0" />
-                           </font>
-                        </Label>
+                        <HBox spacing="10.0">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="48.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../../../Images/comment.png" />
+                                 </image>
+                              </ImageView>
+                              <Label alignment="CENTER" graphicTextGap="0.0" prefHeight="30.0" prefWidth="99.0" text="no of comments" textFill="#dbd9d9f5">
+                                 <font>
+                                    <Font name="Segoe UI Semibold" size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
                      </children>
                   </HBox>
                   <HBox prefHeight="54.0" prefWidth="483.0" style="-fx-background-color: #5A5A5A; -fx-background-radius: 15;">
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefWidth="165.0" spacing="10.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="53.0" prefWidth="301.0" spacing="10.0">
                            <children>
                               <Button mnemonicParsing="false" onAction="#addLike" style="-fx-background-color: transparent;">
                                  <graphic>
@@ -100,7 +104,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Label text="Like">
+                              <Label text="Like" textFill="#dbd9d9f5">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
                                  </font>
@@ -118,21 +122,7 @@
                                     </ImageView>
                                  </graphic>
                               </Button>
-                              <Label text="Comment">
-                                 <font>
-                                    <Font name="Segoe UI Semibold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="CENTER_RIGHT" prefWidth="165.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="26.0" fitWidth="26.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/share.png" />
-                                 </image>
-                              </ImageView>
-                              <Label prefHeight="27.0" prefWidth="80.0" text="Share">
+                              <Label text="Comment" textFill="#dbd9d9f5">
                                  <font>
                                     <Font name="Segoe UI Semibold" size="18.0" />
                                  </font>

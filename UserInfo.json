@@ -33,6 +33,24 @@
             "NumberOfLikes": 0,
             "id": 4,
             "userId": 1
+          },
+          {
+            "postId": 2,
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0,
+            "id": 1,
+            "userId": 2,
+            "content": "d"
+          },
+          {
+            "postId": 2,
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0,
+            "id": 1,
+            "userId": 2,
+            "content": "d"
           }
         ],
         "taggedUsers": [],
