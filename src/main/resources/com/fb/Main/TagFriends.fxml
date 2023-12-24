@@ -9,6 +9,6 @@
    <children>
       <ListView fx:id="listView" layoutX="7.0" layoutY="39.0" prefHeight="222.0" prefWidth="201.0" />
       <Label fx:id="TaggedFriends" alignment="CENTER" layoutX="46.0" layoutY="14.0" prefHeight="17.0" prefWidth="124.0" text="label" />
-      <Button layoutX="93.0" layoutY="266.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="29.0" text="ok" />
+      <Button layoutX="93.0" layoutY="266.0" mnemonicParsing="false" onAction="#SignOut" prefHeight="27.0" prefWidth="29.0" text="ok" />
    </children>
 </Pane>

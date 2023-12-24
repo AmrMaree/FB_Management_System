@@ -4,8 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class User implements Serializable {
-    private static final long serialVersionUID = 1L;
+public class User {
     final private int id;
     private String email;
     private String name;
@@ -56,12 +55,6 @@ public class User implements Serializable {
         if(!found) {
             notifications.add(0, notification);
         }
-//        for (int i = 0; i < UserManager.users.size(); i++) {
-//            if (UserManager.users.get(i).getEmail().equals(user.getEmail())) {
-//                UserManager.users.set(i, user);
-//                break;
-//            }
-//        }
     }
     public void createPost(int postId , String content, String privacy) {
         boolean found= false;

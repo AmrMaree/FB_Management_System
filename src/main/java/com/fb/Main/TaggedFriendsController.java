@@ -8,11 +8,14 @@ import javafx.beans.value.ObservableListValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
+import javafx.stage.Stage;
 
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -27,11 +30,14 @@ public class TaggedFriendsController implements Initializable {
     @FXML
     private Label TaggedFriends;
     String Tagged;
-
-    // ...
-
-    // ...
-
+    public void SignOut(ActionEvent event){
+        try {
+            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
+            stage.close();
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<String> friendsToTag = new ArrayList<>();
@@ -53,6 +59,7 @@ public class TaggedFriendsController implements Initializable {
                     selectedFriends.toString();
 
             TaggedFriends.setText(result);
-        });
+            Tagged = result;
+            });
     }
 }
