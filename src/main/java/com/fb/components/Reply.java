@@ -1,19 +1,15 @@
 package com.fb.components;
 import java.util.ArrayList;
 
-public class Reply {
-    private static int nextId = 1;
-    final private int id;
-    private int userId;
-    private String text;
+public class Reply extends SocialContent{
     private ArrayList<Integer> likers;
-    public Reply(int userId, String text) {
-        this.id = nextId++;
-        this.userId = userId;
-        this.text = text;
+    public Reply(int id,int userId, String content) {
+        super(id,userId,content);
         this.likers = new ArrayList<>();
     }
-    public void addLiker(Integer liker) {
+    @Override
+    public void addLiker(int liker) {
         likers.add(liker);
     }
+
 }

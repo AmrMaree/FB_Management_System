@@ -18,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1203.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="798.0" prefWidth="1199.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.FacebookController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
@@ -44,10 +44,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="798.0">
-               <children>
-                  <Button fx:id="OpenChat1" mnemonicParsing="false" onAction="#OpenChat" text="OpenChat" />
-               </children></HBox>
+            <HBox alignment="CENTER_RIGHT" prefHeight="50.0" prefWidth="798.0" />
             <Button mnemonicParsing="false" onAction="#CloseWindow" prefHeight="46.0" prefWidth="54.0" style="-fx-background-color: transparent;" text="X">
                <font>
                   <Font name="Gadugi Bold" size="20.0" />

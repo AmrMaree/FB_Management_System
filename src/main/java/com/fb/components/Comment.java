@@ -1,27 +1,22 @@
 package com.fb.components;
 import java.util.ArrayList;
-public class Comment {
+public class Comment extends SocialContent{
     private static int nextId = 1;
-    final private int id;
-    final private int userId;
     final private int postId;
-    private String text;
     private ArrayList<Reply> replies;
     private ArrayList<Integer> likers;
     private int NumberOfLikes = 0;
-    public Comment(int userId, int postId, String text) {
+    public Comment(int userId, int postId, String content) {
+        super(userId , postId, content);
         this.postId = postId;
-        this.id = nextId++;
-        this.userId = userId;
-        this.text = text;
         this.replies = new ArrayList<>();
         this.likers = new ArrayList<>();
     }
-    public void addReply(int replierId, String text) {
-        replies.add(new Reply(replierId, text));
-    }
+    @Override
     public void addLiker(int likerId) {
         likers.add(likerId);
     }
-    public String getText() {return text;}
+    public void addReply(int id ,int replierId, String text) {
+        replies.add(new Reply(id,replierId, text));
+    }
 }

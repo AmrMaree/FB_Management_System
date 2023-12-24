@@ -13,6 +13,6 @@ public class CommentController {
 
     public void setCommentData(Comment comment)
     {
-        CommentLabel.setText(comment.getText());
+        CommentLabel.setText(comment.getContent());
     }
 }

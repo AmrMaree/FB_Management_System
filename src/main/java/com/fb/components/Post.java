@@ -1,19 +1,14 @@
 package com.fb.components;
 import java.util.ArrayList;
 
-public class Post {
-    private final int id;
-    private int userId;
-    private String content;
+public class Post extends SocialContent{
     private String privacy;
     private ArrayList<Comment> comments;
     private ArrayList<Integer> taggedUsers;
-    private ArrayList<Integer> likers;
+    private final ArrayList<Integer> likers;
     private int NumberOfLikes = 0;
     public Post(int id, int userId, String content, String privacy) {
-        this.id = id;
-        this.userId = userId;
-        this.content = content;
+        super(id, userId, content);
         this.privacy = privacy;
         this.comments = new ArrayList<>();
         this.taggedUsers = new ArrayList<>();
@@ -22,6 +17,7 @@ public class Post {
     public void addComment(Comment comment) {
         comments.add(comment);
     }
+    @Override
     public void addLiker(int liker) {
         boolean found = false;
         for(int l : likers){
@@ -37,22 +33,19 @@ public class Post {
     public void tagUser(int userId) {
         taggedUsers.add(userId);
     }
-    public int getId() {
-        return id;
-    }
-    public String getContent() {
-        return content;
-    }
     public String getPrivacy() {
         return privacy;
     }
-    public int getNumberOfLikes() {
-        return NumberOfLikes;
-    }
-    public int getUserId() {
-        return userId;
-    }
     public ArrayList<Comment> getComments() {
         return comments;
+    }
+    public ArrayList<Integer> getLikers() {
+        return likers;
+    }
+    public ArrayList<Integer> getTaggedUsers() {
+        return taggedUsers;
+    }
+    public int getNumberOfLikes() {
+        return NumberOfLikes;
     }
 }

@@ -9,14 +9,13 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefWidth="1203.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.ProfilePageController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1203.0" style="-fx-background-color: #222222;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.ProfilePageController">
    <top>
       <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1200.0" style="-fx-background-color: #50378d;" BorderPane.alignment="CENTER">
          <children>
@@ -56,99 +55,95 @@
       </HBox>
    </top>
    <left>
-      <ScrollPane prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: transparent;" BorderPane.alignment="CENTER">
+      <ScrollPane hbarPolicy="NEVER" prefHeight="850.0" prefWidth="334.0" style="-fx-background-color: transparent;" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
          <content>
-            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0">
+            <VBox prefHeight="918.0" prefWidth="342.0" style="-fx-background-color: #222222;">
                <children>
-                  <VBox layoutX="-1.0" prefHeight="848.0" prefWidth="342.0" style="-fx-background-color: #222222;">
+                  <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
                      <children>
-                        <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="46.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/nameIcon.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="UserNameLabel" prefHeight="49.0" prefWidth="242.0" text="Name" textFill="#e0d7d7ee">
-                                 <font>
-                                    <Font name="Segoe UI Semibold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/birthdateIcon.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="BirthdateLabel" prefHeight="49.0" prefWidth="242.0" text="Birthdate" textFill="#e0d7d7ee">
-                                 <font>
-                                    <Font name="Segoe UI Semibold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
-                           <children>
-                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
-                                 <image>
-                                    <Image url="@../../../Images/genderIcon.png" />
-                                 </image>
-                              </ImageView>
-                              <Label fx:id="GenderLabel" prefHeight="49.0" prefWidth="242.0" text="Gender" textFill="#e0d7d7ee">
-                                 <font>
-                                    <Font name="Segoe UI Semibold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <HBox alignment="CENTER" prefHeight="54.0" prefWidth="342.0">
-                           <children>
-                              <Button fx:id="friendRequestButton" mnemonicParsing="false" onAction="#friendRequest" prefHeight="37.0" prefWidth="272.0" style="-fx-background-color: transparent; -fx-border-color: #6958a4; -fx-border-radius: 10;" text="Send Friend Request" textFill="#6958a4">
-                                 <font>
-                                    <Font name="System Bold" size="16.0" />
-                                 </font>
-                                 <effect>
-                                    <DropShadow height="41.52" radius="18.795" width="35.66" />
-                                 </effect>
-                              </Button>
-                           </children>
-                        </HBox>
-                        <Separator prefHeight="0.0" prefWidth="342.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <HBox alignment="CENTER" prefHeight="17.0" prefWidth="323.0">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="106.0" text="Friends" textFill="#7a56d0">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <VBox fx:id="friendsContainer" prefWidth="100.0" />
-                        <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <HBox alignment="CENTER">
-                           <children>
-                              <Label alignment="CENTER" prefHeight="27.0" prefWidth="136.0" text="Mutual friends" textFill="#7a56d0">
-                                 <font>
-                                    <Font name="System Bold" size="18.0" />
-                                 </font>
-                              </Label>
-                           </children>
-                        </HBox>
-                        <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
-                        <VBox fx:id="mutualFriendsContainer" prefWidth="100.0" />
+                        <ImageView fitHeight="46.0" fitWidth="46.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/nameIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="UserNameLabel" prefHeight="49.0" prefWidth="242.0" text="Name" textFill="#e0d7d7ee">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
                      </children>
-                     <padding>
-                        <Insets top="20.0" />
-                     </padding>
-                  </VBox>
+                  </HBox>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/birthdateIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="BirthdateLabel" prefHeight="49.0" prefWidth="242.0" text="Birthdate" textFill="#e0d7d7ee">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BOTTOM_CENTER" prefHeight="80.0" prefWidth="348.0" spacing="10.0">
+                     <children>
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../Images/genderIcon.png" />
+                           </image>
+                        </ImageView>
+                        <Label fx:id="GenderLabel" prefHeight="49.0" prefWidth="242.0" text="Gender" textFill="#e0d7d7ee">
+                           <font>
+                              <Font name="Segoe UI Semibold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <HBox alignment="CENTER" prefHeight="54.0" prefWidth="342.0">
+                     <children>
+                        <Button fx:id="friendRequestButton" mnemonicParsing="false" onAction="#friendRequest" prefHeight="37.0" prefWidth="272.0" style="-fx-background-color: transparent; -fx-border-color: #6958a4; -fx-border-radius: 10;" text="Send Friend Request" textFill="#6958a4">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                           <effect>
+                              <DropShadow height="41.52" radius="18.795" width="35.66" />
+                           </effect>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <Separator prefHeight="0.0" prefWidth="342.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <HBox alignment="CENTER" prefHeight="17.0" prefWidth="323.0">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="106.0" text="Friends" textFill="#7a56d0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <VBox fx:id="friendsContainer" prefWidth="100.0" />
+                  <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="27.0" prefWidth="136.0" text="Mutual friends" textFill="#7a56d0">
+                           <font>
+                              <Font name="System Bold" size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <Separator prefWidth="200.0" style="-fx-background-color: #50378d; -fx-border-color: #50378d;" />
+                  <VBox fx:id="mutualFriendsContainer" prefWidth="100.0" />
                </children>
-            </AnchorPane>
+               <padding>
+                  <Insets top="20.0" />
+               </padding>
+            </VBox>
          </content>
       </ScrollPane>
    </left>
