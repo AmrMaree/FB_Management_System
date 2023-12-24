@@ -10,7 +10,6 @@
    <children>
       <HBox fx:id="chatHbox" alignment="CENTER_LEFT" prefWidth="432.0">
          <children>
-            <Label fx:id="messageUser" text="username" />
             <Label fx:id="ChatLabel" prefWidth="248.0" style="-fx-background-radius: 20; -fx-background-color: #949494;" wrapText="true">
                <font>
                   <Font name="Segoe UI Semibold" size="18.0" />

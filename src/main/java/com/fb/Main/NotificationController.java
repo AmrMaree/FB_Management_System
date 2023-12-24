@@ -23,10 +23,18 @@ public class NotificationController {
         int spaceIndex = NotificationLabel.getText().indexOf(' ');
         String userFriendName = NotificationLabel.getText().substring(0, spaceIndex).trim();
         User userFriend = UserManager.getUserByUserName(userFriendName);
-        Friendship friendship = new Friendship(UserManager.users.get(0).getId(),userFriend.getId(),"regular");
-        Friendship friendship2 = new Friendship(userFriend.getId(),UserManager.users.get(0).getId(),"regular");
-        UserManager.users.get(0).addFriend(friendship);
-        userFriend.addFriend(friendship2);
+        boolean found = false;
+        for(Friendship f:UserManager.users.get(0).getFriends()){
+            if(f.getFriendId()== userFriend.getId()){
+                found = true;
+            }
+        }
+        if(!found){
+            Friendship friendship = new Friendship(UserManager.users.get(0).getId(),userFriend.getId(),"regular");
+            Friendship friendship2 = new Friendship(userFriend.getId(),UserManager.users.get(0).getId(),"regular");
+            UserManager.users.get(0).addFriend(friendship);
+            userFriend.addFriend(friendship2);
+        }
     }
     public void DeclineFriend()
     {

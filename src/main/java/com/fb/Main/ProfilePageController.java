@@ -8,6 +8,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
@@ -25,9 +26,11 @@ public class ProfilePageController implements Initializable{
     @FXML
     private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
-    private VBox ProfilePostContainer,friendsContainer;
+    private VBox ProfilePostContainer,friendsContainer,mutualFriendsContainer;
     @FXML
     private TextField SearchTextField1;
+    @FXML
+    private Button friendRequestButton;
     ArrayList<Post> posts;
     private ArrayList<String> usersName = new ArrayList<>();
     String SearchedUser;
@@ -43,6 +46,11 @@ public class ProfilePageController implements Initializable{
         UserNameLabel.setText(user.getName());
         BirthdateLabel.setText(user.getBirthDate());
         GenderLabel.setText((user.getGender().equals("M")? "Male" :"Female"));
+        for(Friendship f : UserManager.users.get(0).getFriends()){
+            if(f.getFriendId() == user.getId()){
+                friendRequestButton.setVisible(false);
+            }
+       }
         posts = (ArrayList<Post>) user.getPosts();
         try {
             if(posts != null){
@@ -53,6 +61,41 @@ public class ProfilePageController implements Initializable{
                     PostController postController = fxmlLoader.getController();
                     postController.setPostData(post);
                     ProfilePostContainer.getChildren().add(postNode);
+                }
+            }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(user.getFriends() != null){
+                for(Friendship f : user.getFriends()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                    Parent friendNode = fxmlLoader.load();
+                    FriendController friendController = fxmlLoader.getController();
+                    friendController.setFriendLabelData(f);
+                    friendsContainer.getChildren().add(friendNode);
+                }
+            }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(user.getFriends() != null){
+                for(Friendship f : user.getFriends()){
+                    for(Friendship f2: UserManager.users.get(0).getFriends()){
+                       if(f.getFriendId() == f2.getFriendId()){
+                           FXMLLoader fxmlLoader = new FXMLLoader();
+                           fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
+                           Parent friendNode = fxmlLoader.load();
+                           FriendController friendController = fxmlLoader.getController();
+                           friendController.setFriendLabelData(f);
+                           friendsContainer.getChildren().add(friendNode);
+                           break;
+                       }
+                    }
                 }
             }
         }
@@ -91,7 +134,6 @@ public class ProfilePageController implements Initializable{
             }
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getUserName();
@@ -101,21 +143,5 @@ public class ProfilePageController implements Initializable{
             String selectedValue = event.getCompletion();
             SearchedUser = selectedValue;
         });
-        try {
-            if(UserManager.users.get(0).getFriends() != null){
-                for(Friendship f : UserManager.users.get(0).getFriends()){
-                    FXMLLoader fxmlLoader = new FXMLLoader();
-                    fxmlLoader.setLocation(getClass().getResource("friend.fxml"));
-                    Parent friendNode = fxmlLoader.load();
-                    FriendController friendController = fxmlLoader.getController();
-                    friendController.setFriendLabelData(f);
-                    friendsContainer.getChildren().add(friendNode);
-                }
-            }
-
-        }
-        catch (IOException e) {
-            throw new RuntimeException(e);
-        }
     }
 }

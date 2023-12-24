@@ -32,7 +32,7 @@ public class FacebookController implements Initializable {
     private RadioButton PublicRadioButton, FriendsRadioButton;
     @FXML
     private TextField SearchTextField;
-    ArrayList<Post> posts;
+    ArrayList<Post> posts = new ArrayList<>();
     private Stage stage;
     private Scene scene;
     private Parent root;
@@ -45,6 +45,7 @@ public class FacebookController implements Initializable {
             usersName.add(user.getName());
         }
     }
+
     public void TagFriend(ActionEvent event){
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("TagFriends.fxml"));
@@ -59,21 +60,6 @@ public class FacebookController implements Initializable {
             e.printStackTrace();
         }
     }
-    public void addParticipent(ActionEvent event){
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("TagFriends.fxml"));
-            Parent root = loader.load();
-            Stage newStage = new Stage();
-            newStage.setScene(new Scene(root));
-            Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
-            newStage.setResizable(false);
-            newStage.getIcons().add(icon);
-            newStage.show();
-            //userTaggedFriendsController.Tagged
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
     public void SignOut(ActionEvent event){
         try {
             stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
@@ -84,13 +70,18 @@ public class FacebookController implements Initializable {
     }
     public void CloseWindow (ActionEvent event)
     {
-     System.exit(0);
+        System.exit(0);
     }
-    public void CreateChat(ActionEvent event) {
+    public void OpenChat(ActionEvent event) {
         ArrayList<Conversation> conversations = (ArrayList<Conversation>) UserManager.users.get(0).getConversations();
+        ArrayList<Conversation> conversations2 = (ArrayList<Conversation>) UserManager.users.get(1).getConversations();
         if (conversations == null) {
             conversations = new ArrayList<>();
             UserManager.users.get(0).setConversations(conversations);
+        }
+        if (conversations2 == null) {
+            conversations2 = new ArrayList<>();
+            UserManager.users.get(1).setConversations(conversations2);
         }
         int conversationId;
         if(!UserManager.users.get(0).getConversations().isEmpty()){
@@ -99,13 +90,15 @@ public class FacebookController implements Initializable {
         else{
             conversationId = 1;
         }
-        UserManager.users.get(0).createConversation(conversationId, UserManager.users.get(0).getId(),UserManager.users.get(0).getName());
-        for (Conversation c : UserManager.users.get(0).getConversations()) {
-            if (c.getId() == conversationId) {
-                UserManager.users.get(0).getConversations().remove(c);
-                UserManager.users.get(0).getConversations().add(0, c);
-            }
+        int conversationId2;
+        if(!UserManager.users.get(1).getConversations().isEmpty()){
+            conversationId2 = UserManager.users.get(1).getConversations().get(UserManager.users.get(1).getConversations().size()-1).getId() + 1;
         }
+        else{
+            conversationId2 = 1;
+        }
+        UserManager.users.get(0).createConversation(conversationId, UserManager.users.get(0).getId(), UserManager.users.get(1).getId());
+        UserManager.users.get(1).createConversation(conversationId2, UserManager.users.get(0).getId(), UserManager.users.get(1).getId());
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("Conversation.fxml"));
             Parent root = loader.load();
@@ -117,30 +110,6 @@ public class FacebookController implements Initializable {
             newStage.show();
         } catch (IOException e) {
             e.printStackTrace();
-        }
-    }
-    public void OpenChat(ActionEvent event) {
-        ArrayList<Conversation> conversations = (ArrayList<Conversation>) UserManager.users.get(0).getConversations();
-        if (conversations != null) {
-            UserManager.users.get(0).setConversations(conversations);
-            for (Conversation c : UserManager.users.get(0).getConversations()) {
-                if (c.getId() == 0) {
-                    UserManager.users.get(0).getConversations().remove(c);
-                    UserManager.users.get(0).getConversations().add(0, c);
-                }
-            }
-            try {
-                FXMLLoader loader = new FXMLLoader(getClass().getResource("Conversation.fxml"));
-                Parent root = loader.load();
-                Stage newStage = new Stage();
-                newStage.setScene(new Scene(root));
-                Image icon = new Image(getClass().getResourceAsStream("/Images/buzzIcon.png"));
-                newStage.setResizable(false);
-                newStage.getIcons().add(icon);
-                newStage.show();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
         }
     }
     public void getPrivacy(ActionEvent event){
@@ -207,7 +176,6 @@ public class FacebookController implements Initializable {
             }
         }
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         getUserName();
@@ -217,7 +185,20 @@ public class FacebookController implements Initializable {
             String selectedValue = event.getCompletion();
             SearchedUser = selectedValue;
         });
-        posts = (ArrayList<Post>) UserManager.users.get(0).getPosts();
+        posts.addAll((ArrayList<Post>) UserManager.users.get(0).getPosts());
+        for(Friendship f:UserManager.users.get(0).getFriends()){
+            User user = UserManager.getUserByUserId(f.getFriendId());
+            if(f.getType().equals("restricted")){
+                for(Post p : user.getPosts()){
+                    if(p.getPrivacy().equals("public")){
+                        posts.add(p);
+                    }
+                }
+            }
+            else{
+                posts.addAll(user.getPosts());
+            }
+        }
         try {
             if(posts != null){
                 for (Post post:posts) {
@@ -250,7 +231,6 @@ public class FacebookController implements Initializable {
         catch (IOException e) {
             throw new RuntimeException(e);
         }
-
         try {
             if(UserManager.users.get(0).getFriends() != null){
                 for(Friendship f : UserManager.users.get(0).getFriends()){

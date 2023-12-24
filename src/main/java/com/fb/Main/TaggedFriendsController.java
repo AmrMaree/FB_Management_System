@@ -8,14 +8,11 @@ import javafx.beans.value.ObservableListValue;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.SelectionMode;
-import javafx.stage.Stage;
 
 import java.lang.reflect.Array;
 import java.net.URL;
@@ -24,20 +21,17 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class TaggedFriendsController implements Initializable {
+
     @FXML
     private ListView<String> listView;
     @FXML
     private Label TaggedFriends;
-    public static String Tagged;
-    public void close(ActionEvent event){
-        try {
-            Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
-            stage.close();
+    String Tagged;
 
-        }catch (Exception e){
-            e.printStackTrace();
-        }
-    }
+    // ...
+
+    // ...
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ArrayList<String> friendsToTag = new ArrayList<>();
@@ -53,13 +47,12 @@ public class TaggedFriendsController implements Initializable {
             for (String selectedItem : selectedItems) {
                 selectedFriends.append(selectedItem).append(", ");
             }
+
             String result = selectedFriends.length() > 0 ?
                     selectedFriends.substring(0, selectedFriends.length() - 2) :
                     selectedFriends.toString();
 
             TaggedFriends.setText(result);
-            Tagged = TaggedFriends.getText();
         });
     }
-
 }

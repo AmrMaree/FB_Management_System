@@ -98,11 +98,11 @@ public class PostController implements Initializable{
         }
     }
     public void setPostData (Post post){
-        UsernameLabel.setText(UserManager.users.get(0).getName());
+        User user = UserManager.getUserByUserId(post.getUserId());
+        UsernameLabel.setText(user.getName());
         PostCaption.setText(post.getContent());
         likes.setText(String.valueOf(post.getNumberOfLikes()));
     }
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try {

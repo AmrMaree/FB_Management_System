@@ -5,10 +5,10 @@
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="338.0" prefWidth="432.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.TaggedFriendsController">
+<Pane prefHeight="299.0" prefWidth="214.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fb.Main.TaggedFriendsController">
    <children>
-      <ListView fx:id="listView" layoutX="107.0" layoutY="54.0" prefHeight="200.0" prefWidth="200.0" />
-      <Label fx:id="TaggedFriends" alignment="CENTER" layoutX="145.0" layoutY="22.0" prefHeight="17.0" prefWidth="124.0" text="label" />
-      <Button layoutX="181.0" layoutY="285.0" mnemonicParsing="false" onAction="#close" text="ok" />
+      <ListView fx:id="listView" layoutX="7.0" layoutY="39.0" prefHeight="222.0" prefWidth="201.0" />
+      <Label fx:id="TaggedFriends" alignment="CENTER" layoutX="46.0" layoutY="14.0" prefHeight="17.0" prefWidth="124.0" text="label" />
+      <Button layoutX="93.0" layoutY="266.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="29.0" text="ok" />
    </children>
 </Pane>

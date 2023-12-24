@@ -1,123 +1,32 @@
 [
   {
-    "id": 1,
-    "email": "amr@gmail.com",
-    "name": "amr",
+    "id": 3,
+    "email": "joe@gmail.com",
+    "name": "joe",
     "password": "P@ssw0rd",
     "gender": "M",
-    "birthdate": "2023-11-26",
+    "birthdate": "2023-08-27",
     "posts": [
       {
-        "id": 7,
-        "userId": 1,
-        "content": "hello",
-        "comments": [
-          {
-            "id": 1,
-            "userId": 1,
-            "postId": 7,
-            "text": "hi",
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0
-          },
-          {
-            "id": 1,
-            "userId": 1,
-            "postId": 7,
-            "text": "",
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0
-          }
-        ],
-        "taggedUsers": [],
-        "likers": [
-          1
-        ],
-        "NumberOfLikes": 6
-      },
-      {
-        "id": 6,
-        "userId": 1,
-        "content": "hi",
-        "comments": [
-          {
-            "id": 1,
-            "userId": 1,
-            "postId": 6,
-            "text": "amr is ",
-            "replies": [],
-            "likers": [],
-            "NumberOfLikes": 0
-          }
-        ],
-        "taggedUsers": [],
-        "likers": [
-          1
-        ],
-        "NumberOfLikes": 5
-      },
-      {
-        "id": 5,
-        "userId": 1,
-        "content": "freedom",
-        "privacy": "public",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          1
-        ],
-        "NumberOfLikes": 3
-      },
-      {
-        "id": 4,
-        "userId": 1,
-        "content": "eren yeager",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          1
-        ],
-        "NumberOfLikes": 3
-      },
-      {
-        "id": 3,
-        "userId": 1,
-        "content": "I am amr",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0
-      },
-      {
-        "id": 2,
-        "userId": 1,
-        "content": "hi guys☺,nice to meet you",
-        "privacy": "friends",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0
-      },
-      {
         "id": 1,
-        "userId": 1,
-        "content": "hi guys☺",
+        "userId": 3,
+        "content": "i am gay!!",
         "comments": [],
         "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0
+        "likers": [
+          3
+        ],
+        "NumberOfLikes": 1
       }
     ],
     "friends": [
       {
-        "userId": 1,
-        "friendId": 3,
+        "userId": 3,
+        "friendId": 1,
         "type": "regular"
       },
       {
-        "userId": 1,
+        "userId": 3,
         "friendId": 2,
         "type": "regular"
       }
@@ -125,85 +34,32 @@
     "conversations": [
       {
         "id": 1,
-        "name": "amr",
         "participants": [
-          1
-        ],
-        "messages": []
-      }
-    ],
-    "notifications": [
-      {
-        "content": "george sent you a friend request",
-        "senderId": 5,
-        "receiverId": 1
-      }
-    ]
-  },
-  {
-    "id": 5,
-    "email": "george@gmail.com",
-    "name": "george",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-12-23",
-    "posts": [
-      {
-        "id": 1,
-        "userId": 5,
-        "content": "I am gay",
-        "privacy": "public",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [],
-        "NumberOfLikes": 0
-      }
-    ],
-    "friends": [
-      {
-        "userId": 5,
-        "friendId": 1,
-        "type": "regular"
-      }
-    ],
-    "conversations": [
-      {
-        "id": 1,
-        "participants": [
-          5,
+          3,
           1
         ],
         "messages": [
           {
             "id": 1,
-            "senderId": 5,
+            "senderId": 3,
             "recipientId": 1,
-            "content": "hi"
+            "content": "hi amr, you are my best friend"
           }
         ]
-      },
-      {
-        "id": 2,
-        "participants": [
-          1,
-          5
-        ],
-        "messages": []
       }
     ],
-    "notifications": []
-  },
-  {
-    "id": 4,
-    "email": "brsy@gmail.com",
-    "name": "brsy",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-11-26",
-    "posts": [],
-    "friends": [],
-    "conversations": [],
-    "notifications": []
+    "notifications": [
+      {
+        "content": "eren sent you a friend request",
+        "senderId": 2,
+        "receiverId": 3
+      },
+      {
+        "content": "eren sent you a friend request",
+        "senderId": 2,
+        "receiverId": 3
+      }
+    ]
   },
   {
     "id": 2,
@@ -214,9 +70,18 @@
     "birthdate": "2023-11-27",
     "posts": [
       {
+        "id": 2,
+        "userId": 2,
+        "content": "hi",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [],
+        "NumberOfLikes": 0
+      },
+      {
         "id": 1,
         "userId": 2,
-        "content": "hi amr",
+        "content": "eren",
         "comments": [],
         "taggedUsers": [],
         "likers": [
@@ -233,12 +98,12 @@
       },
       {
         "userId": 2,
-        "friendId": 1,
+        "friendId": 3,
         "type": "regular"
       },
       {
         "userId": 2,
-        "friendId": 1,
+        "friendId": 3,
         "type": "regular"
       }
     ],
@@ -335,12 +200,176 @@
             "content": "hi"
           }
         ]
+      }
+    ],
+    "notifications": []
+  },
+  {
+    "id": 1,
+    "email": "amr@gmail.com",
+    "name": "amr",
+    "password": "P@ssw0rd",
+    "gender": "M",
+    "birthdate": "2023-11-26",
+    "posts": [
+      {
+        "id": 2,
+        "userId": 1,
+        "content": "amr",
+        "comments": [
+          {
+            "id": 2,
+            "userId": 1,
+            "postId": 2,
+            "text": "hi",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
+          },
+          {
+            "id": 4,
+            "userId": 1,
+            "postId": 2,
+            "text": "amr",
+            "replies": [],
+            "likers": [],
+            "NumberOfLikes": 0
+          }
+        ],
+        "taggedUsers": [],
+        "likers": [],
+        "NumberOfLikes": 0
+      },
+      {
+        "id": 1,
+        "userId": 1,
+        "content": "hi",
+        "privacy": "public",
+        "comments": [],
+        "taggedUsers": [],
+        "likers": [
+          1
+        ],
+        "NumberOfLikes": 1
+      }
+    ],
+    "friends": [
+      {
+        "userId": 1,
+        "friendId": 3,
+        "type": "regular"
+      },
+      {
+        "userId": 1,
+        "friendId": 2,
+        "type": "regular"
+      }
+    ],
+    "conversations": [
+      {
+        "id": 1,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": [
+          {
+            "id": 1,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "The ending was heartbreaking"
+          },
+          {
+            "id": 2,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "I know right :("
+          },
+          {
+            "id": 3,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "so sad :("
+          },
+          {
+            "id": 4,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "HI"
+          },
+          {
+            "id": 5,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "Hello"
+          },
+          {
+            "id": 6,
+            "senderId": 2,
+            "recipientId": 1,
+            "content": "Good Morning"
+          },
+          {
+            "id": 7,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi eren :)"
+          },
+          {
+            "id": 8,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          },
+          {
+            "id": 9,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "omg "
+          },
+          {
+            "id": 10,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hello "
+          },
+          {
+            "id": 11,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          },
+          {
+            "id": 12,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hey "
+          },
+          {
+            "id": 13,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "love you"
+          },
+          {
+            "id": 1,
+            "senderId": 3,
+            "recipientId": 1,
+            "content": "hi amr, you are my best friend"
+          },
+          {
+            "id": 2,
+            "senderId": 1,
+            "recipientId": 2,
+            "content": "hi"
+          }
+        ]
       },
       {
         "id": 2,
         "participants": [
-          1,
-          2
+          3,
+          1
         ],
         "messages": []
       },
@@ -375,71 +404,40 @@
           2
         ],
         "messages": []
-      }
-    ],
-    "notifications": [
-      {
-        "content": "amr sent you a friend request",
-        "senderId": 1,
-        "receiverId": 2
-      }
-    ]
-  },
-  {
-    "id": 3,
-    "email": "joe@gmail.com",
-    "name": "joe",
-    "password": "P@ssw0rd",
-    "gender": "M",
-    "birthdate": "2023-08-27",
-    "posts": [
-      {
-        "id": 1,
-        "userId": 3,
-        "content": "i am gay!!",
-        "comments": [],
-        "taggedUsers": [],
-        "likers": [
-          3
-        ],
-        "NumberOfLikes": 1
-      }
-    ],
-    "friends": [
-      {
-        "userId": 3,
-        "friendId": 1,
-        "type": "regular"
       },
       {
-        "userId": 3,
-        "friendId": 1,
-        "type": "regular"
-      }
-    ],
-    "conversations": [
-      {
-        "id": 1,
+        "id": 7,
         "participants": [
-          3,
-          1
+          1,
+          2
         ],
-        "messages": [
-          {
-            "id": 1,
-            "senderId": 3,
-            "recipientId": 1,
-            "content": "hi amr, you are my best friend"
-          }
-        ]
+        "messages": []
+      },
+      {
+        "id": 8,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 9,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
+      },
+      {
+        "id": 10,
+        "participants": [
+          1,
+          2
+        ],
+        "messages": []
       }
     ],
-    "notifications": [
-      {
-        "content": "eren sent you a friend request",
-        "senderId": 2,
-        "receiverId": 3
-      }
-    ]
+    "notifications": []
   }
 ]
