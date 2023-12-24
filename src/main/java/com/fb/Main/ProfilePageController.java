@@ -26,7 +26,7 @@ public class ProfilePageController implements Initializable{
     @FXML
     private Label UserNameLabel, BirthdateLabel, GenderLabel,NotificationLabel;
     @FXML
-    private VBox ProfilePostContainer,friendsContainer,mutualFriendsContainer;
+    private VBox ProfilePostContainer,friendsContainer,mutualFriendsContainer,chatContainer;
     @FXML
     private TextField SearchTextField1;
     @FXML
@@ -92,10 +92,26 @@ public class ProfilePageController implements Initializable{
                            Parent friendNode = fxmlLoader.load();
                            FriendController friendController = fxmlLoader.getController();
                            friendController.setFriendLabelData(f);
-                           friendsContainer.getChildren().add(friendNode);
+                           mutualFriendsContainer.getChildren().add(friendNode);
                            break;
                        }
                     }
+                }
+            }
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+
+        try {
+            if(UserManager.users.get(0).getFriends() != null){
+                for(Friendship f : UserManager.users.get(0).getFriends()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Chat.fxml"));
+                    Parent chatNode = fxmlLoader.load();
+                    ChatController chatController = fxmlLoader.getController();
+                    chatController.setChatData(f);
+                    chatContainer.getChildren().add(chatNode);
                 }
             }
         }

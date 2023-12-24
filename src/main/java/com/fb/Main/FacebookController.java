@@ -27,7 +27,7 @@ public class FacebookController implements Initializable {
     @FXML
     private TextField PostTextField;
     @FXML
-    private VBox postsContainer, HomeNotificationContainer, friendsContainer;
+    private VBox postsContainer, HomeNotificationContainer, friendsContainer,chatContainer;
     @FXML
     private RadioButton PublicRadioButton, FriendsRadioButton;
     @FXML
@@ -243,6 +243,21 @@ public class FacebookController implements Initializable {
                 }
             }
 
+        }
+        catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        try {
+            if(UserManager.users.get(0).getFriends() != null){
+                for(Friendship f : UserManager.users.get(0).getFriends()){
+                    FXMLLoader fxmlLoader = new FXMLLoader();
+                    fxmlLoader.setLocation(getClass().getResource("Chat.fxml"));
+                    Parent chatNode = fxmlLoader.load();
+                    ChatController chatController = fxmlLoader.getController();
+                    chatController.setChatData(f);
+                    chatContainer.getChildren().add(chatNode);
+                }
+            }
         }
         catch (IOException e) {
             throw new RuntimeException(e);
