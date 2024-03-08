@@ -29,7 +29,7 @@ public class TaggedFriendsController implements Initializable {
     private ListView<String> listView;
     @FXML
     private Label TaggedFriends;
-    String Tagged;
+    public String Tagged;
     public void SignOut(ActionEvent event){
         try {
             Stage stage = (Stage) ((Node)event.getSource()).getScene().getWindow();
